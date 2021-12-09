@@ -26,7 +26,8 @@ module.exports = {
                     if (shouldReport) {
                         context.report({
                             node,
-                            message: 'Importing a namespace is not allowed for "{{sourceModule}}".',
+                            message:
+                                'Importing a namespace is not allowed for "{{sourceModule}}". Please use a named import instead',
                             data: {
                                 sourceModule,
                             },
