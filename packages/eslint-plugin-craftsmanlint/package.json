@@ -1,0 +1,15 @@
+{
+    "name": "@pedalboard/eslint-plugin-craftsmanlint",
+    "version": "1.0.0",
+    "description": "A set of ESlint rules",
+    "main": "index.js",
+    "author": "Matti Bar-Zeev",
+    "license": "MIT",
+    "scripts": {
+        "test": "jest"
+    },
+    "devDependencies": {
+        "eslint": "^8.4.1",
+        "jest": "^27.4.3"
+    }
+}

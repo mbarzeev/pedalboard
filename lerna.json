@@ -1,0 +1,20 @@
+{
+    "npmClient": "yarn",
+    "command": {
+        "publish": {
+            "ignoreChanges": ["ignored-file", "*.md"],
+            "message": "chore(release): publish %s",
+            "registry": "https://registry.npmjs.org/"
+        },
+        "version": {
+            "message": "chore(release): version %s",
+            "allowBranch": "master",
+            "conventionalCommits": true
+        },
+        "bootstrap": {
+            "npmClientArgs": ["--no-package-lock"]
+        }
+    },
+    "packages": ["packages/*"],
+    "version": "0.0.0"
+}
