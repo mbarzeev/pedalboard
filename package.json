@@ -1,7 +1,7 @@
 {
     "name": "pedalboard",
     "version": "1.0.0",
-    "description": "A collection of packages to make you software sound better",
+    "description": "A collection of packages to help you express you software better",
     "main": "index.js",
     "author": "Matti Bar-Zeev",
     "license": "MIT",
