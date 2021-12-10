@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.6 (2021-12-10)
+
+
+### Bug Fixes
+
+* Set the package access to public ([8a17338](https://github.com/mbarzeev/pedalboard/commit/8a173383af5679d52876d4cd304ae17a6123ba14))
+
+
+
+
+
 ## 1.0.5 (2021-12-10)
 
 
