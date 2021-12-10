@@ -1,7 +1,7 @@
 {
     "name": "@pedalboard/eslint-plugin-craftsmanlint",
-    "version": "1.0.6",
-    "description": "A set of ESlint rules",
+    "version": "1.0.5",
+    "description": "A set of ESlint rules for your code craftsmanship",
     "main": "index.js",
     "author": "Matti Bar-Zeev",
     "license": "MIT",
