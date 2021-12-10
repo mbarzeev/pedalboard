@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.7 (2021-12-10)
+
+
+### Bug Fixes
+
+* Modify json description ([6f47c43](https://github.com/mbarzeev/pedalboard/commit/6f47c43eb42df91ea9c752c47d1b851a1d8c6ef2))
+
+
+
+
+
 ## 1.0.6 (2021-12-10)
 
 
