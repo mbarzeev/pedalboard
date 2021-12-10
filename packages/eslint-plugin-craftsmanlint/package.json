@@ -6,7 +6,8 @@
     "author": "Matti Bar-Zeev",
     "license": "MIT",
     "scripts": {
-        "test": "jest"
+        "test": "jest",
+        "publish": "lerna publish --yes"
     },
     "devDependencies": {
         "eslint": "^8.4.1",
