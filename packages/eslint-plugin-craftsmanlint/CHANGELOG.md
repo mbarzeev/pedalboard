@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.5 (2021-12-10)
+
+
+### Bug Fixes
+
+* Add the --no-verify-access to hnadle Lerna's no support for 2FA ([e3c92d0](https://github.com/mbarzeev/pedalboard/commit/e3c92d059efac1043c9ebcf29779821898ccb4f5))
+
+
+
+
+
 ## 1.0.4 (2021-12-10)
 
 
