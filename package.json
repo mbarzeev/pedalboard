@@ -11,7 +11,7 @@
     ],
     "scripts": {
         "test": "lerna run test",
-        "publish:lerna": "lerna publish --yes"
+        "publish:lerna": "lerna publish --yes --no-verify-access"
     },
     "devDependencies": {
         "lerna": "^4.0.0"
