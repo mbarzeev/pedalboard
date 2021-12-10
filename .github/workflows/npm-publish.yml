@@ -32,6 +32,9 @@ jobs:
          node-version: 16
          registry-url: https://registry.npmjs.org/
      - run: yarn
+     - run: |
+         git config --local user.name 'github-actions[bot]'
+         git config --local user.email 'github-actions[bot]@users.noreply.github.com'
      - run: yarn publish:lerna
        env:
          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
