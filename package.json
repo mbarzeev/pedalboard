@@ -10,7 +10,8 @@
         "packages/*"
     ],
     "scripts": {
-        "test": "lerna run test"
+        "test": "lerna run test",
+        "publish:lerna": "lerna publish --yes"
     },
     "devDependencies": {
         "lerna": "^4.0.0"
