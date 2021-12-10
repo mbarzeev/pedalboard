@@ -29,16 +29,25 @@ ruleTester.run('no-namespace-imports rule', rule, {
     invalid: [
         {
             code: `import * as chuck from './norris'`,
-            errors: [{message: 'Importing a namespace is not allowed for "./norris".'}],
+            errors: [
+                {message: 'Importing a namespace is not allowed for "./norris". Please use a named import instead'},
+            ],
         },
         {
             code: `import defaultExport, * as name from "module-name";`,
-            errors: [{message: 'Importing a namespace is not allowed for "module-name".'}],
+            errors: [
+                {message: 'Importing a namespace is not allowed for "module-name". Please use a named import instead'},
+            ],
         },
         {
             code: `import * as chuck from './forbidden/module'`,
             options: ['./forbidden/module'],
-            errors: [{message: 'Importing a namespace is not allowed for "./forbidden/module".'}],
+            errors: [
+                {
+                    message:
+                        'Importing a namespace is not allowed for "./forbidden/module". Please use a named import instead',
+                },
+            ],
         },
     ],
 });
