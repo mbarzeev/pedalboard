@@ -5,6 +5,8 @@ name: Node.js Package
  
 on:
  push:
+   branches:
+     - master
  workflow_dispatch:
  release:
    types: [created]
