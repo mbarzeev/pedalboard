@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.1.1 (2021-12-17)
+
+
+### Bug Fixes
+
+* Remove the version interpolation in version commit message ([8ab0d24](https://github.com/mbarzeev/pedalboard/commit/8ab0d245d9629596c4620ad1a924b92d3558fa07))
+
+
+
+
+
 # 1.1.0 (2021-12-17)
 
 
