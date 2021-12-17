@@ -7,7 +7,7 @@
             "registry": "https://registry.npmjs.org/"
         },
         "version": {
-            "message": "chore(release): version %s",
+            "message": "chore(release): version",
             "allowBranch": "master",
             "conventionalCommits": true
         },
