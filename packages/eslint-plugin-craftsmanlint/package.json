@@ -9,7 +9,8 @@
         "access": "public"
     },
     "scripts": {
-        "test": "jest"
+        "test": "jest",
+        "lint": "eslint ./src"
     },
     "devDependencies": {
         "eslint": "^8.4.1",
