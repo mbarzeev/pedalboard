@@ -19,8 +19,10 @@ module.exports = {
                     // source module is among them, and only if it is - report
                     let shouldReport = true;
                     const sourceModule = node.source.value;
-                    if (context.options.length) {
-                        shouldReport = context.options.includes(sourceModule);
+                    const forbiddenModules = context?.options[0]?.forbiddenModules;
+
+                    if (forbiddenModules) {
+                        shouldReport = forbiddenModules.includes(sourceModule);
                     }
 
                     if (shouldReport) {

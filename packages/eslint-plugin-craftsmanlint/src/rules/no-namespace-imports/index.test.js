@@ -22,7 +22,7 @@ ruleTester.run('no-namespace-imports rule', rule, {
         },
         {
             code: `import * as chuck from './allowed/module'`,
-            options: ['./forbidden/module'],
+            options: [{forbiddenModules: ['./forbidden/module']}],
         },
     ],
 
@@ -41,7 +41,7 @@ ruleTester.run('no-namespace-imports rule', rule, {
         },
         {
             code: `import * as chuck from './forbidden/module'`,
-            options: ['./forbidden/module'],
+            options: [{forbiddenModules: ['./forbidden/module']}],
             errors: [
                 {
                     message:
