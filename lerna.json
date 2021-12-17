@@ -2,10 +2,7 @@
     "npmClient": "yarn",
     "command": {
         "publish": {
-            "ignoreChanges": [
-                "ignored-file",
-                "*.md"
-            ],
+            "ignoreChanges": ["ignored-file", "*.md"],
             "message": "chore(release): publish %s",
             "registry": "https://registry.npmjs.org/"
         },
@@ -15,13 +12,9 @@
             "conventionalCommits": true
         },
         "bootstrap": {
-            "npmClientArgs": [
-                "--no-package-lock"
-            ]
+            "npmClientArgs": ["--no-package-lock"]
         }
     },
-    "packages": [
-        "packages/*"
-    ],
+    "packages": ["packages/*"],
     "version": "1.0.8"
 }
