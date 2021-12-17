@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.1.0 (2021-12-17)
+
+
+### Features
+
+* Support packages own independent version ([330bb5c](https://github.com/mbarzeev/pedalboard/commit/330bb5c40329a30cbcea98e9ce7c949de3f9420b))
+
+
+
+
+
 ## 1.0.8 (2021-12-17)
 
 **Note:** Version bump only for package @pedalboard/eslint-plugin-craftsmanlint
