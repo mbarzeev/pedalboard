@@ -9,7 +9,7 @@
         "access": "public"
     },
     "scripts": {
-        "test": "echo \"Still no test specified\" && exit 0",
+        "test": "jest",
         "lint": "eslint ./src",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook"
