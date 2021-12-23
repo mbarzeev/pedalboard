@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.2.1 (2021-12-23)
+
+
+### Bug Fixes
+
+* Add import barrel for the components package ([fbb9bce](https://github.com/mbarzeev/pedalboard/commit/fbb9bce801dfe5936ed1050ae911d3d1ee7e71b2))
+
+
+
+
+
 # 1.2.0 (2021-12-23)
 
 
