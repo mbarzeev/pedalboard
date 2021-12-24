@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import usePagination from './use-pagination-hook';
+import {usePagination} from '@pedalboard/hooks';
 import './index.css';
 
 const Pagination = (props) => {
