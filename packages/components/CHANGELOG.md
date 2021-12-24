@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/components@0.1.3...@pedalboard/components@0.2.0) (2021-12-24)
+
+
+### Features
+
+* Use the usePagination hook from the hooks package ([53df986](https://github.com/mbarzeev/pedalboard/commit/53df9863ca6612ee85bdf4fdccb7f0d0810e2789))
+
+
+
+
+
 ## [0.1.3](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/components@0.1.2...@pedalboard/components@0.1.3) (2021-12-23)
 
 **Note:** Version bump only for package @pedalboard/components
