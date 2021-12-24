@@ -4,11 +4,11 @@ import {usePagination} from '@pedalboard/hooks';
 import './index.css';
 
 const Pagination = (props) => {
-    const [cursor, pagesCount, goPrev, goNext] = usePagination(props);
+    const {cursor, totalPages, goPrev, goNext} = usePagination(props);
     const buffer = new Array(props.pagesBuffer).fill(0);
     let bufferGap = 0;
-    if (pagesCount - cursor < buffer.length) {
-        bufferGap = pagesCount - cursor - buffer.length;
+    if (totalPages - cursor < buffer.length) {
+        bufferGap = totalPages - cursor - buffer.length;
     }
 
     return (
@@ -20,13 +20,13 @@ const Pagination = (props) => {
                 const pageCursor = cursor + index + bufferGap;
                 const className = pageCursor === cursor ? 'selected' : '';
 
-                return pageCursor >= 0 && pageCursor < pagesCount ? (
+                return pageCursor >= 0 && pageCursor < totalPages ? (
                     <span key={`page-${pageCursor}`} className={className}>
                         {` [${pageCursor}] `}
                     </span>
                 ) : null;
             })}
-            <button onClick={goNext} disabled={cursor === pagesCount - 1}>
+            <button onClick={goNext} disabled={cursor === totalPages - 1}>
                 NEXT
             </button>
         </div>

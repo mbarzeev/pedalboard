@@ -7,7 +7,7 @@ export default {
   component: Pagination,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    onPageChange:{ action: 'Page changed' },
+    onChange:{ action: 'Page changed' },
   },
 };
 
@@ -19,7 +19,7 @@ const Template = (args) => <div><Pagination {...args} /></div>;
 export const Simple = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Simple.args = {
-    pagesCount:10,
-    cursor:3,
+    totalPages:10,
+    initialCursor:3,
     pagesBuffer:5,
 };
