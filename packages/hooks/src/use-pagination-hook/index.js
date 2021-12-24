@@ -1,32 +1,49 @@
-import {useEffect, useState, useRef} from 'react';
+import {useEffect, useReducer, useRef} from 'react';
 
-const usePagination = ({cursor: initialCursor, pagesCount: initialPagesCount, onPageChange: pageChangeCallback}) => {
-    const [cursor, setCursor] = useState(initialCursor);
-    const [pagesCount] = useState(initialPagesCount);
+export const NO_TOTAL_PAGES_ERROR = 'The UsePagination hook must receive a totalPages argument for it to work';
 
-    const firstUpdate = useRef(true);
+const usePagination = ({totalPages, initialCursor, onChange} = {}) => {
+    if (!totalPages) {
+        throw new Error(NO_TOTAL_PAGES_ERROR);
+    }
 
-    useEffect(() => {
-        if (firstUpdate.current) {
-            firstUpdate.current = false;
-        } else {
-            pageChangeCallback(cursor);
-        }
-    }, [cursor, pageChangeCallback]);
+    const [cursor, dispatch] = useReducer(reducer, initialCursor || 0);
 
-    const changePage = (newCursor) => {
-        setCursor(newCursor);
-    };
-
-    const goPrev = () => {
-        changePage(cursor - 1);
+    const setCursor = (value) => {
+        dispatch({value, totalPages});
     };
 
     const goNext = () => {
-        changePage(cursor + 1);
+        const nextCursor = cursor + 1;
+        setCursor(nextCursor);
     };
 
-    return [cursor, pagesCount, goPrev, goNext, changePage];
+    const goPrev = () => {
+        const prevCursor = cursor - 1;
+        setCursor(prevCursor);
+    };
+
+    const isHookInitializing = useRef(true);
+
+    useEffect(() => {
+        if (isHookInitializing.current) {
+            isHookInitializing.current = false;
+        } else {
+            onChange?.(cursor);
+        }
+    }, [cursor]);
+
+    return {totalPages, cursor, goNext, goPrev, setCursor};
 };
+
+function reducer(state, action) {
+    let result = state;
+
+    if (action.value > 0 && action.value < action.totalPages) {
+        result = action.value;
+    }
+
+    return result;
+}
 
 export default usePagination;

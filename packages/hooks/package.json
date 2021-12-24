@@ -15,5 +15,13 @@
     "peerDependencies": {
         "react": "^17.0.2",
         "react-dom": "^17.0.2"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.16.5",
+        "@testing-library/react-hooks": "^7.0.2",
+        "babel-jest": "^27.4.5"
+    },
+    "jest": {
+        "testEnvironment": "jsdom"
     }
 }
