@@ -1,4 +1,4 @@
-# eslint-plugin-craftsmanship
+# eslint-plugin-craftsmanlint
 A set of ESlint rules for your code craftsmanship
 
 ## Rules
