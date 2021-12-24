@@ -39,7 +39,7 @@ const usePagination = ({totalPages, initialCursor, onChange} = {}) => {
 function reducer(state, action) {
     let result = state;
 
-    if (action.value > 0 && action.value < action.totalPages) {
+    if (action.value >= 0 && action.value < action.totalPages) {
         result = action.value;
     }
 
