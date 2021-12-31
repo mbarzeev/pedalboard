@@ -1,0 +1,24 @@
+{
+    "name": "@pedalboard/scripts",
+    "version": "0.0.0",
+    "description": "A set of reusable scripts",
+    "author": "Matti Bar-Zeev",
+    "license": "MIT",
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "bin",
+        "src"
+    ],
+    "bin": {
+        "pedalboard-scripts": "./bin/pedalboard-scripts.js"
+    },
+    "scripts": {
+        "test": "jest"
+    },
+    "devDependencies": {
+        "eslint": "^8.4.1",
+        "jest": "^27.4.3"
+    }
+}
