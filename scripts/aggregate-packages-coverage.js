@@ -47,13 +47,11 @@ function generateReports() {
                             execSync('yarn test --coverage --silent', {cwd: itemPath, stdio: 'inherit'});
                             // Copy the generated report to the reports dir
                             const targetFilePath = path.resolve(itemPath, 'coverage', 'coverage-final.json');
-                            console.log(GREEN, 'Done!');
                             // check if the report file exists
                             if (fs.existsSync(targetFilePath)) {
                                 console.log(BLUE, `Copying the coverage report...`);
                                 const destFilePath = path.resolve(REPORTS_DIR_PATH, `${item}.json`);
                                 fs.copyFileSync(targetFilePath, destFilePath);
-                                console.log(GREEN, 'Done!');
                             }
                         } catch (error) {
                             console.error('Failed to generate reports', error);
