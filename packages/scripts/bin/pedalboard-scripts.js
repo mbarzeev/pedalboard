@@ -18,5 +18,3 @@ if (command === AGGREGATE_PACKAGES_COVERAGE_COMMAD) {
     const scriptPath = path.resolve(__dirname, '../src/aggregate-packages-coverage.js');
     fork(scriptPath);
 }
-
-console.log('This is the Pedalboard scripts!', command);
