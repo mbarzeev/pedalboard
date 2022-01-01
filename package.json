@@ -19,7 +19,7 @@
     "devDependencies": {
         "lerna": "^4.0.0",
         "nyc": "^15.1.0",
-        "@pedalboard/scripts": "0.0.0"
+        "@pedalboard/scripts": "^0.1.0"
     },
     "dependencies": {
         "react": "^17.0.2",
