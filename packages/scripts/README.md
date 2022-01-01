@@ -18,7 +18,7 @@ This scripts allow you to aggregate all the unit test coverage report from all p
 You'd typically want to call this script form the root project of your monorepo, e.g.
 ```json
 "scripts": {
-    "coverage:combined": "pedalboard-scripts aggregatePackagesCoverage
+    "coverage:combined": "pedalboard-scripts aggregatePackagesCoverage"
 }
 ```
 Following this script you can then call [nyc](https://github.com/istanbuljs/nyc) to create a combined report for all packages at once, which can look something like this -
