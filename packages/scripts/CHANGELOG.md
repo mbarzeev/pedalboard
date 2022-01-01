@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/scripts@0.1.1...@pedalboard/scripts@0.1.2) (2022-01-01)
+
+
+### Bug Fixes
+
+* Remove redundant console.log ([fb3ab63](https://github.com/mbarzeev/pedalboard/commit/fb3ab63ea37bfa09c96c4d5493c3f6f887f094ed))
+
+
+
+
+
 ## [0.1.1](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/scripts@0.1.0...@pedalboard/scripts@0.1.1) (2022-01-01)
 
 
