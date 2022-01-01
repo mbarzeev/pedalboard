@@ -14,7 +14,6 @@ const PACKAGES_DIR_NAME = 'packages';
 const PACKAGE_PATH = path.resolve(process.cwd(), PACKAGES_DIR_NAME);
 const REPORTS_DIR_PATH = path.resolve(process.cwd(), REPORTS_DIR_NAME);
 const BLUE = '\x1b[34m%s\x1b[0m';
-const GREEN = '\x1b[32m%s\x1b[0m';
 
 // go over all the packages and produce a coverage report
 function aggregateReports() {
@@ -26,11 +25,10 @@ function aggregateReports() {
  * Creates a temp directory for all the reports
  */
 function createTempDir() {
-    console.log(BLUE, `Creating a temp ${REPORTS_DIR_NAME} directory...`);
     if (!fs.existsSync(REPORTS_DIR_PATH)) {
+        console.log(BLUE, `Creating a temp ${REPORTS_DIR_NAME} directory...`);
         fs.mkdirSync(REPORTS_DIR_PATH);
     }
-    console.log(GREEN, 'Done!');
 }
 
 /**
