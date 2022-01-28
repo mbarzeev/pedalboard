@@ -34,7 +34,10 @@ const Pagination = (props) => {
 };
 
 Pagination.propTypes = {
+    totalPages: PropTypes.number,
     pagesBuffer: PropTypes.number,
+    initialCursor: PropTypes.number,
+    onChange: PropTypes.func,
 };
 
 export default Pagination;

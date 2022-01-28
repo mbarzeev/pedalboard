@@ -1,5 +1,5 @@
 import React from 'react';
-import Pagination from '../Pagination';
+import Pagination from '.';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -11,9 +11,7 @@ export default {
   },
 };
 
-
-
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
+// // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => <div><Pagination {...args} /></div>;
 
 export const Simple = Template.bind({});
