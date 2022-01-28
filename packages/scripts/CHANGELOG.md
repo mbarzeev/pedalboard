@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/scripts@0.1.2...@pedalboard/scripts@0.1.3) (2022-01-28)
+
+
+### Bug Fixes
+
+* Make the aggregated report work in parallel ([3186f94](https://github.com/mbarzeev/pedalboard/commit/3186f94a88a1b687d0c42728e3122a4599c8ff54))
+
+
+
+
+
 ## [0.1.2](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/scripts@0.1.1...@pedalboard/scripts@0.1.2) (2022-01-01)
 
 
