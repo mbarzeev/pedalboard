@@ -11,5 +11,10 @@
             "jsx": true
         }
     },
+    "globals": {
+        "describe": true,
+        "it": true,
+        "cy": true
+    },
     "rules": {}
 }
