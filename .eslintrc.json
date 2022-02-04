@@ -1,4 +1,5 @@
 {
+    "root": true,
     "env": {
         "browser": true,
         "commonjs": true
@@ -7,6 +8,10 @@
     "parserOptions": {
         "ecmaVersion": 2020,
         "sourceType": "module"
+    },
+    "globals": {
+        "describe": true,
+        "it": true
     },
     "rules": {}
 }
