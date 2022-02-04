@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/components@0.2.1...@pedalboard/components@0.3.0) (2022-02-04)
+
+
+### Bug Fixes
+
+* Exclude spec tests from Jest run ([0590fef](https://github.com/mbarzeev/pedalboard/commit/0590fef884858a19b8108361121205e7628c228a))
+
+
+### Features
+
+* Add Cypress tests to the components package ([61f2720](https://github.com/mbarzeev/pedalboard/commit/61f2720aa65891ce6f94f3b7dbbeb9e7a13b215e))
+
+
+
+
+
 ## [0.2.1](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/components@0.2.0...@pedalboard/components@0.2.1) (2022-01-28)
 
 **Note:** Version bump only for package @pedalboard/components
