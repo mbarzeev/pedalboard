@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/eslint-plugin-craftsmanlint@1.2.1...@pedalboard/eslint-plugin-craftsmanlint@1.2.2) (2022-02-04)
+
+
+### Bug Fixes
+
+* Set jest env to be "jsdom" by default ([7daeb1b](https://github.com/mbarzeev/pedalboard/commit/7daeb1bd4b6a0056048f1d182315690289381179))
+
+
+
+
+
 ## 1.2.1 (2021-12-23)
 
 
