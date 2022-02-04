@@ -12,18 +12,25 @@
         "test": "jest",
         "lint": "eslint ./src",
         "storybook": "start-storybook -p 6006",
-        "build-storybook": "build-storybook"
+        "build-storybook": "build-storybook",
+        "cy:open": "cypress open-ct",
+        "cy:run": "cypress run-ct"
     },
     "devDependencies": {
         "@babel/core": "^7.16.5",
+        "@cypress/react": "^5.12.1",
+        "@cypress/webpack-dev-server": "^1.8.0",
         "@storybook/addon-actions": "^6.5.0-alpha.5",
         "@storybook/addon-essentials": "^6.5.0-alpha.5",
         "@storybook/addon-links": "^6.5.0-alpha.5",
         "@storybook/react": "^6.5.0-alpha.5",
+        "@storybook/testing-react": "^1.2.3",
         "babel-loader": "^8.2.3",
+        "cypress": "^9.3.1",
         "eslint": "^8.4.1",
         "eslint-plugin-react": "^7.28.0",
-        "jest": "^27.4.3"
+        "jest": "^27.4.3",
+        "webpack-dev-server": "^4.7.3"
     },
     "peerDependencies": {
         "prop-types": "^15.8.0",

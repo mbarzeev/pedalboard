@@ -1,0 +1,24 @@
+import React from 'react';
+import {composeStories} from '@storybook/testing-react';
+import {mount} from '@cypress/react';
+import * as stories from './index.stories.jsx';
+
+// compile the "Simple" story with the library
+const {Simple} = composeStories(stories);
+
+describe('Pagination component', () => {
+    describe('PREV button', () => {
+        it('should be disabled when reaching the first page', () => {
+            // and mount the story using @cypress/react library
+            mount(<Simple />);
+
+            const prevButton = cy.get('button').contains('PREV');
+
+            prevButton.click();
+            prevButton.click();
+            prevButton.click();
+
+            prevButton.should('be.disabled');
+        });
+    });
+});
