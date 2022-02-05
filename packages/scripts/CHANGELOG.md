@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.5](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/scripts@0.1.4...@pedalboard/scripts@0.1.5) (2022-02-05)
+
+
+### Bug Fixes
+
+* ESlint issues ([cba9f41](https://github.com/mbarzeev/pedalboard/commit/cba9f41b0e06c88719972c707075c5bc3af6a354))
+
+
+
+
+
 ## [0.1.4](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/scripts@0.1.3...@pedalboard/scripts@0.1.4) (2022-02-04)
 
 **Note:** Version bump only for package @pedalboard/scripts
