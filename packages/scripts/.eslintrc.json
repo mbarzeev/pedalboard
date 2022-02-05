@@ -1,0 +1,7 @@
+{
+    "globals": {
+        "process": true,
+        "__dirname": true,
+        "Promise": true
+    }
+}

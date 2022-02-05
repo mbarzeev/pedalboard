@@ -7,7 +7,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const {execSync, spawn} = require('child_process');
+const {spawn} = require('child_process');
 
 const REPORTS_DIR_NAME = '.nyc_output';
 const PACKAGES_DIR_NAME = 'packages';
@@ -63,7 +63,7 @@ async function generateReportForPackage(packageName) {
 
                 process.on('exit', (code) => {
                     if (code !== 0) {
-                        reject(data);
+                        reject();
                     } else {
                         // Copy the generated report to the reports dir
                         const targetFilePath = path.resolve(packagePath, 'coverage', 'coverage-final.json');
