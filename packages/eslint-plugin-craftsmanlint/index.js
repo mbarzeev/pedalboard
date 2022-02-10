@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const noNamespaceImports = require('./rules/no-namespace-imports');
+const noNamespaceImports = require('./src/rules/no-namespace-imports');
 
 module.exports = {
     rules: {

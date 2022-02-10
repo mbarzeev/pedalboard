@@ -6,6 +6,7 @@
  */
 
 module.exports = {
+    name: 'no-namespace-imports',
     meta: {
         type: 'problem',
 
