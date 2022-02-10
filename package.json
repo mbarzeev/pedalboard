@@ -13,6 +13,7 @@
         "test": "lerna run test --",
         "coverage": "yarn test --coverage",
         "lint": "lerna run lint",
+        "build": "lerna run build",
         "publish:lerna": "lerna publish --yes --no-verify-access",
         "coverage:combined": "pedalboard-scripts aggregatePackagesCoverage && nyc report --reporter lcov"
     },
