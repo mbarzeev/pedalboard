@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/hooks@0.1.3...@pedalboard/hooks@0.2.0) (2022-02-10)
+
+
+### Features
+
+* Support ESM and CJS for the hooks package ([a0f9cc4](https://github.com/mbarzeev/pedalboard/commit/a0f9cc4769b16557537c548950b7f5bd927c8704))
+
+
+
+
+
 ## [0.1.3](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/hooks@0.1.2...@pedalboard/hooks@0.1.3) (2022-02-05)
 
 
