@@ -13,8 +13,5 @@
         "describe": true,
         "it": true
     },
-    "plugins": ["@pedalboard/craftsmanlint"],
-    "rules": {
-        "@pedalboard/craftsmanlint/no-namespace-imports": ["error"]
-    }
+    "rules": {}
 }
