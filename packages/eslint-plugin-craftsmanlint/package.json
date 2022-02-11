@@ -19,6 +19,7 @@
         "build": "tsc --project tsconfig.cjs.json"
     },
     "devDependencies": {
+        "@babel/preset-env": "^7.16.11",
         "eslint": "^8.4.1",
         "jest": "^27.4.3"
     }

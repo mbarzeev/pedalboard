@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const {RuleTester} = require('eslint');
-const rule = require('./index');
+import {RuleTester} from 'eslint';
+import rule from './index';
 
 const ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2015, sourceType: 'module'}});
 
