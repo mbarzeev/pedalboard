@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.6](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/eslint-plugin-craftsmanlint@1.2.5...@pedalboard/eslint-plugin-craftsmanlint@1.2.6) (2022-02-11)
+
+
+### Bug Fixes
+
+* Tests and missing babel preset-env dependnecy ([900e8c6](https://github.com/mbarzeev/pedalboard/commit/900e8c635499b1bb86e4ef0f5ef0af95f8db9a04))
+
+
+
+
+
 ## [1.2.5](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/eslint-plugin-craftsmanlint@1.2.4...@pedalboard/eslint-plugin-craftsmanlint@1.2.5) (2022-02-10)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/hooks@0.2.0...@pedalboard/hooks@0.2.1) (2022-02-11)
+
+
+### Bug Fixes
+
+* Tests and missing babel preset-env dependnecy ([900e8c6](https://github.com/mbarzeev/pedalboard/commit/900e8c635499b1bb86e4ef0f5ef0af95f8db9a04))
+
+
+
+
+
 # [0.2.0](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/hooks@0.1.3...@pedalboard/hooks@0.2.0) (2022-02-10)
 
 
