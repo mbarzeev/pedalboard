@@ -2,15 +2,21 @@
     "name": "@pedalboard/eslint-plugin-craftsmanlint",
     "version": "1.2.5",
     "description": "A set of ESlint rules for your code craftsmanship",
-    "main": "index.js",
+    "main": "./dist/cjs/index.js",
+    "types": "./dist/types/index.d.ts",
     "author": "Matti Bar-Zeev",
     "license": "MIT",
+    "exports": {
+        "require": "./dist/cjs/index.js",
+        "default": "./dist/cjs/index.js"
+    },
     "publishConfig": {
         "access": "public"
     },
     "scripts": {
         "test": "jest",
-        "lint": "eslint ./src"
+        "lint": "eslint ./src",
+        "build": "tsc --project tsconfig.cjs.json"
     },
     "devDependencies": {
         "eslint": "^8.4.1",
