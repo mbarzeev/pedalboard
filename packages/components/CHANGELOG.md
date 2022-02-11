@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.7](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/components@0.3.6...@pedalboard/components@0.3.7) (2022-02-11)
+
+
+### Bug Fixes
+
+* Remove no-namespace-imports ESlint rule from ESlint config ([a6f63ab](https://github.com/mbarzeev/pedalboard/commit/a6f63ab15edb1caf80ce19ff79ae495c7a677050))
+
+
+
+
+
 ## [0.3.6](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/components@0.3.5...@pedalboard/components@0.3.6) (2022-02-11)
 
 **Note:** Version bump only for package @pedalboard/components
