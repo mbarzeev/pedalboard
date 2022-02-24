@@ -5,10 +5,17 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* eslint-disable no-undef */
+import React from 'react';
+import {render} from '@testing-library/react';
+import Pagination from '.';
+
 describe('Pagination component', () => {
-    it('should render the component', () => {
-        // TODO: Implement...
-        expect(1).toBeTruthy();
+    it('should render', () => {
+        const {getByText, getByRole} = render(
+            <Pagination pagesBuffer={5} totalPages={10} initialCursor={3} pagesBuffer={5} />
+        );
+        expect(getByText('[5]')).toBeInTheDocument();
+        expect(getByText('PREV')).toBeInTheDocument();
+        expect(getByText('NEXT')).toBeInTheDocument();
     });
 });

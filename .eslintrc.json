@@ -11,7 +11,9 @@
     },
     "globals": {
         "describe": true,
-        "it": true
+        "it": true,
+        "expect": true,
+        "jest",
     },
     "rules": {}
 }
