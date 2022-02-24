@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.8](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/components@0.3.7...@pedalboard/components@0.3.8) (2022-02-24)
+
+
+### Bug Fixes
+
+* linting ([4b95b4a](https://github.com/mbarzeev/pedalboard/commit/4b95b4a04c9ed31b1be1b415fcb0b8345cbfd4a9))
+
+
+
+
+
 ## [0.3.7](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/components@0.3.6...@pedalboard/components@0.3.7) (2022-02-11)
 
 
