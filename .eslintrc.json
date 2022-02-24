@@ -13,7 +13,7 @@
         "describe": true,
         "it": true,
         "expect": true,
-        "jest",
+        "jest": true
     },
     "rules": {}
 }

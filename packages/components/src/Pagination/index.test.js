@@ -11,9 +11,7 @@ import Pagination from '.';
 
 describe('Pagination component', () => {
     it('should render', () => {
-        const {getByText, getByRole} = render(
-            <Pagination pagesBuffer={5} totalPages={10} initialCursor={3} pagesBuffer={5} />
-        );
+        const {getByText} = render(<Pagination pagesBuffer={5} totalPages={10} initialCursor={3} />);
         expect(getByText('[5]')).toBeInTheDocument();
         expect(getByText('PREV')).toBeInTheDocument();
         expect(getByText('NEXT')).toBeInTheDocument();
