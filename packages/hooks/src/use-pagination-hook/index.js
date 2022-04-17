@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import {useEffect, useReducer, useRef} from 'react';
+import {useEffect, useRef, useState} from 'react';
 
 export const NO_TOTAL_PAGES_ERROR = 'The UsePagination hook must receive a totalPages argument for it to work';
 
@@ -14,10 +14,12 @@ const usePagination = ({totalPages, initialCursor, onChange} = {}) => {
         throw new Error(NO_TOTAL_PAGES_ERROR);
     }
 
-    const [cursor, dispatch] = useReducer(reducer, initialCursor || 0);
+    const [cursor, setInternalCursor] = useState(initialCursor || 0);
 
-    const setCursor = (value) => {
-        dispatch({value, totalPages});
+    const setCursor = (newCursor) => {
+        if (newCursor >= 0 && newCursor < totalPages) {
+            setInternalCursor(newCursor);
+        }
     };
 
     const goNext = () => {
@@ -42,15 +44,5 @@ const usePagination = ({totalPages, initialCursor, onChange} = {}) => {
 
     return {totalPages, cursor, goNext, goPrev, setCursor};
 };
-
-function reducer(state, action) {
-    let result = state;
-
-    if (action.value >= 0 && action.value < action.totalPages) {
-        result = action.value;
-    }
-
-    return result;
-}
 
 export default usePagination;
