@@ -10,17 +10,18 @@
         "packages/*"
     ],
     "scripts": {
-        "test": "lerna run test --",
+        "test": "nx run-many --target=test --all",
         "coverage": "yarn test --coverage",
-        "lint": "lerna run lint",
-        "build": "lerna run build",
+        "lint": "nx run-many --target=lint --all",
+        "build": "nx run-many --target=build --all",
         "publish:lerna": "lerna publish --yes --no-verify-access",
         "coverage:combined": "pedalboard-scripts aggregatePackagesCoverage && nyc report --reporter lcov"
     },
     "devDependencies": {
         "@pedalboard/scripts": "^0.1.1",
         "lerna": "^4.0.0",
-        "nyc": "^15.1.0"
+        "nyc": "^15.1.0",
+        "nx": "14.0.5"
     },
     "dependencies": {
         "react": "^17.0.2",
