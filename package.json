@@ -10,21 +10,22 @@
         "packages/*"
     ],
     "scripts": {
-        "test": "nx run-many --target=test --all",
+        "test": "yarn workspaces foreach -p run test",
         "coverage": "yarn test --coverage",
-        "lint": "nx run-many --target=lint --all",
-        "build": "nx run-many --target=build --all",
+        "lint": "yarn workspaces foreach -p run lint",
+        "build": "yarn workspaces foreach -ptv run build",
         "publish:lerna": "lerna publish --yes --no-verify-access",
         "coverage:combined": "pedalboard-scripts aggregatePackagesCoverage && nyc report --reporter lcov"
     },
     "devDependencies": {
         "@pedalboard/scripts": "^0.1.1",
         "lerna": "^4.0.0",
-        "nyc": "^15.1.0",
-        "nx": "14.0.5"
+        "nx": "14.0.5",
+        "nyc": "^15.1.0"
     },
     "dependencies": {
         "react": "^17.0.2",
         "react-dom": "^17.0.2"
-    }
+    },
+    "packageManager": "yarn@3.2.0"
 }
