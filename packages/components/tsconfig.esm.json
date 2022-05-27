@@ -3,8 +3,9 @@
     "compilerOptions": {
         "module": "ES2020",
         "outDir": "dist/esm",
-        "declarationDir": "dist/types"
+        "declarationDir": "dist/types",
+        "jsx": "react"
     },
-    "files": ["index.js"],
+    "files": ["index.ts"],
     "include": ["src/**/*"]
 }

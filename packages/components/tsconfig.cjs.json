@@ -3,8 +3,9 @@
     "compilerOptions": {
         "module": "CommonJS",
         "outDir": "dist/cjs",
-        "declarationDir": "dist/types"
+        "declarationDir": "dist/types",
+        "jsx": "react"
     },
-    "files": ["index.js"],
+    "files": ["index.ts"],
     "include": ["src/**/*"]
 }

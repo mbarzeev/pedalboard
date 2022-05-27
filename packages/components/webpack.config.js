@@ -12,10 +12,23 @@ module.exports = {
                 },
             },
             {
+                test: /\.(tsx|ts)$/,
+                exclude: /(node_modules)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-typescript'],
+                    },
+                },
+            },
+            {
                 test: /\.css$/i,
                 exclude: /(node_modules)/,
                 use: ['style-loader', 'css-loader'],
             },
         ],
+    },
+    resolve: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
 };

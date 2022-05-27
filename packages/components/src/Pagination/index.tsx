@@ -10,7 +10,14 @@ import PropTypes from 'prop-types';
 import {usePagination} from '@pedalboard/hooks';
 import './index.css';
 
-const Pagination = (props) => {
+export interface PaginationProps {
+    totalPages: number;
+    initialCursor: number;
+    pagesBuffer: number;
+    onChange: () => void;
+}
+
+const Pagination = (props: PaginationProps) => {
     const {cursor, totalPages, goPrev, goNext} = usePagination(props);
     const buffer = new Array(props.pagesBuffer).fill(0);
     let bufferGap = 0;

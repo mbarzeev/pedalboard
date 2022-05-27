@@ -11,5 +11,5 @@
         "esModuleInterop": true,
         "skipLibCheck": true
     },
-    "exclude": ["node_modules", "**/*.test.js"]
+    "exclude": ["node_modules", "**/*.test.*", "**/*.spec.*", "**/*.stories.*"]
 }

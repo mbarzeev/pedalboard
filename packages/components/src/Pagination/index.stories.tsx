@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import Pagination from './index.jsx';
+import Pagination, {PaginationProps} from '.';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -19,7 +19,7 @@ export default {
 };
 
 // // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => (
+const Template = (args: PaginationProps) => (
     <div>
         <Pagination {...args} />
     </div>

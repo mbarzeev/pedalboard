@@ -18,6 +18,7 @@
         "coverage:combined": "pedalboard-scripts aggregatePackagesCoverage && nyc report --reporter lcov"
     },
     "devDependencies": {
+        "@babel/preset-typescript": "^7.17.12",
         "@pedalboard/scripts": "^0.1.1",
         "lerna": "^4.0.0",
         "nx": "14.0.5",
