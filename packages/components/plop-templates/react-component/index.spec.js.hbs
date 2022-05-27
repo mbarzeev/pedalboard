@@ -1,0 +1,21 @@
+/**
+ * Copyright (c) 2021-present, Matti Bar-Zeev.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+import React from 'react';
+import {composeStories} from '@storybook/testing-react';
+import {mount} from '@cypress/react';
+import * as stories from './index.stories.jsx';
+
+// compile the "Simple" story with the library
+const {Simple} = composeStories(stories);
+
+describe('{{name}} component', () => {
+    it('should mount the component', () => {
+        // and mount the story using @cypress/react library
+        mount(<Simple />);
+    });
+});

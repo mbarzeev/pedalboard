@@ -14,7 +14,8 @@
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
         "cy:open": "cypress open-ct",
-        "cy:run": "cypress run-ct"
+        "cy:run": "cypress run-ct",
+        "plop": "plop"
     },
     "devDependencies": {
         "@babel/core": "^7.16.5",
@@ -36,6 +37,7 @@
         "eslint-plugin-react": "^7.28.0",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^27.4.3",
+        "plop": "^3.1.0",
         "webpack-dev-server": "^4.7.3"
     },
     "peerDependencies": {
