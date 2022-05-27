@@ -3318,7 +3318,7 @@ __metadata:
     "@babel/preset-react": ^7.16.7
     "@cypress/react": ^5.12.1
     "@cypress/webpack-dev-server": ^1.8.0
-    "@pedalboard/hooks": ^0.2.4
+    "@pedalboard/hooks": ^0.2.5
     "@storybook/addon-actions": ^6.5.0-alpha.5
     "@storybook/addon-essentials": ^6.5.0-alpha.5
     "@storybook/addon-links": ^6.5.0-alpha.5
@@ -3355,7 +3355,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pedalboard/hooks@^0.2.4, @pedalboard/hooks@workspace:packages/hooks":
+"@pedalboard/hooks@^0.2.5, @pedalboard/hooks@workspace:packages/hooks":
   version: 0.0.0-use.local
   resolution: "@pedalboard/hooks@workspace:packages/hooks"
   dependencies:
