@@ -7,7 +7,7 @@
 
 import React from 'react';
 import {composeStories} from '@storybook/testing-react';
-import {mount} from '@cypress/react';
+import {mount} from 'cypress/react';
 import * as stories from './index.stories';
 
 // compile the "Simple" story with the library
