@@ -10,11 +10,11 @@
         "packages/*"
     ],
     "scripts": {
-        "test": "yarn workspaces foreach -p run test",
-        "coverage": "yarn test --coverage",
-        "lint": "yarn workspaces foreach -p run lint",
-        "build": "yarn workspaces foreach -ptv run build",
+        "test": "yarn workspaces foreach --since -pR run test",
+        "lint": "yarn workspaces foreach --since -pR run lint",
+        "build": "yarn workspaces foreach --since -ptvR run build",
         "publish:lerna": "lerna publish --yes --no-verify-access",
+        "coverage": "yarn test --coverage",
         "coverage:combined": "pedalboard-scripts aggregatePackagesCoverage && nyc report --reporter lcov"
     },
     "devDependencies": {
