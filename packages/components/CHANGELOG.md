@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.17](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/components@0.3.16...@pedalboard/components@0.3.17) (2022-09-08)
+
+**Note:** Version bump only for package @pedalboard/components
+
+
+
+
+
 ## [0.3.16](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/components@0.3.15...@pedalboard/components@0.3.16) (2022-06-17)
 
 **Note:** Version bump only for package @pedalboard/components
