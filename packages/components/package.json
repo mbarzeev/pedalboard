@@ -11,7 +11,8 @@
     "scripts": {
         "test": "jest",
         "lint": "eslint ./src",
-        "build": "tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json",
+        "build": "tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json && yarn bundle",
+        "bundle": "node ../../esbuild.config.js",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
         "cy:open": "cypress open-ct",
@@ -32,6 +33,7 @@
         "babel-jest": "^27.5.1",
         "babel-loader": "^8.2.3",
         "cypress": "^10.1.0",
+        "esbuild": "^0.15.7",
         "eslint": "^8.4.1",
         "eslint-plugin-react": "^7.28.0",
         "identity-obj-proxy": "^3.0.0",

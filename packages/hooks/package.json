@@ -17,7 +17,8 @@
     "scripts": {
         "test": "jest",
         "lint": "eslint ./src",
-        "build": "tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json"
+        "build": "tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json && yarn bundle",
+        "bundle": "node ../../esbuild.config.js"
     },
     "peerDependencies": {
         "react": "^17.0.2",
