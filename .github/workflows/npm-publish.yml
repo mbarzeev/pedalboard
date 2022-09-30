@@ -56,6 +56,7 @@ jobs:
               with:
                   node-version: 16
                   registry-url: 'https://npm.pkg.github.com'
+                  scope: '@mbarzeev'
             - run: yarn
             - run: yarn publish:lerna:skip-git
               env:
