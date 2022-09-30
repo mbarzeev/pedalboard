@@ -9,19 +9,19 @@ on:
         types: [created]
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-              with:
-                  fetch-depth: 0
-            - uses: actions/setup-node@v3
-              with:
-                  node-version: 16
-            - run: yarn
-            - run: yarn lint
-            - run: yarn test
-            - run: yarn build
+    # build:
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #         - uses: actions/checkout@v3
+    #           with:
+    #               fetch-depth: 0
+    #         - uses: actions/setup-node@v3
+    #           with:
+    #               node-version: 16
+    #         - run: yarn
+    #         - run: yarn lint
+    #         - run: yarn test
+    #         - run: yarn build
 
     # publish-npm:
     #     needs: build
@@ -43,7 +43,7 @@ jobs:
     #               NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
     publish-github:
-        needs: publish-npm
+        # needs: publish-npm
         runs-on: ubuntu-latest
         permissions:
             contents: read
