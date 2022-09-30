@@ -1,5 +1,5 @@
 {
-    "npmClient": "npm",
+    "npmClient": "yarn",
     "command": {
         "publish": {
             "ignoreChanges": ["ignored-file", "*.md"],

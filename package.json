@@ -5,6 +5,7 @@
     "main": "index.js",
     "author": "Matti Bar-Zeev",
     "license": "MIT",
+    "private": true,
     "workspaces": [
         "packages/*"
     ],
