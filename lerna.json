@@ -3,8 +3,7 @@
     "command": {
         "publish": {
             "ignoreChanges": ["ignored-file", "*.md"],
-            "message": "chore(release): publish %s",
-            "registry": "https://registry.npmjs.org/"
+            "message": "chore(release): publish %s"
         },
         "version": {
             "message": "chore(release): version",
