@@ -56,6 +56,9 @@ jobs:
                   registry-url: 'https://npm.pkg.github.com'
                   scope: '@pedalboard'
             - run: yarn
+            - run: |
+                  git config --local user.name 'github-actions[bot]'
+                  git config --local user.email 'github-actions[bot]@users.noreply.github.com'
             - run: yarn publish:lerna
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
