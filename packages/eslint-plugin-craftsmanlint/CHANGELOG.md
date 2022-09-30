@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.11](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/eslint-plugin-craftsmanlint@1.2.10...@pedalboard/eslint-plugin-craftsmanlint@1.2.11) (2022-09-30)
+
+**Note:** Version bump only for package @pedalboard/eslint-plugin-craftsmanlint
+
+
+
+
+
 ## [1.2.10](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/eslint-plugin-craftsmanlint@1.2.9...@pedalboard/eslint-plugin-craftsmanlint@1.2.10) (2022-05-27)
 
 **Note:** Version bump only for package @pedalboard/eslint-plugin-craftsmanlint

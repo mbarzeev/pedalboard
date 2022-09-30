@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.7](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/hooks@0.2.6...@pedalboard/hooks@0.2.7) (2022-09-30)
+
+**Note:** Version bump only for package @pedalboard/hooks
+
+
+
+
+
 ## [0.2.6](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/hooks@0.2.5...@pedalboard/hooks@0.2.6) (2022-09-08)
 
 **Note:** Version bump only for package @pedalboard/hooks
