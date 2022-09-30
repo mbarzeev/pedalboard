@@ -1,6 +1,6 @@
 {
     "name": "@pedalboard/components",
-    "version": "0.3.17",
+    "version": "0.3.18",
     "description": "A set of well-crafted components",
     "main": "index.js",
     "author": "Matti Bar-Zeev",
