@@ -5,9 +5,6 @@
     "main": "index.js",
     "author": "Matti Bar-Zeev",
     "license": "MIT",
-    "publishConfig": {
-        "access": "public"
-    },
     "scripts": {
         "test": "jest",
         "lint": "eslint ./src",
