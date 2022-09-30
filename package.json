@@ -14,6 +14,7 @@
         "lint": "yarn workspaces foreach --since -pR run lint",
         "build": "yarn workspaces foreach --since -ptvR run build",
         "publish:lerna": "lerna publish --yes --no-verify-access",
+        "publish:lerna:skip-git": "lerna publish --yes --no-verify-access --no-git-tag-version --no-push",
         "coverage": "yarn test --coverage",
         "coverage:combined": "pedalboard-scripts aggregatePackagesCoverage && nyc report --reporter lcov"
     },

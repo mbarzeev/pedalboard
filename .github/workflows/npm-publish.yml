@@ -23,29 +23,30 @@ jobs:
             - run: yarn test
             - run: yarn build
 
-    # publish-npm:
-    #     needs: build
-    #     runs-on: ubuntu-latest
-    #     steps:
-    #         - uses: actions/checkout@v3
-    #           with:
-    #               fetch-depth: 0
-    #         - uses: actions/setup-node@v3
-    #           with:
-    #               node-version: 16
-    #               registry-url: https://registry.npmjs.org/
-    #         - run: yarn
-    #         - run: |
-    #               git config --local user.name 'github-actions[bot]'
-    #               git config --local user.email 'github-actions[bot]@users.noreply.github.com'
-    #         - run: yarn publish:lerna
-    #           env:
-    #               NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-
-    publish-github:
+    publish-npm:
         needs: build
         runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 16
+                  registry-url: https://registry.npmjs.org/
+            - run: yarn
+            - run: |
+                  git config --local user.name 'github-actions[bot]'
+                  git config --local user.email 'github-actions[bot]@users.noreply.github.com'
+            - run: yarn publish:lerna
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+
+    publish-github:
+        needs: publish-npm
+        runs-on: ubuntu-latest
         permissions:
+            contents: read
             packages: write
         steps:
             - uses: actions/checkout@v3
@@ -56,9 +57,6 @@ jobs:
                   node-version: 16
                   registry-url: 'https://npm.pkg.github.com'
             - run: yarn
-            - run: |
-                  git config --local user.name 'github-actions[bot]'
-                  git config --local user.email 'github-actions[bot]@users.noreply.github.com'
-            - run: yarn publish:lerna
+            - run: yarn publish:lerna:skip-git
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
