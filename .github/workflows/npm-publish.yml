@@ -57,6 +57,8 @@ jobs:
                   node-version: 16
                   registry-url: 'https://npm.pkg.github.com'
                   scope: '@pedalboard'
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             - run: yarn
             - run: yarn publish:lerna:skip-git
               env:
