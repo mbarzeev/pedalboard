@@ -4,6 +4,11 @@
     "description": "A set of reusable scripts",
     "author": "Matti Bar-Zeev",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mbarzeev/pedalboard.git",
+        "directory": "packages/scripts"
+    },
     "publishConfig": {
         "access": "public"
     },

@@ -5,6 +5,10 @@
     "main": "index.js",
     "author": "Matti Bar-Zeev",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mbarzeev/pedalboard.git"
+    },
     "private": true,
     "workspaces": [
         "packages/*"

@@ -6,6 +6,11 @@
     "types": "./dist/types/index.d.ts",
     "author": "Matti Bar-Zeev",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mbarzeev/pedalboard.git",
+        "directory": "packages/hooks"
+    },
     "exports": {
         "import": "./dist/esm/index.js",
         "require": "./dist/cjs/index.js",
