@@ -13,7 +13,7 @@ describe('Pagination component', () => {
     it('should render', () => {
         const {getByText} = render(
             <Pagination
-                pagesBuffer={7}
+                pagesBuffer={3}
                 totalPages={10}
                 initialCursor={3}
                 onChange={function (): void {
