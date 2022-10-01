@@ -9,9 +9,6 @@
         "url": "https://github.com/mbarzeev/pedalboard.git",
         "directory": "packages/scripts"
     },
-    "publishConfig": {
-        "access": "public"
-    },
     "files": [
         "bin",
         "src"

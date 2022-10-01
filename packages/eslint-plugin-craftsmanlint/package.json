@@ -15,9 +15,6 @@
         "require": "./dist/cjs/index.js",
         "default": "./dist/cjs/index.js"
     },
-    "publishConfig": {
-        "access": "public"
-    },
     "scripts": {
         "test": "jest",
         "lint": "eslint ./src",

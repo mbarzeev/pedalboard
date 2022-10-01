@@ -10,9 +10,6 @@
         "url": "https://github.com/mbarzeev/pedalboard.git",
         "directory": "packages/components"
     },
-    "publishConfig": {
-        "access": "public"
-    },
     "scripts": {
         "test": "jest",
         "lint": "eslint ./src",
