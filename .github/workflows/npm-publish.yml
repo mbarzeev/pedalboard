@@ -42,23 +42,23 @@ jobs:
               env:
                   NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
-    # publish-github:
-    #     needs: publish-npm
-    #     runs-on: ubuntu-latest
-    #     permissions:
-    #         contents: read
-    #         packages: write
-    #     steps:
-    #         - uses: actions/checkout@v3
-    #           with:
-    #               fetch-depth: 0
-    #         - uses: actions/setup-node@v3
-    #           with:
-    #               node-version: 16
-    #               registry-url: 'https://npm.pkg.github.com'
-    #               scope: '@pedalboard'
-    #               always-auth: true
-    #         - run: yarn
-    #         - run: yarn publish:lerna:skip-git
-    #           env:
-    #               NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    publish-github:
+        needs: publish-npm
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            packages: write
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+            - uses: actions/setup-node@v2
+              with:
+                  node-version: 16
+                  registry-url: 'https://npm.pkg.github.com'
+                  scope: '@pedalboard'
+                  always-auth: true
+            - run: yarn
+            - run: yarn publish:lerna:skip-git
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
