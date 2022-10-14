@@ -13,6 +13,8 @@
         "packages/*"
     ],
     "scripts": {
+        "setup:git-hooks": "git config core.hooksPath .git-hooks",
+        "postinstall": "yarn run setup:git-hooks",
         "test": "yarn workspaces foreach --since -pR run test",
         "lint": "yarn workspaces foreach --since -pR run lint",
         "build": "yarn workspaces foreach --since -ptvR run build",
