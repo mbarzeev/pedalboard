@@ -31,6 +31,7 @@ describe('conventional-commits-validation-hook', () => {
             'style: This is a mock message',
             'chore!: drop support for Node 6',
             'docs: correct spelling of CHANGELOG',
+            'chore(release): publish',
         ];
 
         messages.forEach((msg) => {
