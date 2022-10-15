@@ -16,6 +16,9 @@
         "require": "./dist/cjs/index.js",
         "default": "./dist/esm/index.js"
     },
+    "publishConfig": {
+        "access": "public"
+    },
     "scripts": {
         "test": "jest",
         "lint": "eslint ./src",
