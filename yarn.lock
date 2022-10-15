@@ -3394,6 +3394,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@pedalboard/git-hooks@1.0.0, @pedalboard/git-hooks@workspace:packages/git-hooks":
+  version: 0.0.0-use.local
+  resolution: "@pedalboard/git-hooks@workspace:packages/git-hooks"
+  dependencies:
+    "@babel/core": ^7.16.5
+    "@babel/preset-env": ^7.16.11
+    "@types/node": ^18.11.0
+    babel-jest: ^27.4.5
+    eslint: ^8.4.1
+    jest: ^27.4.3
+    typescript: ^4.6.4
+  languageName: unknown
+  linkType: soft
+
 "@pedalboard/hooks@^0.2.8, @pedalboard/hooks@workspace:packages/hooks":
   version: 0.0.0-use.local
   resolution: "@pedalboard/hooks@workspace:packages/hooks"
@@ -4974,6 +4988,13 @@ __metadata:
   version: 14.18.21
   resolution: "@types/node@npm:14.18.21"
   checksum: 4ed35b76609647a4e36a194702e31cdda9ed42174ddaf7937bc5498984e98a99e8a42ea895ea17dd9c5ec18080112c29ab670c34f90eb9f7a4703b85b31e34fa
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.11.0":
+  version: 18.11.0
+  resolution: "@types/node@npm:18.11.0"
+  checksum: f27f899ab428e5732f04fadadc9203f44bdf3abf56474540ee27da90e4f2ba133faf87263cada4d2271955f92ee6a142bd50683c86290fe5070c19aac44fd654
   languageName: node
   linkType: hard
 
@@ -16368,6 +16389,7 @@ __metadata:
   resolution: "pedalboard@workspace:."
   dependencies:
     "@babel/preset-typescript": ^7.17.12
+    "@pedalboard/git-hooks": 1.0.0
     "@pedalboard/scripts": ^0.1.1
     lerna: ^5.0.0
     nyc: ^15.1.0
