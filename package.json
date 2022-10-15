@@ -14,6 +14,7 @@
     ],
     "scripts": {
         "setup:git-hooks": "git config core.hooksPath .git-hooks",
+        "postinstall": "yarn run setup:git-hooks",
         "test": "yarn workspaces foreach --since -pR run test",
         "lint": "yarn workspaces foreach --since -pR run lint",
         "build": "yarn workspaces foreach --since -ptvR run build",
@@ -24,6 +25,7 @@
     },
     "devDependencies": {
         "@babel/preset-typescript": "^7.17.12",
+        "@pedalboard/git-hooks": "^1.0.3",
         "@pedalboard/scripts": "^0.1.1",
         "lerna": "^5.0.0",
         "nyc": "^15.1.0"
