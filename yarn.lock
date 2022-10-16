@@ -3394,7 +3394,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pedalboard/git-hooks@workspace:^, @pedalboard/git-hooks@workspace:packages/git-hooks":
+"@pedalboard/git-hooks@^1.0.3, @pedalboard/git-hooks@workspace:packages/git-hooks":
   version: 0.0.0-use.local
   resolution: "@pedalboard/git-hooks@workspace:packages/git-hooks"
   dependencies:
@@ -16389,7 +16389,7 @@ __metadata:
   resolution: "pedalboard@workspace:."
   dependencies:
     "@babel/preset-typescript": ^7.17.12
-    "@pedalboard/git-hooks": "workspace:^"
+    "@pedalboard/git-hooks": ^1.0.3
     "@pedalboard/scripts": ^0.1.1
     lerna: ^5.0.0
     nyc: ^15.1.0
