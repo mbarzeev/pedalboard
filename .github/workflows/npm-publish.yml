@@ -38,6 +38,8 @@ jobs:
             - run: |
                   git config --local user.name 'github-actions[bot]'
                   git config --local user.email 'github-actions[bot]@users.noreply.github.com'
+            # Don't run custom Git hooks
+            - run: git --local config core.hooksPath .git/hooks
             - run: yarn publish:lerna
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
