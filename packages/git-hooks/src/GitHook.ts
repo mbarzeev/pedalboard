@@ -5,6 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import GitHook from './src/GitHook';
-
-export {default as conventionalCommitsValidationHook} from './src/conventional-commits-validation-hook';
+export default interface GitHook {
+    execute: () => void;
+}

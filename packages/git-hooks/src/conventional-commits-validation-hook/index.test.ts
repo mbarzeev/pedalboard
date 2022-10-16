@@ -1,5 +1,5 @@
 import fs from 'fs';
-import * as conventionalCommitsValidationHook from './index';
+import conventionalCommitsValidationHook from './index';
 
 describe('conventional-commits-validation-hook', () => {
     const mockConsoleLog = jest.spyOn(console, 'log').mockImplementation((msg) => msg);
