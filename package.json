@@ -25,6 +25,7 @@
     },
     "devDependencies": {
         "@babel/preset-typescript": "^7.17.12",
+        "@pedalboard/eslint-plugin-craftsmanlint": "workspace:^",
         "@pedalboard/git-hooks": "^1.0.3",
         "@pedalboard/scripts": "^0.1.1",
         "lerna": "^5.0.0",

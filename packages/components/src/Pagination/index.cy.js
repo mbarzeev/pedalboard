@@ -24,6 +24,7 @@ describe('Pagination component', () => {
             prevButton.click();
             prevButton.click();
             prevButton.click();
+            prevButton.click();
 
             prevButton.should('be.disabled');
         });

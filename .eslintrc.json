@@ -20,5 +20,8 @@
         "expect": true,
         "jest": true
     },
-    "rules": {}
+    "plugins": ["@pedalboard/craftsmanlint"],
+    "rules": {
+        "@pedalboard/craftsmanlint/no-namespace-imports": ["error"]
+    }
 }
