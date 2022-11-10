@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/scripts@0.1.8...@pedalboard/scripts@0.2.0) (2022-11-10)
+
+
+### Features
+
+* Add the collectFiles script ([625ee2f](https://github.com/mbarzeev/pedalboard/commit/625ee2f2cc3bf242619b36132e982429e2c6c0ac))
+
+
+
+
+
 ## [0.1.8](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/scripts@0.1.7...@pedalboard/scripts@0.1.8) (2022-10-01)
 
 **Note:** Version bump only for package @pedalboard/scripts

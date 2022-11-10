@@ -1,6 +1,6 @@
 {
     "name": "@pedalboard/components",
-    "version": "0.3.38",
+    "version": "0.3.39",
     "description": "A set of well-crafted components",
     "main": "index.js",
     "author": "Matti Bar-Zeev",
@@ -50,6 +50,6 @@
         "react-dom": "^17.0.2"
     },
     "dependencies": {
-        "@pedalboard/hooks": "^0.2.8"
+        "@pedalboard/hooks": "^0.2.9"
     }
 }
