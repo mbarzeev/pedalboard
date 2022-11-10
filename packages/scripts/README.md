@@ -11,7 +11,22 @@ yarn add @pedalboard/scripts -D
 npm i @pedalboard/scripts -D
 ```
 ## Scripts
-### aggregatePackagesCoverage
+
+*** 
+### **collectFiles**
+This script allows you to collect files which match a given pattern into a target directory
+
+### Usage
+In the following example you collect all the coverage-finals.json files  under the packages directory and place them in `.nyc_output`.
+```json
+"scripts": {
+    "collect": "pedalboard-scripts collectFiles --pattern='packages/**/coverage-final.json' --target='.nyc_output'"
+}
+```
+
+***
+
+### **aggregatePackagesCoverage**
 This scripts allow you to aggregate all the unit test coverage report from all packages directory of your monorepo
 
 #### Usage
@@ -27,3 +42,5 @@ Following this script you can then call [nyc](https://github.com/istanbuljs/nyc)
     "coverage:combined": "pedalboard-scripts aggregatePackagesCoverage && nyc report --reporter lcov"
 }
 ```
+
+***

@@ -21,7 +21,9 @@
         "publish:lerna": "lerna publish --yes --no-verify-access",
         "publish:lerna:skip-git": "lerna publish --yes --no-verify-access --no-git-tag-version --no-push --loglevel=silly",
         "coverage": "yarn test --coverage",
-        "coverage:combined": "pedalboard-scripts aggregatePackagesCoverage && nyc report --reporter lcov"
+        "coverage:all": "yarn workspaces foreach -pvR run test --coverage --silent",
+        "coverage:collect": "mkdir -p .nyc_output && pedalboard-scripts collectFiles --pattern='packages/**/coverage-final.json' --target='.nyc_output'",
+        "coverage:combined": "yarn coverage:all && yarn coverage:collect && nyc report --reporter lcov"
     },
     "devDependencies": {
         "@babel/preset-typescript": "^7.17.12",
