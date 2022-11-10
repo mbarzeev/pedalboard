@@ -29,7 +29,7 @@
         "@babel/preset-typescript": "^7.17.12",
         "@pedalboard/eslint-plugin-craftsmanlint": "^1.2.12",
         "@pedalboard/git-hooks": "^1.0.3",
-        "@pedalboard/scripts": "^0.1.1",
+        "@pedalboard/scripts": "^0.2.0",
         "lerna": "^5.0.0",
         "nyc": "^15.1.0"
     },

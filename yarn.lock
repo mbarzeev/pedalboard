@@ -3425,16 +3425,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pedalboard/scripts@npm:^0.1.1":
-  version: 0.1.8
-  resolution: "@pedalboard/scripts@npm:0.1.8"
-  bin:
-    pedalboard-scripts: bin/pedalboard-scripts.js
-  checksum: 6134816da5e274a595a88fc40a4d1876916ecfd8c8711641205a25356cf2f5fe94d7a5dc2d62aefb8ce7b4dd197ef3f8381a518c2fe73a72ba7842bc0bf21f2e
-  languageName: node
-  linkType: hard
-
-"@pedalboard/scripts@workspace:packages/scripts":
+"@pedalboard/scripts@^0.2.0, @pedalboard/scripts@workspace:packages/scripts":
   version: 0.0.0-use.local
   resolution: "@pedalboard/scripts@workspace:packages/scripts"
   dependencies:
@@ -16416,7 +16407,7 @@ __metadata:
     "@babel/preset-typescript": ^7.17.12
     "@pedalboard/eslint-plugin-craftsmanlint": ^1.2.12
     "@pedalboard/git-hooks": ^1.0.3
-    "@pedalboard/scripts": ^0.1.1
+    "@pedalboard/scripts": ^0.2.0
     lerna: ^5.0.0
     nyc: ^15.1.0
     react: ^17.0.2
