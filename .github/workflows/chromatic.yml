@@ -27,4 +27,6 @@ jobs:
               with:
                   # 👇 Chromatic projectToken, refer to the manage page to obtain it.
                   projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-                  storybookBaseDir: './packages/components'
+                  storybookBaseDir: 'packages/components'
+                  only-changed: true
+                  exitZeroOnChanges: true
