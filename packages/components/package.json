@@ -20,7 +20,7 @@
         "cy:open": "cypress open-ct",
         "cy:run": "cypress run-ct",
         "plop": "plop",
-        "chromatic": "chromatic --only-changed --untraced=package.json,yarn.lock --exit-zero-on-changes"
+        "chromatic": "chromatic --debug --only-changed --untraced=package.json,yarn.lock --exit-zero-on-changes"
     },
     "devDependencies": {
         "@babel/core": "^7.16.5",
