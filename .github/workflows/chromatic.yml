@@ -6,6 +6,8 @@ on:
     push:
         branches:
             - master
+        paths:
+            - 'packages/components/**'
     workflow_dispatch:
 
 # List of jobs
