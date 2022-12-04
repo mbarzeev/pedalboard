@@ -17,7 +17,7 @@ describe('UsePagination hook', () => {
 
     it('should throw if no total pages were given to it', () => {
         expect(() => {
-            usePagination();
+            usePagination({totalPages: 0});
         }).toThrow(NO_TOTAL_PAGES_ERROR);
     });
 
