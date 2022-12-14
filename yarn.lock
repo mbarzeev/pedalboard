@@ -3363,7 +3363,7 @@ __metadata:
     "@babel/core": ^7.16.5
     "@babel/preset-env": ^7.16.11
     "@babel/preset-react": ^7.16.7
-    "@pedalboard/hooks": ^0.2.9
+    "@pedalboard/hooks": ^0.2.10
     "@storybook/addon-actions": ^6.5.0-alpha.5
     "@storybook/addon-essentials": ^6.5.0-alpha.5
     "@storybook/addon-links": ^6.5.0-alpha.5
@@ -3416,7 +3416,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pedalboard/hooks@^0.2.9, @pedalboard/hooks@workspace:packages/hooks":
+"@pedalboard/hooks@^0.2.10, @pedalboard/hooks@workspace:packages/hooks":
   version: 0.0.0-use.local
   resolution: "@pedalboard/hooks@workspace:packages/hooks"
   dependencies:
