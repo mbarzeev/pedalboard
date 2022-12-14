@@ -13,7 +13,7 @@ const ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2015, sourceType
 ruleTester.run('no-namespace-imports rule', rule, {
     valid: [
         {
-            code: `import {charles} from './bronson'`,
+            code: `import {bart} from './simpson'`,
         },
         {
             code: `import {john as chuck} from './norris'`,
