@@ -11,6 +11,9 @@
         "url": "https://github.com/mbarzeev/pedalboard.git",
         "directory": "packages/eslint-plugin-craftsmanlint"
     },
+    "files": [
+        "./dist"
+    ],
     "exports": {
         "require": "./dist/cjs/index.js",
         "default": "./dist/cjs/index.js"
