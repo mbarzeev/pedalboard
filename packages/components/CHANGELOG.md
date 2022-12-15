@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/components@0.3.45...@pedalboard/components@0.4.0) (2022-12-15)
+
+
+### Features
+
+* Change the selected color ([e88ec2c](https://github.com/mbarzeev/pedalboard/commit/e88ec2cac1c7052df00a3daf12d6d3e063ecc2f7))
+
+
+
+
+
 ## [0.3.45](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/components@0.3.44...@pedalboard/components@0.3.45) (2022-12-04)
 
 **Note:** Version bump only for package @pedalboard/components
