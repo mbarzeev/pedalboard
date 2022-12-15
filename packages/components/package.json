@@ -11,7 +11,7 @@
         "directory": "packages/components"
     },
     "files": [
-        "./dist"
+        "dist"
     ],
     "scripts": {
         "test": "jest",
