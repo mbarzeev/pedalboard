@@ -1,6 +1,6 @@
 {
     "name": "@pedalboard/git-hooks",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "A set of JS Git hooks",
     "main": "./dist/esm/index.js",
     "types": "./dist/types/index.d.ts",
