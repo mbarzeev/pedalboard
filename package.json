@@ -17,7 +17,7 @@
         "postinstall": "yarn run setup:git-hooks",
         "test": "yarn workspaces foreach --since -pR run test",
         "lint": "yarn workspaces foreach --since -pR run lint",
-        "build": "yarn workspaces foreach --since -ptvR run build",
+        "build": "yarn workspaces foreach -ptvR run build",
         "publish:lerna": "lerna publish --yes --no-verify-access",
         "publish:lerna:skip-git": "lerna publish --yes --no-verify-access --no-git-tag-version --no-push --loglevel=silly",
         "coverage": "yarn test --coverage",
