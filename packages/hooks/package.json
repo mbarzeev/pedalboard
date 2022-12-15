@@ -11,6 +11,9 @@
         "url": "https://github.com/mbarzeev/pedalboard.git",
         "directory": "packages/hooks"
     },
+    "files": [
+        "dist"
+    ],
     "exports": {
         "import": "./dist/esm/index.js",
         "require": "./dist/cjs/index.js",
