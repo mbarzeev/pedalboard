@@ -39,8 +39,7 @@ const ruleFunction = (primaryOption: Record<string, any>, secondaryOptionObject:
             const allowedFiles = propRule.allowed;
             const forbiddenFiles = propRule.forbidden;
             let shouldReport = false;
-            //@ts-ignore
-            const isFileInList = (inspectedFile) => file.includes(inspectedFile);
+            const isFileInList = (inspectedFile: string) => file.includes(inspectedFile);
 
             if (allowedFiles) {
                 shouldReport = !allowedFiles.some(isFileInList);
