@@ -1,0 +1,15 @@
+{
+    "plugins": ["@pedalboard/stylelint-plugin-craftsmanlint"],
+    "rules": {
+        "stylelint-plugin-craftsmanlint/props-in-files": [
+            {
+                "font-family": {
+                    "allowed": ["Pagination/index.css"]
+                }
+            },
+            {
+                "severity": "error"
+            }
+        ]
+    }
+}

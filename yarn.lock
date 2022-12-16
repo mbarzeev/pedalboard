@@ -3374,6 +3374,7 @@ __metadata:
     "@babel/preset-env": ^7.16.11
     "@babel/preset-react": ^7.16.7
     "@pedalboard/hooks": ^0.2.11
+    "@pedalboard/stylelint-plugin-craftsmanlint": ^1.0.0
     "@storybook/addon-actions": ^6.5.0-alpha.5
     "@storybook/addon-essentials": ^6.5.0-alpha.5
     "@storybook/addon-links": ^6.5.0-alpha.5
@@ -3391,6 +3392,7 @@ __metadata:
     identity-obj-proxy: ^3.0.0
     jest: ^27.4.3
     plop: ^3.1.0
+    stylelint: ^14.16.0
     typescript: ^4.6.4
     webpack-dev-server: ^4.7.3
   peerDependencies:
@@ -3456,7 +3458,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pedalboard/stylelint-plugin-craftsmanlint@workspace:packages/stylelint-plugin-craftsmanlint":
+"@pedalboard/stylelint-plugin-craftsmanlint@^1.0.0, @pedalboard/stylelint-plugin-craftsmanlint@workspace:packages/stylelint-plugin-craftsmanlint":
   version: 0.0.0-use.local
   resolution: "@pedalboard/stylelint-plugin-craftsmanlint@workspace:packages/stylelint-plugin-craftsmanlint"
   dependencies:
