@@ -6,6 +6,9 @@
     "types": "./dist/types/index.d.ts",
     "author": "Matti Bar-Zeev",
     "license": "MIT",
+    "publishConfig": {
+        "access": "public"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/mbarzeev/pedalboard.git",
