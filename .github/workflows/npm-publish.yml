@@ -23,18 +23,11 @@ jobs:
             - run: yarn test
             - run: yarn build
 
-    publish-npm:
-        needs: build
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-              with:
-                  fetch-depth: 0
+            # Publish to NPM
             - uses: actions/setup-node@v3
               with:
                   node-version: 16
                   registry-url: https://registry.npmjs.org/
-            - run: yarn
             - run: |
                   git config --local user.name 'github-actions[bot]'
                   git config --local user.email 'github-actions[bot]@users.noreply.github.com'
