@@ -11,6 +11,9 @@
         "url": "https://github.com/mbarzeev/pedalboard.git",
         "directory": "packages/git-hooks"
     },
+    "publishConfig": {
+        "access": "public"
+    },
     "files": [
         "dist"
     ],
@@ -18,9 +21,6 @@
         "import": "./dist/esm/index.js",
         "require": "./dist/cjs/index.js",
         "default": "./dist/esm/index.js"
-    },
-    "publishConfig": {
-        "access": "public"
     },
     "scripts": {
         "test": "jest",

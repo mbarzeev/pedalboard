@@ -11,6 +11,9 @@
         "url": "https://github.com/mbarzeev/pedalboard.git",
         "directory": "packages/hooks"
     },
+    "publishConfig": {
+        "access": "public"
+    },
     "files": [
         "dist"
     ],
