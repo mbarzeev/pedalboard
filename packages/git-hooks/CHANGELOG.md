@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/git-hooks@1.0.6...@pedalboard/git-hooks@1.1.0) (2022-12-17)
+
+
+### Features
+
+* Add public access to the packages publish config ([0d9ef1a](https://github.com/mbarzeev/pedalboard/commit/0d9ef1ad18a1a1ae3f857e0c66f786e91b394fa5))
+
+
+
+
+
 ## [1.0.6](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/git-hooks@1.0.5...@pedalboard/git-hooks@1.0.6) (2022-12-15)
 
 **Note:** Version bump only for package @pedalboard/git-hooks

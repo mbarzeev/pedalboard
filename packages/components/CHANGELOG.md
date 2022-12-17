@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/components@0.5.2...@pedalboard/components@0.6.0) (2022-12-17)
+
+
+### Features
+
+* Add public access to the packages publish config ([0d9ef1a](https://github.com/mbarzeev/pedalboard/commit/0d9ef1ad18a1a1ae3f857e0c66f786e91b394fa5))
+
+
+
+
+
 ## [0.5.2](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/components@0.5.1...@pedalboard/components@0.5.2) (2022-12-16)
 
 **Note:** Version bump only for package @pedalboard/components
