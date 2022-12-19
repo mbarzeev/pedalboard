@@ -26,6 +26,7 @@
         "coverage:combined": "yarn coverage:all && yarn coverage:collect && nyc report --reporter lcov"
     },
     "devDependencies": {
+        "@babel/plugin-transform-runtime": "^7.19.6",
         "@babel/preset-typescript": "^7.17.12",
         "@pedalboard/eslint-plugin-craftsmanlint": "^1.2.12",
         "@pedalboard/git-hooks": "^1.0.3",
