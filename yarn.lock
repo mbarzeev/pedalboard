@@ -3591,6 +3591,7 @@ __metadata:
   dependencies:
     "@babel/core": ^7.16.5
     "@babel/preset-env": ^7.16.11
+    csstype: ^3.1.1
     jest: ^27.4.3
     jest-preset-stylelint: ^6.0.0
     stylelint: ^14.16.0
@@ -8871,6 +8872,13 @@ __metadata:
   version: 3.0.10
   resolution: "csstype@npm:3.0.10"
   checksum: 20a8fa324f2b33ddf94aa7507d1b6ab3daa6f3cc308888dc50126585d7952f2471de69b2dbe0635d1fdc31223fef8e070842691877e725caf456e2378685a631
+  languageName: node
+  linkType: hard
+
+"csstype@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "csstype@npm:3.1.1"
+  checksum: 1f7b4f5fdd955b7444b18ebdddf3f5c699159f13e9cf8ac9027ae4a60ae226aef9bbb14a6e12ca7dba3358b007cee6354b116e720262867c398de6c955ea451d
   languageName: node
   linkType: hard
 

@@ -6,18 +6,23 @@
  */
 
 import stylelint from 'stylelint';
+import * as CSS from 'csstype';
+import type * as PostCSS from 'postcss';
+
+type Policy = Record<'forbidden' | 'allowed', string[]>;
+type PrimaryOption = Record<keyof CSS.StandardPropertiesHyphen, Partial<Policy>>;
+type SecondaryOption = Record<'severity', 'error' | 'warning'>;
 
 const ruleName = 'stylelint-plugin-craftsmanlint/props-in-files';
 const messages = stylelint.utils.ruleMessages(ruleName, {
-    expected: (property) => `"${property}" CSS property was found in a file it should not be in`,
+    expected: (property: string) => `"${property}" CSS property was found in a file it should not be in`,
 });
 const meta = {
     url: 'https://github.com/mbarzeev/pedalboard/blob/master/packages/stylelint-plugin-craftsmanlint/README.md',
 };
 
-const ruleFunction = (primaryOption: Record<string, any>, secondaryOptionObject: Record<string, any>) => {
-    //@ts-ignore
-    return (postcssRoot, postcssResult) => {
+const ruleFunction = (primaryOption: PrimaryOption, secondaryOptionObject: SecondaryOption) => {
+    return (postcssRoot: PostCSS.Root, postcssResult: stylelint.PostcssResult) => {
         const validOptions = stylelint.utils.validateOptions(postcssResult, ruleName, {
             actual: null,
         });
@@ -26,10 +31,9 @@ const ruleFunction = (primaryOption: Record<string, any>, secondaryOptionObject:
             return;
         }
 
-        //@ts-ignore
-        postcssRoot.walkDecls((decl) => {
-            //Iterate CSS declarations
-            const propRule = primaryOption[decl.prop];
+        postcssRoot.walkDecls((decl: PostCSS.Declaration) => {
+            // Iterate CSS declarations
+            const propRule = primaryOption[decl.prop as keyof CSS.StandardPropertiesHyphen];
 
             if (!propRule) {
                 return;
@@ -39,7 +43,7 @@ const ruleFunction = (primaryOption: Record<string, any>, secondaryOptionObject:
             const allowedFiles = propRule.allowed;
             const forbiddenFiles = propRule.forbidden;
             let shouldReport = false;
-            const isFileInList = (inspectedFile: string) => file.includes(inspectedFile);
+            const isFileInList = (inspectedFile: string) => file?.includes(inspectedFile);
 
             if (allowedFiles) {
                 shouldReport = !allowedFiles.some(isFileInList);

@@ -26,6 +26,7 @@
     "devDependencies": {
         "@babel/core": "^7.16.5",
         "@babel/preset-env": "^7.16.11",
+        "csstype": "^3.1.1",
         "jest": "^27.4.3",
         "jest-preset-stylelint": "^6.0.0",
         "ts-node": "^10.9.1",
