@@ -8,7 +8,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {usePagination} from '@pedalboard/hooks';
-import './index.css';
+import './index.scss';
 
 export interface PaginationProps {
     totalPages: number;
@@ -26,7 +26,7 @@ const Pagination = (props: PaginationProps) => {
     }
 
     return (
-        <div>
+        <div className="pagination">
             <button onClick={goPrev} disabled={cursor === 0}>
                 PREV
             </button>

@@ -6,6 +6,5 @@
         "declarationDir": "dist/types",
         "jsx": "react"
     },
-    "files": ["index.ts"],
-    "include": ["src/**/*"]
+    "files": ["index.ts"]
 }

@@ -1,4 +1,5 @@
 const cssPlugin = require('./esbuild.css.plugin');
+const {sassPlugin} = require('esbuild-sass-plugin');
 
 require('esbuild')
     .build({
@@ -7,6 +8,6 @@ require('esbuild')
         minify: true,
         sourcemap: true,
         outfile: 'dist/main/index.js',
-        plugins: [cssPlugin],
+        plugins: [cssPlugin, sassPlugin()],
     })
     .catch(() => process.exit(1));
