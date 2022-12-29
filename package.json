@@ -15,8 +15,10 @@
     "scripts": {
         "setup:git-hooks": "git config core.hooksPath .git-hooks",
         "postinstall": "yarn run setup:git-hooks",
-        "test": "yarn workspaces foreach --since -pR run test",
-        "lint": "yarn workspaces foreach --since -pR run lint",
+        "test": "yarn workspaces foreach -pRv run test",
+        "test:since": "yarn workspaces foreach --since -pRv run test",
+        "lint": "yarn workspaces foreach -pRv run lint",
+        "lint:since": "yarn workspaces foreach --since -pRv run lint",
         "build": "yarn workspaces foreach -ptv run build",
         "publish:lerna": "lerna publish --yes --no-verify-access",
         "publish:lerna:skip-git": "lerna publish --yes --no-verify-access --no-git-tag-version --no-push --loglevel=silly",
