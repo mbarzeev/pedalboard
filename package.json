@@ -33,6 +33,8 @@
         "@pedalboard/eslint-plugin-craftsmanlint": "^1.2.12",
         "@pedalboard/git-hooks": "^1.0.3",
         "@pedalboard/scripts": "^0.2.0",
+        "@swc/core": "^1.3.24",
+        "@swc/jest": "^0.2.24",
         "lerna": "^5.0.0",
         "nyc": "^15.1.0"
     },
