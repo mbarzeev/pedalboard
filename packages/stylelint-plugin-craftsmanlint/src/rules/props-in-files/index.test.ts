@@ -7,7 +7,7 @@ it('should error on files that contain a prop they should not', async () => {
             'stylelint-plugin-craftsmanlint/props-in-files': [
                 {
                     'font-family': {
-                        forbidden: ['contains-prop.css'],
+                        forbidden: ['a.css'],
                     },
                 },
                 {
@@ -18,15 +18,14 @@ it('should error on files that contain a prop they should not', async () => {
     };
 
     const {
-        results: [{warnings, errored, parseErrors}],
+        results: [{warnings, errored}],
     } = await lint({
-        files: 'src/rules/props-in-files/fixtures/contains-prop.css',
+        files: 'src/rules/props-in-files/fixtures/a.css',
         config,
     });
 
     expect(errored).toEqual(true);
-    expect(parseErrors).toHaveLength(0);
-    expect(warnings).toHaveLength(1);
+    expect(warnings).toHaveLength(3);
 
     const [{line, column, text}] = warnings;
 
@@ -44,7 +43,7 @@ it('should be valid on files that contain a prop they are allowed to', async () 
             'stylelint-plugin-craftsmanlint/props-in-files': [
                 {
                     'font-family': {
-                        allowed: ['contains-prop.css'],
+                        allowed: ['a.css'],
                     },
                 },
                 {
@@ -55,13 +54,202 @@ it('should be valid on files that contain a prop they are allowed to', async () 
     };
 
     const {
-        results: [{warnings, errored, parseErrors}],
+        results: [{warnings: warningsA, errored: erroredA}],
     } = await lint({
-        files: 'src/rules/props-in-files/fixtures/contains-prop.css',
+        files: 'src/rules/props-in-files/fixtures/a.css',
         config,
     });
 
-    expect(errored).toEqual(false);
-    expect(parseErrors).toHaveLength(0);
-    expect(warnings).toHaveLength(0);
+    expect(erroredA).toEqual(false);
+    expect(warningsA).toHaveLength(0);
+
+    const {
+        results: [{warnings: warningsB, errored: erroredB}],
+    } = await lint({
+        files: 'src/rules/props-in-files/fixtures/b.css',
+        config,
+    });
+
+    expect(erroredB).toEqual(true);
+    expect(warningsB).toHaveLength(3);
+});
+
+it('should forbid a certain CSS property from all inspected files', async () => {
+    const config = {
+        plugins: ['./index.ts'],
+        rules: {
+            'stylelint-plugin-craftsmanlint/props-in-files': [
+                {
+                    color: {
+                        forbidden: ['all'],
+                    },
+                },
+                {
+                    severity: 'error',
+                },
+            ],
+        },
+    };
+
+    const {results} = await lint({
+        files: ['src/rules/props-in-files/fixtures/a.css', 'src/rules/props-in-files/fixtures/b.css'],
+        config,
+    });
+
+    expect(results).toHaveLength(2);
+    const [{errored: erroredA}, {errored: erroredB}] = results;
+    expect(erroredA).toEqual(true);
+    expect(erroredB).toEqual(true);
+});
+
+it('should allow a certain CSS property in all inspected files', async () => {
+    const config = {
+        plugins: ['./index.ts'],
+        rules: {
+            'stylelint-plugin-craftsmanlint/props-in-files': [
+                {
+                    'font-family': {
+                        allowed: ['all'],
+                    },
+                },
+                {
+                    severity: 'error',
+                },
+            ],
+        },
+    };
+
+    const {results} = await lint({
+        files: ['src/rules/props-in-files/fixtures/a.css', 'src/rules/props-in-files/fixtures/b.css'],
+        config,
+    });
+
+    expect(results).toHaveLength(2);
+    const [{errored: erroredA}, {errored: erroredB}] = results;
+    expect(erroredA).toEqual(false);
+    expect(erroredB).toEqual(false);
+});
+
+it('should forbid a certain CSS property with a specific value from all inspected files', async () => {
+    const config = {
+        plugins: ['./index.ts'],
+        rules: {
+            'stylelint-plugin-craftsmanlint/props-in-files': [
+                {
+                    'font-family': {
+                        valueRegex: /^Arial$/,
+                        forbidden: ['all'],
+                    },
+                },
+                {
+                    severity: 'error',
+                },
+            ],
+        },
+    };
+
+    const {results} = await lint({
+        files: ['src/rules/props-in-files/fixtures/a.css', 'src/rules/props-in-files/fixtures/b.css'],
+        config,
+    });
+
+    expect(results).toHaveLength(2);
+    const [{errored: erroredA, warnings: warningsA}, {errored: erroredB, warnings: warningsB}] = results;
+    expect(erroredA).toEqual(true);
+    expect(erroredB).toEqual(true);
+    expect(warningsA).toHaveLength(1);
+    expect(warningsB).toHaveLength(1);
+});
+
+it('should allow a certain CSS property with a specific value in all inspected files', async () => {
+    const config = {
+        plugins: ['./index.ts'],
+        rules: {
+            'stylelint-plugin-craftsmanlint/props-in-files': [
+                {
+                    'font-family': {
+                        valueRegex: /^Arial$/,
+                        allowed: ['all'],
+                    },
+                },
+                {
+                    severity: 'error',
+                },
+            ],
+        },
+    };
+
+    const {results} = await lint({
+        files: ['src/rules/props-in-files/fixtures/a.css', 'src/rules/props-in-files/fixtures/b.css'],
+        config,
+    });
+
+    expect(results).toHaveLength(2);
+    const [{errored: erroredA, warnings: warningsA}, {errored: erroredB, warnings: warningsB}] = results;
+    expect(erroredA).toEqual(true);
+    expect(erroredB).toEqual(true);
+    expect(warningsA).toHaveLength(2);
+    expect(warningsB).toHaveLength(2);
+});
+
+it('should forbid a certain CSS property with a specific value from a specific file', async () => {
+    const config = {
+        plugins: ['./index.ts'],
+        rules: {
+            'stylelint-plugin-craftsmanlint/props-in-files': [
+                {
+                    'font-family': {
+                        valueRegex: /^Arial$/,
+                        forbidden: ['a.css'],
+                    },
+                },
+                {
+                    severity: 'error',
+                },
+            ],
+        },
+    };
+
+    const {results} = await lint({
+        files: ['src/rules/props-in-files/fixtures/a.css', 'src/rules/props-in-files/fixtures/b.css'],
+        config,
+    });
+
+    expect(results).toHaveLength(2);
+    const [{errored: erroredA, warnings: warningsA}, {errored: erroredB, warnings: warningsB}] = results;
+    expect(erroredA).toEqual(true);
+    expect(erroredB).toEqual(false);
+    expect(warningsA).toHaveLength(1);
+    expect(warningsB).toHaveLength(0);
+});
+
+it('should allow a certain CSS property with a specific value in a specific file', async () => {
+    const config = {
+        plugins: ['./index.ts'],
+        rules: {
+            'stylelint-plugin-craftsmanlint/props-in-files': [
+                {
+                    'font-family': {
+                        valueRegex: /^Arial$/,
+                        allowed: ['a.css'],
+                    },
+                },
+                {
+                    severity: 'error',
+                },
+            ],
+        },
+    };
+
+    const {results} = await lint({
+        files: ['src/rules/props-in-files/fixtures/a.css', 'src/rules/props-in-files/fixtures/b.css'],
+        config,
+    });
+
+    expect(results).toHaveLength(2);
+    const [{errored: erroredA, warnings: warningsA}, {errored: erroredB, warnings: warningsB}] = results;
+    expect(erroredA).toEqual(true);
+    expect(erroredB).toEqual(true);
+    expect(warningsA).toHaveLength(2);
+    expect(warningsB).toHaveLength(3);
 });

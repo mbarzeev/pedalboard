@@ -9,7 +9,12 @@ import stylelint from 'stylelint';
 import * as CSS from 'csstype';
 import type * as PostCSS from 'postcss';
 
-type Policy = Record<'forbidden' | 'allowed', string[]>;
+type Policy = {
+    forbidden?: string[];
+    allowed?: string[];
+    valueRegex?: RegExp;
+};
+
 type PrimaryOption = Record<keyof CSS.StandardPropertiesHyphen, Partial<Policy>>;
 type SecondaryOption = Record<'severity', 'error' | 'warning'>;
 
@@ -20,6 +25,8 @@ const messages = stylelint.utils.ruleMessages(ruleName, {
 const meta = {
     url: 'https://github.com/mbarzeev/pedalboard/blob/master/packages/stylelint-plugin-craftsmanlint/README.md',
 };
+
+const ALL_FILES_KEYWORD = 'all';
 
 const ruleFunction = (primaryOption: PrimaryOption, secondaryOptionObject: SecondaryOption) => {
     return (postcssRoot: PostCSS.Root, postcssResult: stylelint.PostcssResult) => {
@@ -43,14 +50,25 @@ const ruleFunction = (primaryOption: PrimaryOption, secondaryOptionObject: Secon
             const allowedFiles = propRule.allowed;
             const forbiddenFiles = propRule.forbidden;
             let shouldReport = false;
-            const isFileInList = (inspectedFile: string) => file?.includes(inspectedFile);
+            const valueRegex = propRule.valueRegex;
+
+            const isFileValid = (inspectedFile: string, index: number, files: string[]) => {
+                let result = false;
+                const isRegexValueComply = valueRegex ? valueRegex.test(decl.value) : true;
+                if (files.includes(ALL_FILES_KEYWORD)) {
+                    result = isRegexValueComply;
+                } else {
+                    result = (file?.includes(inspectedFile) as boolean) && isRegexValueComply;
+                }
+                return result;
+            };
 
             if (allowedFiles) {
-                shouldReport = !allowedFiles.some(isFileInList);
+                shouldReport = !allowedFiles.some(isFileValid);
             }
 
             if (forbiddenFiles) {
-                shouldReport = forbiddenFiles.some(isFileInList);
+                shouldReport = forbiddenFiles.some(isFileValid);
             }
 
             if (!shouldReport) {

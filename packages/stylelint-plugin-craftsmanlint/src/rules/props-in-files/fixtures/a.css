@@ -1,0 +1,12 @@
+.my-class {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.my-second-class {
+    font-family: Arial;
+}
+
+.my-third-class {
+    font-family: Courier, Arial, monospace;
+    color: black;
+}
