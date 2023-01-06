@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/stylelint-plugin-craftsmanlint@1.1.3...@pedalboard/stylelint-plugin-craftsmanlint@1.2.0) (2023-01-06)
+
+
+### Features
+
+* Add CSS property values inspection and "all" files ([aaeb615](https://github.com/mbarzeev/pedalboard/commit/aaeb6156186daee772533678a0658013120c9673))
+
+
+
+
+
 ## [1.1.3](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/stylelint-plugin-craftsmanlint@1.1.1...@pedalboard/stylelint-plugin-craftsmanlint@1.1.3) (2022-12-29)
 
 **Note:** Version bump only for package @pedalboard/stylelint-plugin-craftsmanlint
