@@ -60,7 +60,7 @@ You can also have it work the opposite way buy declaring which files should not 
 }
 ```
 This means that the `font-family` CSS property cannot be in the `my-css-file.css` file.  
-> Both "forbidden" an "allowed" support and Array of files but also a reserved keyword `["all"]` to enforce the rule on all inspected files.
+> Both "forbidden" an "allowed" support an Array of files but also a reserved keyword `["all"]` to enforce the rule on all inspected files.
 
 ### Advanced usage 
 
