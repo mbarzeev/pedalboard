@@ -30,7 +30,7 @@ it('should error on files that contain a prop they should not', async () => {
     const [{line, column, text}] = warnings;
 
     expect(text).toBe(
-        '"font-family" CSS property was found in a file it should not be in (stylelint-plugin-craftsmanlint/props-in-files)'
+        `"font-family" CSS property with "'Courier New', Courier, monospace" value was found in a file it should not be in (stylelint-plugin-craftsmanlint/props-in-files)`
     );
     expect(line).toBe(2);
     expect(column).toBe(5);

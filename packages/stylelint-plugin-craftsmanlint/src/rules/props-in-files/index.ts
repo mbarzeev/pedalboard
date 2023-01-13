@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import stylelint from 'stylelint';
+import stylelint, {RuleMessage} from 'stylelint';
 import * as CSS from 'csstype';
 import type * as PostCSS from 'postcss';
 
@@ -20,7 +20,10 @@ type SecondaryOption = Record<'severity', 'error' | 'warning'>;
 
 const ruleName = 'stylelint-plugin-craftsmanlint/props-in-files';
 const messages = stylelint.utils.ruleMessages(ruleName, {
-    expected: (property: string) => `"${property}" CSS property was found in a file it should not be in`,
+    expected: (...args) => {
+        const [prop, value] = args;
+        return `"${prop}" CSS property with "${value}" value was found in a file it should not be in`;
+    },
 });
 const meta = {
     url: 'https://github.com/mbarzeev/pedalboard/blob/master/packages/stylelint-plugin-craftsmanlint/README.md',
@@ -79,7 +82,7 @@ const ruleFunction = (primaryOption: PrimaryOption, secondaryOptionObject: Secon
             stylelint.utils.report({
                 ruleName,
                 result: postcssResult,
-                message: messages.expected(decl.prop),
+                message: messages.expected(decl.prop, decl.value),
                 node: decl,
             });
         });
