@@ -12,7 +12,7 @@ import type * as PostCSS from 'postcss';
 type Policy = {
     forbidden?: string[];
     allowed?: string[];
-    valueRegex?: RegExp;
+    valueRegex?: RegExp | string;
 };
 
 type PrimaryOption = Record<keyof CSS.StandardPropertiesHyphen, Partial<Policy>>;
@@ -50,7 +50,8 @@ const ruleFunction = (primaryOption: PrimaryOption, secondaryOptionObject: Secon
             const allowedFiles = propRule.allowed;
             const forbiddenFiles = propRule.forbidden;
             let shouldReport = false;
-            const valueRegex = propRule.valueRegex;
+            const valueRegex =
+                typeof propRule.valueRegex === 'string' ? new RegExp(propRule.valueRegex) : propRule.valueRegex;
 
             const isFileValid = (inspectedFile: string, index: number, files: string[]) => {
                 let result = false;

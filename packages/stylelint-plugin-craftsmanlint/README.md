@@ -67,8 +67,8 @@ This means that the `font-family` CSS property cannot be in the `my-css-file.css
 **Allowing or forbidding a certain CSS property _with a certain value_ to reside in files**: 
 You can add a `value` field to the rule, which then allows you to go deeper and inspect the property's value. In the next example you can make sure that you forbid only `font-family: Arial;` in all the files. Any other value to the `font-family` will be ok:  
 
-```json
-{
+```javascript
+module.exports = {
    "plugins": ["@pedalboard/stylelint-plugin-craftsmanlint"],
    "rules": {
        "stylelint-plugin-craftsmanlint/props-in-files": [
@@ -85,9 +85,18 @@ You can add a `value` field to the rule, which then allows you to go deeper and 
    }
 }
 ```
+When the rule is defined in a `.stylelintrc.js` file.\
+If your rule is defined in a JSON format, then you can pass a string as the regex, without the forward slashes, like so:
+
+```json
+"font-family": {
+    "valueRegex": "^Arial$",
+    "forbidden": ["all"]
+}
+```
 
 # Resources
 * [Enforcing Your CSS Standards with a Custom Stylelint Plugin](https://dev.to/mbarzeev/enforcing-your-css-standards-with-a-custom-stylelint-plugin-1o8c)
 * [Testing Your Stylelint Plugin](https://dev.to/mbarzeev/testing-your-stylelint-plugin-5ceh)
-
+* [Enhancing a Stylelint plugin (with some TDD love)](https://dev.to/mbarzeev/enhancing-a-stylelint-plugin-with-some-tdd-love-hpo)
 

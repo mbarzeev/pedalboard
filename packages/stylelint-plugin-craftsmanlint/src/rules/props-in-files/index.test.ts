@@ -253,3 +253,38 @@ it('should allow a certain CSS property with a specific value in a specific file
     expect(warningsA).toHaveLength(2);
     expect(warningsB).toHaveLength(3);
 });
+
+it('should support JSON configuration with valueRegex', async () => {
+    const jsonRule = JSON.parse(`{
+        "stylelint-plugin-craftsmanlint/props-in-files": [
+            {
+                "font-family": {
+                    "valueRegex": "^Arial$",
+                    "allowed": [
+                        "a.css"
+                    ]
+                }
+            },
+            {
+                "severity": "error"
+            }
+        ]
+    }`);
+
+    const config = {
+        plugins: ['./index.ts'],
+        rules: jsonRule,
+    };
+
+    const {results} = await lint({
+        files: ['src/rules/props-in-files/fixtures/a.css', 'src/rules/props-in-files/fixtures/b.css'],
+        config,
+    });
+
+    expect(results).toHaveLength(2);
+    const [{errored: erroredA, warnings: warningsA}, {errored: erroredB, warnings: warningsB}] = results;
+    expect(erroredA).toEqual(true);
+    expect(erroredB).toEqual(true);
+    expect(warningsA).toHaveLength(2);
+    expect(warningsB).toHaveLength(3);
+});
