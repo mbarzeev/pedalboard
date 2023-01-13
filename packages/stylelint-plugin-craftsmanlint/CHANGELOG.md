@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/stylelint-plugin-craftsmanlint@1.2.1...@pedalboard/stylelint-plugin-craftsmanlint@1.3.0) (2023-01-13)
+
+
+### Features
+
+* Add better error message ([b51398a](https://github.com/mbarzeev/pedalboard/commit/b51398a33acdf558c128dbc02aee3f31eb145d6c))
+* Support Regex in both JS and JSON rule definitions ([25e0507](https://github.com/mbarzeev/pedalboard/commit/25e050754927786a30bde428ad9ad7554c4e17a4))
+
+
+
+
+
 ## [1.2.1](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/stylelint-plugin-craftsmanlint@1.2.0...@pedalboard/stylelint-plugin-craftsmanlint@1.2.1) (2023-01-12)
 
 **Note:** Version bump only for package @pedalboard/stylelint-plugin-craftsmanlint
