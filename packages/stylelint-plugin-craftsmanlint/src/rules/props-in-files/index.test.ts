@@ -1,4 +1,4 @@
-const {lint} = require('stylelint');
+import {lint} from 'stylelint';
 
 it('should error on files that contain a prop they should not', async () => {
     const config = {
@@ -255,7 +255,7 @@ it('should allow a certain CSS property with a specific value in a specific file
 });
 
 it('should support JSON configuration with valueRegex', async () => {
-    const jsonRule = JSON.parse(`{
+    const jsonRule: JSON = JSON.parse(`{
         "stylelint-plugin-craftsmanlint/props-in-files": [
             {
                 "font-family": {

@@ -8,6 +8,7 @@
 node_modules
 yarn-error.log
 coverage
+coverage-ts
 .nyc_output
 videos
 dist
