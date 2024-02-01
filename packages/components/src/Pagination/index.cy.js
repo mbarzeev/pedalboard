@@ -8,6 +8,7 @@
 import React from 'react';
 import {composeStories} from '@storybook/testing-react';
 import {mount} from 'cypress/react';
+// eslint-disable-next-line @pedalboard/craftsmanlint/no-namespace-imports
 import * as stories from './index.stories';
 
 // compile the "Simple" story with the library

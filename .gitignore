@@ -11,5 +11,6 @@ coverage
 coverage-ts
 .nyc_output
 videos
+screenshots
 dist
 build-storybook.log
