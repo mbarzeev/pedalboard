@@ -1,6 +1,6 @@
 {
     "name": "@pedalboard/components",
-    "version": "0.6.12",
+    "version": "0.6.13",
     "description": "A set of well-crafted components",
     "main": "index.js",
     "author": "Matti Bar-Zeev",
@@ -38,7 +38,7 @@
         "@babel/core": "^7.16.5",
         "@babel/preset-env": "^7.16.11",
         "@babel/preset-react": "^7.16.7",
-        "@pedalboard/stylelint-plugin-craftsmanlint": "^1.3.3",
+        "@pedalboard/stylelint-plugin-craftsmanlint": "^1.3.4",
         "@storybook/addon-actions": "^6.5.0-alpha.5",
         "@storybook/addon-essentials": "^6.5.0-alpha.5",
         "@storybook/addon-links": "^6.5.0-alpha.5",
