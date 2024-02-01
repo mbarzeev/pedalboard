@@ -43,6 +43,6 @@
         "typescript-coverage-report": "^0.7.0"
     },
     "dependencies": {
-        "stylelint": "^14.16.0"
+        "stylelint": "16.2.1"
     }
 }
