@@ -14,3 +14,5 @@ videos
 screenshots
 dist
 build-storybook.log
+storybook.log
+storybook-static
