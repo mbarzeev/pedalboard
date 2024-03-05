@@ -1,5 +1,6 @@
 {
     "root": true,
+    "parser": "@typescript-eslint/parser",
     "env": {
         "browser": true,
         "commonjs": true
@@ -14,14 +15,24 @@
         "ecmaVersion": 2020,
         "sourceType": "module"
     },
+    "overrides": [
+        {
+            "files": ["*.js", "*.jsx", "*.ts", "*.tsx"]
+        }
+    ],
     "globals": {
         "describe": true,
         "it": true,
         "expect": true,
-        "jest": true
+        "jest": true,
+        "beforeAll": true,
+        "beforeEach": true,
+        "process": true
     },
-    "plugins": ["@pedalboard/craftsmanlint"],
+    "plugins": ["@typescript-eslint", "@pedalboard/craftsmanlint"],
     "rules": {
-        "@pedalboard/craftsmanlint/no-namespace-imports": ["error"]
+        "@pedalboard/craftsmanlint/no-namespace-imports": ["error"],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "error"
     }
 }

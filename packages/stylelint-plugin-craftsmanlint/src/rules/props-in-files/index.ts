@@ -5,7 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import stylelint, {RuleMessage} from 'stylelint';
+/* eslint-disable @pedalboard/craftsmanlint/no-namespace-imports */
+import stylelint from 'stylelint';
 import * as CSS from 'csstype';
 import type * as PostCSS from 'postcss';
 
@@ -16,7 +17,6 @@ type Policy = {
 };
 
 type PrimaryOption = Record<keyof CSS.StandardPropertiesHyphen, Partial<Policy>>;
-type SecondaryOption = Record<'severity', 'error' | 'warning'>;
 
 const ruleName = 'stylelint-plugin-craftsmanlint/props-in-files';
 const messages = stylelint.utils.ruleMessages(ruleName, {
@@ -31,7 +31,7 @@ const meta = {
 
 const ALL_FILES_KEYWORD = 'all';
 
-const ruleFunction = (primaryOption: PrimaryOption, secondaryOptionObject: SecondaryOption) => {
+const ruleFunction = (primaryOption: PrimaryOption) => {
     return (postcssRoot: PostCSS.Root, postcssResult: stylelint.PostcssResult) => {
         const validOptions = stylelint.utils.validateOptions(postcssResult, ruleName, {
             actual: null,

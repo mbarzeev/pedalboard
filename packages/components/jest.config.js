@@ -5,4 +5,6 @@ module.exports = {
     moduleNameMapper: {
         '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     },
+    collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!', '!**/node_modules/**'],
+    coveragePathIgnorePatterns: ['.cy.js', '.stories.tsx'],
 };
