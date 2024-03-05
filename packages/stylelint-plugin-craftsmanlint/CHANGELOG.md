@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.5](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/stylelint-plugin-craftsmanlint@1.3.4...@pedalboard/stylelint-plugin-craftsmanlint@1.3.5) (2024-03-05)
+
+
+### Bug Fixes
+
+* ESlint configuration for typescript ([9af8700](https://github.com/mbarzeev/pedalboard/commit/9af87001d0750e23c6a94c615dd7bcaa90f3f2da))
+
+
+
+
+
 ## [1.3.4](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/stylelint-plugin-craftsmanlint@1.3.3...@pedalboard/stylelint-plugin-craftsmanlint@1.3.4) (2024-02-01)
 
 **Note:** Version bump only for package @pedalboard/stylelint-plugin-craftsmanlint

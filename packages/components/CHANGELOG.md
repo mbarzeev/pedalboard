@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.15](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/components@0.6.14...@pedalboard/components@0.6.15) (2024-03-05)
+
+
+### Bug Fixes
+
+* ESlint configuration for typescript ([9af8700](https://github.com/mbarzeev/pedalboard/commit/9af87001d0750e23c6a94c615dd7bcaa90f3f2da))
+
+
+
+
+
 ## [0.6.14](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/components@0.6.13...@pedalboard/components@0.6.14) (2024-02-02)
 
 **Note:** Version bump only for package @pedalboard/components
