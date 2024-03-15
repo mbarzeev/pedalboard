@@ -40,7 +40,7 @@ export class VideoProcessor implements MediaProcessor {
         htmlVideoElement.setAttribute('style', 'visibility: "visible"');
         const videoElementChildren = Array.from(htmlVideoElement.children);
         if (Array.isArray(videoElementChildren) && videoElementChildren.length) {
-            for (const child of htmlVideoElement.children) {
+            for (const child of videoElementChildren) {
                 if (child instanceof HTMLSourceElement) this.enableMediaByElement(child);
             }
         } else {

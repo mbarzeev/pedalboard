@@ -40,7 +40,7 @@ export class AudioProcessor implements MediaProcessor {
         htmlAudioElement.setAttribute('style', 'visibility: "visible"');
         const audioElementChildren = Array.from(htmlAudioElement.children);
         if (Array.isArray(audioElementChildren) && audioElementChildren.length) {
-            for (const child of htmlAudioElement.children) {
+            for (const child of audioElementChildren) {
                 if (child instanceof HTMLSourceElement) this.enableMediaByElement(child);
             }
         } else {
