@@ -137,14 +137,14 @@ You can also see more example with their code in the project's [Storybook](https
 </details>
 
 <details>
-    <summary>Does MediaLoader knows how to deal with nested DOM?</summary>
+    <summary>Does MediaLoader know how to deal with nested DOM?</summary>
         <p>
         Yep :)
         </p>
 </details>
 
 <details>
-    <summary>Does MediaLoader knows how to deal `Source` tags as well as with `src` attributes?</summary>
+    <summary>Does MediaLoader know how to deal `Source` tags as well as with `src` attributes?</summary>
         <p>
         Yes!
         MediaLoader can control both formats of Video and Audio tags.  
