@@ -28,7 +28,7 @@
         "bundle": "node ../../esbuild.config.js",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
-        "chromatic": "chromatic --project-token=chpt_d3991a2fb677fec --exit-zero-on-changes"
+        "chromatic": "chromatic --only-changed --untraced package.json --untraced yarn.lock --exit-zero-on-changes"
     },
     "devDependencies": {
         "@babel/core": "^7.16.5",
