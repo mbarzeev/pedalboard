@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/media-loader@0.1.0...@pedalboard/media-loader@0.1.1) (2024-03-15)
+
+
+### Bug Fixes
+
+* Tests ([07535be](https://github.com/mbarzeev/pedalboard/commit/07535be417af6bb688250d0184596d12249d2c5e))
+
+
+
+
+
 # 0.1.0 (2024-03-15)
 
 
