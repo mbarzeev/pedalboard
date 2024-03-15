@@ -20,7 +20,7 @@ describe('MediaLoader component', () => {
     it('should disable the immediate loading of images wrapped with it', () => {
         const {queryAllByRole} = render(
             <div>
-                <MediaLoader>
+                <MediaLoader loadingStrategy={() => {}}>
                     <img src="/assets/image-01.jpg" alt="image-01"></img>
                     <div>
                         <img src="/assets/image-09.jpg" alt="image-09"></img>
@@ -39,7 +39,7 @@ describe('MediaLoader component', () => {
     it('should disable the immediate loading of videos wrapped with it', () => {
         const {getAllByRole} = render(
             <div>
-                <MediaLoader>
+                <MediaLoader loadingStrategy={() => {}}>
                     <div className="media-container">
                         <video role="video" controls height="100" autoPlay>
                             <source role="source" src="/assets/video-01.mp4" type="video/mp4" />
@@ -60,7 +60,7 @@ describe('MediaLoader component', () => {
     it('should disable the immediate loading of audios wrapped with it', () => {
         const {getAllByRole} = render(
             <div>
-                <MediaLoader>
+                <MediaLoader loadingStrategy={() => {}}>
                     <div className="media-container">
                         <audio role="audio" controls autoPlay>
                             <source role="source" src="/assets/audio-01.mp3" type="audio/mp3" />
@@ -82,7 +82,7 @@ describe('MediaLoader component', () => {
         const {getByRole} = render(
             <div>
                 <MediaLoader
-                    triggerFunction={(mediaHTMLElements, loadMedia) => {
+                    loadingStrategy={(mediaHTMLElements, loadMedia) => {
                         // We're using setTimeout here since JSDom does not act
                         // like a real browser
                         setTimeout(() => {
@@ -118,7 +118,7 @@ describe('MediaLoader component', () => {
         const {getByRole} = render(
             <div>
                 <MediaLoader
-                    triggerFunction={(mediaHTMLElements, loadMedia) => {
+                    loadingStrategy={(mediaHTMLElements, loadMedia) => {
                         // We're using setTimeout here since JSDom does not act
                         // like a real browser
                         setTimeout(() => {
