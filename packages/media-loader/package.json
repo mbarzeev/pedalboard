@@ -1,0 +1,77 @@
+{
+    "name": "@pedalboard/media-loader",
+    "version": "0.0.0",
+    "description": "A component that lets you take control over you media loading",
+    "main": "index.ts",
+    "author": "Matti Bar-Zeev",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mbarzeev/pedalboard.git",
+        "directory": "packages/media-loader"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "dist"
+    ],
+    "exports": {
+        "import": "./dist/esm/index.js",
+        "require": "./dist/cjs/index.js",
+        "default": "./dist/esm/index.js"
+    },
+    "scripts": {
+        "test": "jest",
+        "lint": "eslint ./src",
+        "build": "tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json && yarn bundle",
+        "bundle": "node ../../esbuild.config.js",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build",
+        "chromatic": "chromatic --project-token=chpt_d3991a2fb677fec --exit-zero-on-changes"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.16.5",
+        "@babel/preset-env": "^7.16.11",
+        "@babel/preset-react": "^7.16.7",
+        "@storybook/addon-essentials": "^7.6.12",
+        "@storybook/addon-interactions": "^7.6.12",
+        "@storybook/addon-links": "^7.6.12",
+        "@storybook/addon-onboarding": "^1.0.11",
+        "@storybook/addons": "^7.6.12",
+        "@storybook/blocks": "^7.6.12",
+        "@storybook/client-api": "^7.6.12",
+        "@storybook/react": "^7.6.12",
+        "@storybook/react-webpack5": "^7.6.12",
+        "@storybook/test": "^7.6.12",
+        "@testing-library/jest-dom": "^5.16.2",
+        "@testing-library/react": "^12.1.3",
+        "@types/react": "^18.2.61",
+        "@typescript-eslint/eslint-plugin": "^7.1.1",
+        "@typescript-eslint/parser": "^7.1.1",
+        "@typescript-eslint/utils": "^7.1.1",
+        "babel-jest": "^29.7.0",
+        "babel-loader": "^8.2.3",
+        "chromatic": "^11.0.8",
+        "esbuild": "^0.15.7",
+        "esbuild-sass-plugin": "^2.4.5",
+        "eslint": "8.57.0",
+        "eslint-plugin-react": "^7.28.0",
+        "eslint-plugin-storybook": "^0.6.15",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^27.4.3",
+        "sass": "^1.70.0",
+        "sass-loader": "^14.1.0",
+        "storybook": "^7.6.12",
+        "storybook-addon-sass-postcss": "^0.1.3",
+        "typescript": "^5.3.3",
+        "typescript-eslint": "^7.1.1",
+        "webpack": "^5.90.1",
+        "webpack-dev-server": "4.15.1"
+    },
+    "peerDependencies": {
+        "prop-types": "^15.8.0",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    }
+}

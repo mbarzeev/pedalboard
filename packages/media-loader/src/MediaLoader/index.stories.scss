@@ -1,0 +1,111 @@
+/**
+ * Copyright (c) 2024-present, Matti Bar-Zeev.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.story-container {
+    display: flex;
+    height: 100%;
+
+    article {
+        width: 500px;
+        padding-right: 16px;
+    }
+
+    .story-content {
+        display: flex;
+        overflow-y: auto;
+        width: 100%;
+        padding: 16px;
+    }
+
+}
+
+.story-content.media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+
+    img,
+    div {
+        align-self: center;
+        justify-self: center;
+    }
+}
+
+.media-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.media-animation {
+    display: flex;
+}
+
+img,
+video,
+audio {
+    width: 150px;
+    height: 150px;
+    min-width: 150px;
+    min-height: 150px;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+@keyframes moveAcrossScreen {
+    100% {
+        left: calc(100% - 180px);
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.media-container {
+    border: 1px solid black;
+    width: 150px;
+    height: 150px;
+    background-color: aqua;
+    cursor: pointer;
+}
+
+.animate-media {
+    animation: moveAcrossScreen 5s ease-in;
+    animation-fill-mode: forwards;
+
+    &>div {
+        display: none;
+    }
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #3498db;
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: antiquewhite;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 170px;
+    width: 170px;
+
+    img {
+        border: none;
+    }
+}
