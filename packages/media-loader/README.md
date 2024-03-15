@@ -39,6 +39,9 @@ So say you have this JSX:
 
 You will wrap it with the MediaLoader and provide a loading strategy:
 ```jsx
+import MediaLoader from '@pedalboard/media-loader';
+...
+
 <MediaLoader
     loadingStrategy={(mediaHTMLElementRefs, loadMedia) => {
         // You loading strategy here
@@ -58,6 +61,9 @@ Our **loading strategy** here is: "When the left css value of the image is above
 (Watch the result in the link below)
 
 ```jsx
+import MediaLoader from '@pedalboard/media-loader';
+...
+
 <MediaLoader
     loadingStrategy={(mediaHTMLElementRefs, loadMedia) => {
         const monitor = (target) => {

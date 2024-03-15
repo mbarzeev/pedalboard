@@ -8,7 +8,7 @@
 import React from 'react';
 import type {Meta, StoryObj} from '@storybook/react';
 import './index.stories.scss';
-import MediaLoader from '.';
+import MediaLoader from '../..';
 
 const meta: Meta<typeof MediaLoader> = {
     component: MediaLoader,

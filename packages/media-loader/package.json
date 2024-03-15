@@ -2,7 +2,7 @@
     "name": "@pedalboard/media-loader",
     "version": "0.1.1",
     "description": "A component that lets you take control over you media loading",
-    "main": "index.ts",
+    "main": "./dist/esm/index.js",
     "author": "Matti Bar-Zeev",
     "license": "MIT",
     "repository": {
@@ -21,6 +21,7 @@
         "require": "./dist/cjs/index.js",
         "default": "./dist/esm/index.js"
     },
+    "types": "./dist/types/index.d.ts",
     "scripts": {
         "test": "jest",
         "lint": "eslint ./src",
@@ -71,7 +72,7 @@
     },
     "peerDependencies": {
         "prop-types": "^15.8.0",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2"
+        "react": "^18.2.61",
+        "react-dom": "^18.2.61"
     }
 }
