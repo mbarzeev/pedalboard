@@ -117,13 +117,19 @@ import MediaLoader from '@pedalboard/media-loader';
 </MediaLoader>
 ```
 
+## The loadingStrategy prop
+The loadingStrategy prop is a function which defines how we would like to trigger the load for our wrapped media.  
+It receives 2 arguments - An array of the media element refs and the `loadMedia` function. When you call the loadMedia function with a given ref it will load the associated media for it, whether it is an image, video or audio.
+
+
 📽️ [Watch the result](./docs/assets/images-animation.mp4) 
 
 Check out the **FAQ** below for more details
 
 
 ## Storybook
-You can also see more example with their code in the project's [Storybook](https://65f0a7c612ec612e3b7b2059-pqygczjhcu.chromatic.com/)
+You can also see more example with their code in the project's online [Storybook](https://65f0a7c612ec612e3b7b2059-pqygczjhcu.chromatic.com/).  
+If you wish to run Storybook locally, clone the project, install the dependencies and run `yarn storybook`
 
 
 ## FAQ
