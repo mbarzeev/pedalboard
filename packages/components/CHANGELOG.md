@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.18](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/components@0.6.17...@pedalboard/components@0.6.18) (2024-03-23)
+
+
+### Bug Fixes
+
+* Remove redundant static dir for Storybook ([c019eab](https://github.com/mbarzeev/pedalboard/commit/c019eabadac62f9aa151e36b5d7cc42db9f8e0a4))
+
+
+
+
+
 ## [0.6.17](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/components@0.6.16...@pedalboard/components@0.6.17) (2024-03-23)
 
 **Note:** Version bump only for package @pedalboard/components
