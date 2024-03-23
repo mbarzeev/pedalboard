@@ -7,6 +7,7 @@ const {join, dirname} = require('path');
 function getAbsolutePath(value) {
     return dirname(require.resolve(join(value, 'package.json')));
 }
+
 const config = {
     stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
     addons: [
@@ -15,6 +16,29 @@ const config = {
         getAbsolutePath('@storybook/addon-onboarding'),
         getAbsolutePath('@storybook/addon-interactions'),
         getAbsolutePath('storybook-addon-sass-postcss'),
+        {
+            name: '@storybook/addon-styling-webpack',
+            options: {
+                rules: [
+                    // Replaces existing CSS rules with given rule
+                    {
+                        test: /\.css$/,
+                        use: ['style-loader', 'css-loader'],
+                    },
+                    {
+                        test: /\.s[ac]ss$/i,
+                        use: [
+                            // Creates `style` nodes from JS strings
+                            'style-loader',
+                            // Translates CSS into CommonJS
+                            'css-loader',
+                            // Compiles Sass to CSS
+                            'sass-loader',
+                        ],
+                    },
+                ],
+            },
+        },
     ],
     framework: {
         name: getAbsolutePath('@storybook/react-webpack5'),
@@ -28,8 +52,10 @@ const config = {
         disableTelemetry: true,
     },
     docs: {
-        autodocs: 'tag',
+        autodocs: true,
+        defaultName: 'Docs',
     },
+    staticDirs: ['../public'],
 };
 
 export default config;
