@@ -5112,6 +5112,7 @@ __metadata:
     "@storybook/addon-interactions": ^7.6.12
     "@storybook/addon-links": ^7.6.12
     "@storybook/addon-onboarding": ^1.0.11
+    "@storybook/addon-styling-webpack": ^1.0.0
     "@storybook/addons": ^7.6.12
     "@storybook/blocks": ^7.6.12
     "@storybook/client-api": ^7.6.12
@@ -5134,6 +5135,7 @@ __metadata:
     eslint-plugin-storybook: ^0.6.15
     identity-obj-proxy: ^3.0.0
     jest: ^27.4.3
+    react-responsive-carousel: ^3.2.23
     sass: ^1.70.0
     sass-loader: ^14.1.0
     storybook: ^7.6.12
@@ -6020,6 +6022,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/addon-styling-webpack@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@storybook/addon-styling-webpack@npm:1.0.0"
+  dependencies:
+    "@storybook/node-logger": ^8.0.0-alpha.10
+  peerDependencies:
+    webpack: ^5.0.0
+  checksum: fa907064a42b255fad274ae898b48cb1ce53d969cf79b48e8e0d761ae05500ab9e486d54b2aac625f57c78347daa51828a864497955cd4b0b650e67e8196a341
+  languageName: node
+  linkType: hard
+
 "@storybook/addon-toolbars@npm:7.6.12":
   version: 7.6.12
   resolution: "@storybook/addon-toolbars@npm:7.6.12"
@@ -6535,6 +6548,13 @@ __metadata:
     npmlog: ^5.0.1
     pretty-hrtime: ^1.0.3
   checksum: 9c01127d3b57db7a85759d2f179afec0e1207c0754e80e22472e73468f831e1dafa2a5bf1047e54f92d47b5103325c157c14655208a6ddcdb8f9e7ee0b256e48
+  languageName: node
+  linkType: hard
+
+"@storybook/node-logger@npm:^8.0.0-alpha.10":
+  version: 8.0.4
+  resolution: "@storybook/node-logger@npm:8.0.4"
+  checksum: b5e2a226e83adf23f6d16f72139bd88cf6d695a3e06d810f41d4c706a766b68d74c5e829cb9b2a340a001e0ad7a191bf489854d225d8fcc13c5d2a79457cc308
   languageName: node
   linkType: hard
 
@@ -10129,6 +10149,13 @@ __metadata:
   version: 1.2.3
   resolution: "cjs-module-lexer@npm:1.2.3"
   checksum: 5ea3cb867a9bb609b6d476cd86590d105f3cfd6514db38ff71f63992ab40939c2feb68967faa15a6d2b1f90daa6416b79ea2de486e9e2485a6f8b66a21b4fb0a
+  languageName: node
+  linkType: hard
+
+"classnames@npm:^2.2.5":
+  version: 2.5.1
+  resolution: "classnames@npm:2.5.1"
+  checksum: da424a8a6f3a96a2e87d01a432ba19315503294ac7e025f9fece656db6b6a0f7b5003bb1fbb51cbb0d9624d964f1b9bb35a51c73af9b2434c7b292c42231c1e5
   languageName: node
   linkType: hard
 
@@ -19425,7 +19452,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.6.1, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
+"prop-types@npm:^15.5.8, prop-types@npm:^15.6.1, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -19707,6 +19734,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-easy-swipe@npm:^0.0.21":
+  version: 0.0.21
+  resolution: "react-easy-swipe@npm:0.0.21"
+  dependencies:
+    prop-types: ^15.5.8
+  checksum: 225f12a9dd410db1c790220867ab1eb58e2ef0a2bdae8541330805fc5b9905e242ab307b019f9aaed76473849a753f363baff03fa8a77e7a1860d7b41dc83ec0
+  languageName: node
+  linkType: hard
+
 "react-element-to-jsx-string@npm:^15.0.0":
   version: 15.0.0
   resolution: "react-element-to-jsx-string@npm:15.0.0"
@@ -19816,6 +19852,17 @@ __metadata:
     "@types/react":
       optional: true
   checksum: 2c7fe9cbd766f5e54beb4bec2e2efb2de3583037b23fef8fa511ab426ed7f1ae992382db5acd8ab5bfb030a4b93a06a2ebca41377d6eeaf0e6791bb0a59616a4
+  languageName: node
+  linkType: hard
+
+"react-responsive-carousel@npm:^3.2.23":
+  version: 3.2.23
+  resolution: "react-responsive-carousel@npm:3.2.23"
+  dependencies:
+    classnames: ^2.2.5
+    prop-types: ^15.5.8
+    react-easy-swipe: ^0.0.21
+  checksum: 8a5b915f140a05425554a0c108c60a0b103dae49808486d39147df09c832ad712c7d7f4a66f0d0c39529ca095b4a327f0cc440d91b5f7a39ab13076931f74bd0
   languageName: node
   linkType: hard
 

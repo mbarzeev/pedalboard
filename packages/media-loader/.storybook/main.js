@@ -16,6 +16,29 @@ const config = {
         getAbsolutePath('@storybook/addon-onboarding'),
         getAbsolutePath('@storybook/addon-interactions'),
         getAbsolutePath('storybook-addon-sass-postcss'),
+        {
+            name: '@storybook/addon-styling-webpack',
+            options: {
+                rules: [
+                    // Replaces existing CSS rules with given rule
+                    {
+                        test: /\.css$/,
+                        use: ['style-loader', 'css-loader'],
+                    },
+                    {
+                        test: /\.s[ac]ss$/i,
+                        use: [
+                            // Creates `style` nodes from JS strings
+                            'style-loader',
+                            // Translates CSS into CommonJS
+                            'css-loader',
+                            // Compiles Sass to CSS
+                            'sass-loader',
+                        ],
+                    },
+                ],
+            },
+        },
     ],
     framework: {
         name: getAbsolutePath('@storybook/react-webpack5'),
