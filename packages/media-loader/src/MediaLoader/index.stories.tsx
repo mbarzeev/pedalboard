@@ -7,6 +7,8 @@
 
 import React from 'react';
 import type {Meta, StoryObj} from '@storybook/react';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import {Carousel} from 'react-responsive-carousel';
 import './index.stories.scss';
 import MediaLoader from '../..';
 
@@ -428,4 +430,93 @@ export const ImagesGrid: Story = {
             </div>
         </div>
     ),
+};
+
+export const ImagesCarousel: Story = {
+    name: 'Images carousel',
+    parameters: {},
+    render: () => {
+        return (
+            <div className="story-container">
+                <article className="story-docs">
+                    <h1>Images carousel</h1>
+                    {/* <p>
+                        This example uses the Carousel from the `react-responsive-carousel` library. By default, this
+                        Carousel loads all the media that it is nested in it, but by adding the MediaLoader Component
+                        the images are loading only when they are needed, that is - only when you navigate to them.
+                    </p> */}
+                </article>
+                <div className="story-content">
+                    <MediaLoader
+                        loadingStrategy={(mediaHTMLElementRefs, loadMedia) => {
+                            const sliderElement = document.querySelector('.slider.animated') as HTMLElement;
+                            let imageIndexToLoad = getImageIndexFromTransformStyle(sliderElement.style.transform);
+
+                            function getImageIndexFromTransformStyle(transformStyle: string) {
+                                let imageIndexToLoad = 0;
+                                if (transformStyle) {
+                                    const match = transformStyle.match(/-?[\d.]+(?:%|px)/);
+                                    if (match) {
+                                        const transformPercent = match[0];
+                                        imageIndexToLoad = parseInt(transformPercent) / -100;
+                                    }
+                                }
+                                return imageIndexToLoad;
+                            }
+
+                            function loadImageByIndex(index: number) {
+                                let imageRefToLoad = mediaHTMLElementRefs[index];
+                                if (imageRefToLoad && imageRefToLoad.current) {
+                                    loadMedia(imageRefToLoad.current);
+                                }
+                            }
+
+                            const callback = (mutationList) => {
+                                for (const mutation of mutationList) {
+                                    if (mutation.attributeName === 'style') {
+                                        const style = mutation.target.style;
+                                        imageIndexToLoad = getImageIndexFromTransformStyle(style.transform);
+                                        loadImageByIndex(imageIndexToLoad);
+                                        break;
+                                    }
+                                }
+                            };
+
+                            const observer = new MutationObserver(callback);
+                            observer.observe(sliderElement, {attributes: true});
+
+                            loadImageByIndex(imageIndexToLoad);
+                        }}
+                    >
+                        <Carousel showThumbs={false} className="carousel">
+                            <div>
+                                <img src="/assets/image-01.jpg" />
+                                <p className="legend">Legend 1</p>
+                            </div>
+                            <div>
+                                <img src="/assets/image-02.jpg" />
+                                <p className="legend">Legend 2</p>
+                            </div>
+                            <div>
+                                <img src="/assets/image-03.jpg" />
+                                <p className="legend">Legend 3</p>
+                            </div>
+                            <div>
+                                <img src="/assets/image-04.jpg" />
+                                <p className="legend">Legend 4</p>
+                            </div>
+                            <div>
+                                <img src="/assets/image-05.jpg" />
+                                <p className="legend">Legend 5</p>
+                            </div>
+                            <div>
+                                <img src="/assets/image-06.jpg" />
+                                <p className="legend">Legend 6</p>
+                            </div>
+                        </Carousel>
+                    </MediaLoader>
+                </div>
+            </div>
+        );
+    },
 };

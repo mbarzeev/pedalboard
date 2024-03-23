@@ -109,3 +109,11 @@ audio {
         border: none;
     }
 }
+
+.carousel {
+    height: 400px;
+
+    .slide img {
+        height: 400px;
+    }
+}
