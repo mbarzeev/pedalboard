@@ -22,7 +22,8 @@ jobs:
                   fetch-depth: 0
             - name: Install dependencies
               run: yarn
-              # 👇 Adds Chromatic as a step in the workflow
+            - name: Build
+              run: yarn build
             - name: Publish to Chromatic
               run: |
                   cd packages/components
