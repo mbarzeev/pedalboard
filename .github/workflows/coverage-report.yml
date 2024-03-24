@@ -29,16 +29,16 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
             - run: yarn
             - run: yarn coverage:combined
             - name: Setup Pages
-              uses: actions/configure-pages@v2
+              uses: actions/configure-pages@v4
             - name: Upload artifact
-              uses: actions/upload-pages-artifact@v1
+              uses: actions/upload-pages-artifact@v3
               with:
                   # Upload the coverage directory from the repository
                   path: './coverage/lcov-report'
             - name: Deploy to GitHub Pages
               id: deployment
-              uses: actions/deploy-pages@v1
+              uses: actions/deploy-pages@v4
