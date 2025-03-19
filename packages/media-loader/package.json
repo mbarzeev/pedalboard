@@ -25,8 +25,7 @@
     "scripts": {
         "test": "jest",
         "lint": "eslint ./src",
-        "build": "tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json && yarn bundle",
-        "bundle": "node ../../esbuild.config.js",
+        "build": "tsc -b",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
         "chromatic": "chromatic --only-changed --untraced package.json --untraced yarn.lock --exit-zero-on-changes"

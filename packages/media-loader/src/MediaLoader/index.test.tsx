@@ -88,7 +88,9 @@ describe('MediaLoader component', () => {
                         setTimeout(() => {
                             mediaHTMLElements.forEach((mediaHTMLElementRef) => {
                                 let target = mediaHTMLElementRef.current;
-                                loadMedia(target);
+                                if (target) {
+                                    loadMedia(target);
+                                }
                             });
                         });
                     }}
@@ -124,7 +126,9 @@ describe('MediaLoader component', () => {
                         setTimeout(() => {
                             mediaHTMLElements.forEach((mediaHTMLElementRef) => {
                                 let target = mediaHTMLElementRef.current;
-                                loadMedia(target);
+                                if (target) {
+                                    loadMedia(target);
+                                }
                             });
                         });
                     }}
