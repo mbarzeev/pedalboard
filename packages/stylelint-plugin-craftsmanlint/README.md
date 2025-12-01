@@ -95,6 +95,69 @@ If your rule is defined in a JSON format, then you can pass a string as the rege
 }
 ```
 
+## **stylelint-plugin-craftsmanlint/no-hardcoded-values**
+This rule prevents hardcoded CSS values when design system tokens should be used instead. It helps maintain consistency by enforcing the use of predefined design tokens for spacing, colors, and other CSS properties.
+
+### usage
+**Basic configuration**:
+
+```javascript
+module.exports = {
+    plugins: ['@pedalboard/stylelint-plugin-craftsmanlint'],
+    rules: {
+        'stylelint-plugin-craftsmanlint/no-hardcoded-values': [
+            {
+                valueToToken: {
+                    '4px': '$spacing-half',
+                    '8px': '$spacing-1',
+                    '#F5F5F7': '$bg-off-white-color',
+                    '#FFFFFF': '$white',
+                }
+            },
+            {
+                severity: 'error',
+            },
+        ],
+    },
+};
+```
+
+This configuration will flag any CSS declaration that uses `4px` and suggest using `$spacing-half` instead.
+
+**Multiple token options**:
+
+You can provide multiple token options for the same value:
+
+```javascript
+{
+    valueToToken: {
+        '0': ['$spacing-0', '0'],  // Suggests either option
+    }
+}
+```
+
+### Advanced features
+
+- **Case insensitive matching**: Color values like `#FFFFFF` and `#ffffff` are treated the same
+- **Normalization**: Values are normalized (trimmed, quotes removed) for accurate matching
+
+### Example violations
+
+```scss
+// Will error
+.my-class {
+    margin: 4px;  // Hard-coded value '4px' detected. Replace it with the token $spacing-half.
+    color: #F5F5F7;  // Hard-coded value '#F5F5F7' detected. Replace it with the token $bg-off-white-color.
+}
+
+// Will pass
+.my-class {
+    margin: $spacing-half;
+    color: $bg-off-white-color;
+}
+```
+
+
 # Resources
 * [Enforcing Your CSS Standards with a Custom Stylelint Plugin](https://dev.to/mbarzeev/enforcing-your-css-standards-with-a-custom-stylelint-plugin-1o8c)
 * [Testing Your Stylelint Plugin](https://dev.to/mbarzeev/testing-your-stylelint-plugin-5ceh)

@@ -1,0 +1,12 @@
+.my-class {
+    margin: $spacing-1;
+    padding: $spacing-2;
+    color: $primary-color;
+}
+
+.my-second-class {
+    margin: var(--spacing-1);
+    padding: 0;
+    background-color: $bg-white-color;
+}
+
