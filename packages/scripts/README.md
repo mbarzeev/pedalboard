@@ -44,3 +44,11 @@ Following this script you can then call [nyc](https://github.com/istanbuljs/nyc)
 ```
 
 ***
+
+## Resources
+
+- [Yarn Workspace Scripts Refactor - A Case Study](https://dev.to/mbarzeev/yarn-workspace-scripts-refactor-a-case-study-4ol0)
+
+## License
+
+MIT
