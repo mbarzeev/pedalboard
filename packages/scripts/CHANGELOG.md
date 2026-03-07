@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/scripts@0.2.1...@pedalboard/scripts@0.2.2) (2026-03-07)
+
+**Note:** Version bump only for package @pedalboard/scripts
+
+
+
+
+
 ## [0.2.1](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/scripts@0.2.0...@pedalboard/scripts@0.2.1) (2024-03-05)
 
 
