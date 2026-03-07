@@ -56,7 +56,7 @@ async function generateReportForPackage(packageName) {
             return new Promise((resolve, reject) => {
                 // Call the coverage command
                 console.log(BLUE, `Generating report for the ${packageName} package...`);
-                const process = spawn('pnpm', ['run', 'test', '--', '--coverage', '--silent'], {
+                const process = spawn('yarn', ['test', '--coverage', '--silent'], {
                     cwd: packagePath,
                     stdio: 'inherit',
                 });

@@ -23,15 +23,15 @@ Many of the development done on this project was blogged about on [dev.to/mbarze
 ## Getting Started
 
 ```bash
-pnpm install
+yarn install
 ```
 
 ## Scripts
 
 ```bash
-pnpm run build      # Build all packages
-pnpm run test       # Run tests
-pnpm run lint       # Lint all packages
+yarn build      # Build all packages
+yarn test       # Run tests
+yarn lint       # Lint all packages
 ```
 
 ## License

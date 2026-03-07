@@ -19,7 +19,7 @@ We welcome contributions from the community! If you'd like to contribute code to
 1. Fork the repository and create a new branch from the `master` branch. Please note that the media-loader is a package within a Monorepo called "pedalboard". 
 2. Make your changes, ensuring that your code adheres to the project's coding conventions and standards.
 3. Write tests to cover your changes, if applicable.
-4. Ensure that all existing tests pass by running `pnpm run test`. You can run this from the `media-loader` package level, so that only this package's test will run.
+4. Ensure that all existing tests pass by running `yarn test`. You can run this from the `media-loader` package level, so that only this package's test will run.
 5. Commit your changes with clear and descriptive commit messages. Please adhere to [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 6. Push your changes to your fork and submit a pull request to the `master` branch of the Pedalboard repository.
 

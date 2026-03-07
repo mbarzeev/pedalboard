@@ -9,20 +9,23 @@
         "type": "git",
         "url": "https://github.com/mbarzeev/pedalboard.git"
     },
+    "workspaces": [
+        "packages/*"
+    ],
     "scripts": {
         "setup:git-hooks": "git config core.hooksPath .git-hooks",
-        "postinstall": "pnpm run setup:git-hooks",
-        "test": "pnpm -r run test",
-        "test:since": "pnpm --filter '...[origin/master]' run test",
-        "lint": "pnpm -r run lint",
-        "lint:since": "pnpm --filter '...[origin/master]' run lint",
-        "build": "pnpm -r run build",
+        "postinstall": "yarn run setup:git-hooks",
+        "test": "yarn workspaces foreach -pRv run test",
+        "test:since": "yarn workspaces foreach --since -pRv run test",
+        "lint": "yarn workspaces foreach -pRv run lint",
+        "lint:since": "yarn workspaces foreach --since -pRv run lint",
+        "build": "yarn workspaces foreach -ptv run build",
         "publish:lerna": "lerna publish --yes --no-verify-access",
         "publish:lerna:skip-git": "lerna publish --yes --no-verify-access --no-git-tag-version --no-push --loglevel=silly",
-        "coverage": "pnpm run test -- --coverage",
-        "coverage:all": "pnpm -r run test -- --coverage --silent",
+        "coverage": "yarn test --coverage",
+        "coverage:all": "yarn workspaces foreach -pvA run test --coverage --silent",
         "coverage:collect": "mkdir -p .nyc_output && pedalboard-scripts collectFiles --pattern='packages/**/coverage-final.json' --target='.nyc_output'",
-        "coverage:combined": "pnpm run coverage:all && pnpm run coverage:collect && nyc report --reporter lcov"
+        "coverage:combined": "yarn coverage:all && yarn coverage:collect && nyc report --reporter lcov"
     },
     "devDependencies": {
         "@babel/plugin-transform-runtime": "^7.19.6",
@@ -34,9 +37,7 @@
         "@swc/jest": "^0.2.24",
         "@typescript-eslint/eslint-plugin": "^7.1.1",
         "@typescript-eslint/parser": "^7.1.1",
-        "esbuild": "^0.15.7",
-        "esbuild-sass-plugin": "^2.4.5",
-        "lerna": "^8.0.0",
+        "lerna": "^5.0.0",
         "nyc": "^15.1.0",
         "ts-node": "^10.9.2"
     },
@@ -44,10 +45,8 @@
         "react": "^17.0.2",
         "react-dom": "^17.0.2"
     },
-    "packageManager": "pnpm@9.15.4",
-    "pnpm": {
-        "overrides": {
-            "parse-url": "^8.1.0"
-        }
+    "packageManager": "yarn@3.2.0",
+    "resolutions": {
+        "parse-url": "^8.1.0"
     }
 }

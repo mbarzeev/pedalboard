@@ -5,7 +5,6 @@ const config = {
     transform: {
         '\\.[jt]sx?$': ['@swc/jest'],
     },
-    transformIgnorePatterns: ['node_modules/(?!@pedalboard)'],
     testPathIgnorePatterns: ['dist'],
 };
 

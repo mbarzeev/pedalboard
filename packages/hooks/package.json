@@ -25,7 +25,7 @@
     "scripts": {
         "test": "jest",
         "lint": "eslint ./src",
-        "build": "tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json && pnpm run bundle",
+        "build": "tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json && yarn bundle",
         "bundle": "node ../../esbuild.config.js"
     },
     "peerDependencies": {
@@ -36,10 +36,7 @@
         "@babel/core": "^7.16.5",
         "@babel/preset-env": "^7.16.11",
         "@testing-library/react-hooks": "^7.0.2",
-        "@types/react": "^18.2.61",
         "babel-jest": "^27.4.5",
-        "esbuild": "^0.15.7",
-        "esbuild-sass-plugin": "^2.4.5",
         "eslint": "8.57.0",
         "jest": "^27.4.3",
         "typescript": "^5.3.3"

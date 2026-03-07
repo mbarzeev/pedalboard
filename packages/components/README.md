@@ -4,9 +4,9 @@ A set of well-crafted React components.
 
 ## Installation
 
-### pnpm
+### yarn
 ```bash
-pnpm add @pedalboard/components
+yarn add @pedalboard/components
 ```
 
 ### npm
@@ -63,7 +63,7 @@ This package includes a Storybook for component documentation and visual testing
 
 ```bash
 cd packages/components
-pnpm run storybook
+yarn storybook
 ```
 
 ## Resources

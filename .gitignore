@@ -1,5 +1,12 @@
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 node_modules
-.pnpm-debug.log
+yarn-error.log
 coverage
 coverage-ts
 .nyc_output
@@ -9,6 +16,3 @@ dist
 build-storybook.log
 storybook.log
 storybook-static
-
-blog-writer
-blog-posts
