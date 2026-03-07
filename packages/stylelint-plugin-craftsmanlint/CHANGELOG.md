@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.10](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/stylelint-plugin-craftsmanlint@1.3.9...@pedalboard/stylelint-plugin-craftsmanlint@1.3.10) (2026-03-07)
+
+**Note:** Version bump only for package @pedalboard/stylelint-plugin-craftsmanlint
+
+
+
+
+
 ## [1.3.9](https://github.com/mbarzeev/pedalboard/compare/@pedalboard/stylelint-plugin-craftsmanlint@1.3.7...@pedalboard/stylelint-plugin-craftsmanlint@1.3.9) (2026-03-07)
 
 **Note:** Version bump only for package @pedalboard/stylelint-plugin-craftsmanlint
