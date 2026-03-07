@@ -1,6 +1,7 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
+        "lib": ["ES2020", "DOM"],
         "module": "CommonJS",
         "outDir": "dist/cjs",
         "declarationDir": "dist/types"

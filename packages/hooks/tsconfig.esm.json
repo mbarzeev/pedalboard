@@ -1,6 +1,7 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
+        "lib": ["ES2020", "DOM"],
         "module": "ES2020",
         "outDir": "dist/esm",
         "declarationDir": "dist/types"
