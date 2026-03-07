@@ -20,13 +20,17 @@ jobs:
             - uses: actions/checkout@v4
               with:
                   fetch-depth: 0
+            - uses: pnpm/action-setup@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 20
             - name: Install dependencies
-              run: yarn
+              run: pnpm install
             - name: Build
-              run: yarn build
+              run: pnpm run build
             - name: Publish to Chromatic
               run: |
                   cd packages/components
-                  yarn chromatic
+                  pnpm run chromatic
               env:
                   CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
