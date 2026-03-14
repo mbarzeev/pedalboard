@@ -35,6 +35,11 @@ jobs:
                   git config --local user.email 'github-actions[bot]@users.noreply.github.com'
             # Don't run custom Git hooks
             - run: git config --local core.hooksPath .git/hooks
+            - run: pnpm run version:changeset
+            - run: git add -A
+            # Skip commit and push if version:changeset produced no changes (e.g. no pending changesets)
+            - run: |
+                  git diff --staged --quiet || (git commit -m "chore(release): version" && git push)
             - run: pnpm run publish:changeset
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
