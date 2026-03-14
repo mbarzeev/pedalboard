@@ -17,8 +17,9 @@
         "lint": "pnpm -r run lint",
         "lint:since": "pnpm --filter '...[origin/master]' run lint",
         "build": "pnpm -r run build",
-        "publish:lerna": "lerna publish --yes --no-verify-access",
-        "publish:lerna:skip-git": "lerna publish --yes --no-verify-access --no-git-tag-version --no-push --loglevel=silly",
+        "changeset:check": "changeset status --since=origin/master",
+        "version:changeset": "changeset version",
+        "publish:changeset": "changeset publish",
         "coverage": "pnpm run test -- --coverage",
         "coverage:all": "pnpm -r run test --coverage --silent",
         "coverage:collect": "mkdir -p .nyc_output && pedalboard-scripts collectFiles --pattern='packages/**/coverage-final.json' --target='.nyc_output'",
@@ -27,6 +28,7 @@
     "devDependencies": {
         "@babel/plugin-transform-runtime": "^7.19.6",
         "@babel/preset-typescript": "^7.17.12",
+        "@changesets/cli": "^2.30.0",
         "@pedalboard/eslint-plugin-craftsmanlint": "^1.2.12",
         "@pedalboard/git-hooks": "^1.0.3",
         "@pedalboard/scripts": "^0.2.0",
@@ -36,7 +38,6 @@
         "@typescript-eslint/parser": "^7.1.1",
         "esbuild": "^0.15.7",
         "esbuild-sass-plugin": "^2.4.5",
-        "lerna": "^8.0.0",
         "nyc": "^15.1.0",
         "ts-node": "^10.9.2"
     },

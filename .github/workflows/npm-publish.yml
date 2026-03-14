@@ -20,6 +20,7 @@ jobs:
               with:
                   node-version: 20
             - run: pnpm install
+            - run: pnpm run changeset:check
             - run: pnpm run lint:since
             - run: pnpm run test:since
             - run: pnpm run build
@@ -34,6 +35,6 @@ jobs:
                   git config --local user.email 'github-actions[bot]@users.noreply.github.com'
             # Don't run custom Git hooks
             - run: git config --local core.hooksPath .git/hooks
-            - run: pnpm run publish:lerna
+            - run: pnpm run publish:changeset
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
