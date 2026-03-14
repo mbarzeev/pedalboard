@@ -17,7 +17,6 @@
         "lint": "pnpm -r run lint",
         "lint:since": "pnpm --filter '...[origin/master]' run lint",
         "build": "pnpm -r run build",
-        "changeset:check": "changeset status --since=origin/master",
         "version:changeset": "changeset version",
         "publish:changeset": "changeset publish",
         "coverage": "pnpm run test --coverage",
