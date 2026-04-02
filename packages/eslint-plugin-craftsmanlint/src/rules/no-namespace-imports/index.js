@@ -14,6 +14,18 @@ export default {
             description: 'disallow namespace imports',
             recommended: false,
         },
+        schema: [
+            {
+                type: 'object',
+                properties: {
+                    forbiddenModules: {
+                        type: 'array',
+                        items: {type: 'string'},
+                    },
+                },
+                additionalProperties: false,
+            },
+        ],
     },
     create: (context) => {
         return {

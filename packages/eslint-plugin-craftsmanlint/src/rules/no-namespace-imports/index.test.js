@@ -8,15 +8,12 @@
 import {RuleTester} from 'eslint';
 import rule from './index';
 
-const ruleTester = new RuleTester({parserOptions: {ecmaVersion: 2015, sourceType: 'module'}});
+const ruleTester = new RuleTester({languageOptions: {ecmaVersion: 2015}});
 
 ruleTester.run('no-namespace-imports rule', rule, {
     valid: [
         {
             code: `import {bart} from './simpson'`,
-        },
-        {
-            code: `import {john as chuck} from './norris'`,
         },
         {
             code: `import {john as chuck} from './norris'`,
