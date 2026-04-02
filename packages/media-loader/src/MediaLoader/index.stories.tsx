@@ -5,6 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+/* eslint-disable react/no-unescaped-entities */
+
 import React from 'react';
 import type {Meta, StoryObj} from '@storybook/react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader

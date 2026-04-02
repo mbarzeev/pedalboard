@@ -60,7 +60,7 @@
         "cypress": "^10.1.0",
         "esbuild": "^0.15.7",
         "esbuild-sass-plugin": "^2.4.5",
-        "eslint": "8.57.0",
+        "eslint": "10.1.0",
         "eslint-plugin-react": "^7.28.0",
         "eslint-plugin-storybook": "^0.6.15",
         "identity-obj-proxy": "^3.0.0",

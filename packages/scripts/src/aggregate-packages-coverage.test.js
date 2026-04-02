@@ -5,7 +5,6 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-/* eslint-disable no-undef */
 describe('aggregate-packages-coverage script', () => {
     it('should be implemented...', () => {
         // TODO: Implement...

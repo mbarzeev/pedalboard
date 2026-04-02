@@ -57,7 +57,7 @@ const ruleFunction = (primaryOption: PrimaryOption) => {
                 typeof propRule.valueRegex === 'string' ? new RegExp(propRule.valueRegex) : propRule.valueRegex;
 
             const isFileValid = (inspectedFile: string, index: number, files: string[]) => {
-                let result = false;
+                let result;
                 const isRegexValueComply = valueRegex ? valueRegex.test(decl.value) : true;
                 if (files.includes(ALL_FILES_KEYWORD)) {
                     result = isRegexValueComply;
