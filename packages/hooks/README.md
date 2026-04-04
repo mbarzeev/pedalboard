@@ -17,8 +17,8 @@ npm install @pedalboard/hooks
 ## Peer Dependencies
 
 This package requires the following peer dependencies:
-- `react` ^17.0.2
-- `react-dom` ^17.0.2
+- `react` ^18.3.1
+- `react-dom` ^18.3.1
 
 ## Hooks
 

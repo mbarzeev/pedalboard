@@ -17,8 +17,8 @@ npm install @pedalboard/components
 ## Peer Dependencies
 
 This package requires the following peer dependencies:
-- `react` ^17.0.2
-- `react-dom` ^17.0.2
+- `react` ^18.3.1
+- `react-dom` ^18.3.1
 - `prop-types` ^15.8.0
 
 ## Components
