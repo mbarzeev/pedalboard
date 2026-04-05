@@ -1,5 +1,5 @@
-import rootConfig from "../../eslint.config.mjs";
-import globals from "globals";
+import rootConfig from '../../eslint.config.mjs';
+import globals from 'globals';
 
 export default [
     ...rootConfig,

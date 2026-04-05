@@ -1,0 +1,35 @@
+# Root BUILD file required by aspect_rules_js
+
+load("@npm//:defs.bzl", "npm_link_all_packages")
+load("@aspect_rules_ts//ts:defs.bzl", "ts_config")
+load("@aspect_rules_js//js:defs.bzl", "js_library")
+
+npm_link_all_packages(name = "node_modules")
+
+ts_config(
+    name = "tsconfig_base",
+    src = "tsconfig.base.json",
+    visibility = ["//packages:__subpackages__"],
+)
+
+js_library(
+    name = "jest_config_base",
+    srcs = ["jest.config.base.js"],
+    visibility = ["//packages:__subpackages__"],
+)
+
+js_library(
+    name = "eslintrc",
+    srcs = ["eslint.config.mjs"],
+    deps = [
+        ":node_modules/globals",
+        ":node_modules/eslint",
+        ":node_modules/@eslint/js",
+        ":node_modules/eslint-plugin-react",
+        ":node_modules/typescript-eslint",
+        ":node_modules/@typescript-eslint/parser",
+        ":node_modules/@typescript-eslint/eslint-plugin",
+        ":node_modules/@pedalboard/eslint-plugin-craftsmanlint",
+    ],
+    visibility = ["//packages:__subpackages__"],
+)

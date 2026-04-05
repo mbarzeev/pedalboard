@@ -1,0 +1,8 @@
+load("@npm//:eslint/package_json.bzl", eslint_bin = "bin")
+
+eslint_bin.eslint_binary(
+    name = "eslint",
+    data = [
+        "//:node_modules/chalk",
+    ],
+)

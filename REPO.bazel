@@ -1,0 +1,3 @@
+"""Repository configuration for the Pedalboard monorepo."""
+
+ignore_directories(["**/node_modules"])

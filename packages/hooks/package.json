@@ -23,10 +23,10 @@
         "default": "./dist/esm/index.js"
     },
     "scripts": {
-        "test": "jest",
-        "lint": "eslint ./src",
-        "build": "tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json && pnpm run bundle",
-        "bundle": "node ../../esbuild.config.js"
+        "test": "bazel run //packages/hooks:jest -- --coverageDirectory=$(pwd)/coverage",
+        "lint": "bazel run //packages/hooks:lint",
+        "build": "bazel run //packages/hooks:build_and_copy",
+        "test:watch": "jest --watch"
     },
     "peerDependencies": {
         "react": "^18.3.1",
@@ -42,6 +42,7 @@
         "esbuild-sass-plugin": "^2.4.5",
         "eslint": "10.1.0",
         "jest": "^27.4.3",
+        "jest-cli": "^27.4.3",
         "typescript": "^5.3.3"
     }
 }

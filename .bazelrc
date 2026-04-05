@@ -1,0 +1,5 @@
+# Types
+common  --@aspect_rules_ts//ts:skipLibCheck=honor_tsconfig
+# Testing
+test --test_output=all
+test --test_env=FORCE_COLOR=0

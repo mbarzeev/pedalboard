@@ -1,4 +1,5 @@
 node_modules
+bazel-*
 .pnpm-debug.log
 coverage
 coverage-ts
