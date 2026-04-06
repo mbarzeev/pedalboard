@@ -19,6 +19,18 @@ js_library(
 )
 
 js_library(
+    name = "swcrc_base_esm",
+    srcs = [".swcrc.base.esm.json"],
+    visibility = ["//packages:__subpackages__"],
+)
+
+js_library(
+    name = "swcrc_base_cjs",
+    srcs = [".swcrc.base.cjs.json"],
+    visibility = ["//packages:__subpackages__"],
+)
+
+js_library(
     name = "eslintrc",
     srcs = ["eslint.config.mjs"],
     deps = [

@@ -48,7 +48,7 @@ ts_project(
 swc(
     name = "compile_esm",
     srcs = [":sources"],
-    swcrc = ".swcrc.esm.json",
+    swcrc = "//:swcrc_base_esm",
     source_maps = "true",
     out_dir = "dist/esm",
 )
@@ -56,7 +56,7 @@ swc(
 swc(
     name = "compile_cjs",
     srcs = [":sources"],
-    swcrc = ".swcrc.cjs.json",
+    swcrc = "//:swcrc_base_cjs",
     source_maps = "true",
     out_dir = "dist/cjs",
 )
