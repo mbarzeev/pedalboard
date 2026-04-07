@@ -241,10 +241,6 @@ importers:
         version: 4.9.5
 
   packages/git-hooks:
-    dependencies:
-      '@types/node':
-        specifier: ^18.11.0
-        version: 18.19.130
     devDependencies:
       '@babel/core':
         specifier: ^7.16.5
@@ -252,6 +248,9 @@ importers:
       '@babel/preset-env':
         specifier: ^7.16.11
         version: 7.29.0(@babel/core@7.29.0)
+      '@types/node':
+        specifier: ^18.11.0
+        version: 18.19.130
       babel-jest:
         specifier: ^27.4.5
         version: 27.5.1(@babel/core@7.29.0)
@@ -456,12 +455,24 @@ importers:
         specifier: ^17.6.2
         version: 17.7.2
     devDependencies:
+      '@types/glob':
+        specifier: ^8.0.0
+        version: 8.1.0
+      '@types/node':
+        specifier: ^18.11.0
+        version: 18.19.130
+      '@types/yargs':
+        specifier: ^17.0.0
+        version: 17.0.35
       eslint:
         specifier: 10.1.0
         version: 10.1.0(jiti@2.6.1)
       jest:
         specifier: ^27.4.3
         version: 27.5.1(ts-node@10.9.2(@swc/core@1.15.11)(@types/node@18.19.130)(typescript@5.9.3))
+      jest-cli:
+        specifier: 27.4.3
+        version: 27.4.3(ts-node@10.9.2(@swc/core@1.15.11)(@types/node@18.19.130)(typescript@5.9.3))
 
   packages/stylelint-plugin-craftsmanlint:
     dependencies:
@@ -2880,6 +2891,9 @@ packages:
   '@types/fined@1.1.5':
     resolution: {integrity: sha512-2N93vadEGDFhASTIRbizbl4bNqpMOId5zZfj6hHqYZfEzEfO9onnU4Im8xvzo8uudySDveDHBOOSlTWf38ErfQ==}
 
+  '@types/glob@8.1.0':
+    resolution: {integrity: sha512-IO+MJPVhoqz+28h1qLAcBEH2+xHMK6MTyHJc7MTnnYb6wsoLR29POVGJ7LycmVXIqyy/4/2ShP5sUwTXuOwb/w==}
+
   '@types/graceful-fs@4.1.9':
     resolution: {integrity: sha512-olP3sd1qOEe5dXTSaFvQG+02VdRXcdytWLAZsAq1PecU8uqQAhkrnbli7DagjtXKW/Bl7YJbUsa8MPcuc8LHEQ==}
 
@@ -2924,6 +2938,9 @@ packages:
 
   '@types/mime@1.3.5':
     resolution: {integrity: sha512-/pyBZWSLD2n0dcHE3hq8s8ZvcETHtEuF+3E7XVt0Ig2nvsVQXdghHVcEkIWjy9A0wKfTn97a/PSDYohKIlnP/w==}
+
+  '@types/minimatch@5.1.2':
+    resolution: {integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==}
 
   '@types/minimist@1.2.5':
     resolution: {integrity: sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==}
@@ -12184,6 +12201,11 @@ snapshots:
 
   '@types/fined@1.1.5': {}
 
+  '@types/glob@8.1.0':
+    dependencies:
+      '@types/minimatch': 5.1.2
+      '@types/node': 18.19.130
+
   '@types/graceful-fs@4.1.9':
     dependencies:
       '@types/node': 18.19.130
@@ -12230,6 +12252,8 @@ snapshots:
   '@types/mime-types@2.1.4': {}
 
   '@types/mime@1.3.5': {}
+
+  '@types/minimatch@5.1.2': {}
 
   '@types/minimist@1.2.5': {}
 
@@ -15492,6 +15516,27 @@ snapshots:
       graceful-fs: 4.2.11
       import-local: 3.2.0
       jest-config: 27.5.1(ts-node@10.9.2(@swc/core@1.15.11)(@types/node@18.19.130)(typescript@4.9.5))
+      jest-util: 27.5.1
+      jest-validate: 27.5.1
+      prompts: 2.4.2
+      yargs: 16.2.0
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - supports-color
+      - ts-node
+      - utf-8-validate
+
+  jest-cli@27.4.3(ts-node@10.9.2(@swc/core@1.15.11)(@types/node@18.19.130)(typescript@5.9.3)):
+    dependencies:
+      '@jest/core': 27.5.1(ts-node@10.9.2(@swc/core@1.15.11)(@types/node@18.19.130)(typescript@5.9.3))
+      '@jest/test-result': 27.5.1
+      '@jest/types': 27.5.1
+      chalk: 4.1.2
+      exit: 0.1.2
+      graceful-fs: 4.2.11
+      import-local: 3.2.0
+      jest-config: 27.5.1(ts-node@10.9.2(@swc/core@1.15.11)(@types/node@18.19.130)(typescript@5.9.3))
       jest-util: 27.5.1
       jest-validate: 27.5.1
       prompts: 2.4.2

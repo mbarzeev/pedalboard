@@ -10,19 +10,24 @@
         "directory": "packages/scripts"
     },
     "files": [
-        "bin",
-        "src"
+        "dist"
     ],
     "bin": {
-        "pedalboard-scripts": "./bin/pedalboard-scripts.js"
+        "pedalboard-scripts": "./dist/src/pedalboard-scripts.js"
     },
     "scripts": {
-        "test": "jest",
-        "lint": "eslint ./src"
+        "test": "bazel run //packages/scripts:jest -- --coverageDirectory=$(pwd)/coverage",
+        "lint": "bazel run //packages/scripts:lint",
+        "build": "bazel run //packages/scripts:build_and_copy",
+        "test:watch": "jest --watch"
     },
     "devDependencies": {
+        "@types/glob": "^8.0.0",
+        "@types/node": "^18.11.0",
+        "@types/yargs": "^17.0.0",
         "eslint": "10.1.0",
-        "jest": "^27.4.3"
+        "jest": "^27.4.3",
+        "jest-cli": "27.4.3"
     },
     "dependencies": {
         "glob": "^8.0.3",

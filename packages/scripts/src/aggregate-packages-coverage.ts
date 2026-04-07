@@ -5,9 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const fs = require('fs');
-const path = require('path');
-const {spawn} = require('child_process');
+import fs from 'fs';
+import path from 'path';
+import {spawn} from 'child_process';
 
 const REPORTS_DIR_NAME = '.nyc_output';
 const PACKAGES_DIR_NAME = 'packages';
@@ -48,7 +48,7 @@ async function generateReports() {
     return Promise.all(promises);
 }
 
-async function generateReportForPackage(packageName) {
+async function generateReportForPackage(packageName: string) {
     const packagePath = path.resolve(PACKAGES_PATH, packageName);
     const stat = await fs.promises.stat(packagePath);
     if (stat.isDirectory()) {
@@ -61,7 +61,7 @@ async function generateReportForPackage(packageName) {
                     stdio: 'inherit',
                 });
 
-                process.on('exit', (code) => {
+                process.on('exit', (code: number | null) => {
                     if (code !== 0) {
                         reject();
                     } else {

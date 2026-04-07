@@ -2,13 +2,8 @@
 A set of reusable scripts.
 
 ## Installation
-### yarn
 ```bash
-yarn add @pedalboard/scripts -D
-```
-### npm
-```bash
-npm i @pedalboard/scripts -D
+pnpm add @pedalboard/scripts -D
 ```
 ## Scripts
 

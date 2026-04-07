@@ -1,24 +1,24 @@
-const yargs = require('yargs/yargs');
-const glob = require('glob');
-const fs = require('fs');
-const path = require('path');
+import yargs from 'yargs/yargs';
+import glob from 'glob';
+import fs from 'fs';
+import path from 'path';
 
 const GREEN = '\x1b[32m%s\x1b[0m';
-function normalizeCoveragePath(filePath) {
+function normalizeCoveragePath(filePath: string) {
     const idx = filePath.lastIndexOf('/packages/');
     return idx !== -1 ? filePath.slice(idx + 1) : filePath;
 }
 
-function remapCoveragePaths(coverage) {
-    const remapped = {};
+function remapCoveragePaths(coverage: Record<string, unknown>) {
+    const remapped: Record<string, unknown> = {};
     for (const [filePath, data] of Object.entries(coverage)) {
         const realPath = normalizeCoveragePath(filePath);
-        remapped[realPath] = {...data, path: realPath};
+        remapped[realPath] = {...(data as Record<string, unknown>), path: realPath};
     }
     return remapped;
 }
 
-async function collectFiles({pattern, target}) {
+async function collectFiles({pattern, target}: {pattern: string; target: string}) {
     if (!pattern || !target) throw new Error('Missing either pattern or target params');
     console.log(GREEN, `Collecting files... into ${target}`);
 
@@ -38,6 +38,6 @@ async function collectFiles({pattern, target}) {
     console.log(GREEN, `Done.`);
 }
 
-const args = yargs(process.argv.slice(2)).argv;
+const args = yargs(process.argv.slice(2)).parseSync() as unknown as {pattern: string; target: string};
 
 collectFiles(args);
