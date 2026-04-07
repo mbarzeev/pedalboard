@@ -35,9 +35,6 @@ jobs:
               with:
                   node-version: 20
             - run: pnpm install
-            # Build the scripts package so the pedalboard-scripts binary is available for coverage:combined
-            - name: Build scripts package
-              run: pnpm --filter @pedalboard/scripts run build
             - run: pnpm run coverage:combined
             - name: Setup Pages
               uses: actions/configure-pages@v4
