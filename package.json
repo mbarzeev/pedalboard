@@ -12,8 +12,8 @@
     "scripts": {
         "setup:git-hooks": "git config core.hooksPath .git-hooks",
         "postinstall": "pnpm run setup:git-hooks",
-        "test": "pnpm -r run test",
-        "test:since": "pnpm --filter '...[origin/master]' run test",
+        "test": "pnpm -r --workspace-concurrency=1 run test",
+        "test:since": "pnpm --filter '...[origin/master]' --workspace-concurrency=1 run test",
         "lint": "pnpm -r run lint",
         "lint:since": "pnpm --filter '...[origin/master]' run lint",
         "build": "pnpm -r run build",
