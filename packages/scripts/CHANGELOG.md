@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.6
+
+### Patch Changes
+
+- 1b15c60: Arrange the source better and Bazelify the package
+
 ## 0.2.5
 
 ### Patch Changes
