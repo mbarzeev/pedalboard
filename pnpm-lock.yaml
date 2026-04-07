@@ -187,7 +187,7 @@ importers:
         version: 3.0.0
       jest:
         specifier: ^27.4.3
-        version: 27.5.1(ts-node@10.9.2(@swc/core@1.15.11)(@types/node@18.19.130)(typescript@4.9.5))
+        version: 27.5.1(ts-node@10.9.2(@swc/core@1.15.11)(@types/node@18.19.130)(typescript@5.9.3))
       plop:
         specifier: ^3.1.0
         version: 3.1.2(@types/node@18.19.130)
@@ -495,6 +495,9 @@ importers:
       jest:
         specifier: ^27.4.3
         version: 27.5.1(ts-node@10.9.2(@swc/core@1.15.11)(@types/node@18.19.130)(typescript@4.9.5))
+      jest-cli:
+        specifier: 27.4.3
+        version: 27.4.3(ts-node@10.9.2(@swc/core@1.15.11)(@types/node@18.19.130)(typescript@4.9.5))
       jest-preset-stylelint:
         specifier: 7.0.0
         version: 7.0.0(jest@27.5.1(ts-node@10.9.2(@swc/core@1.15.11)(@types/node@18.19.130)(typescript@4.9.5)))

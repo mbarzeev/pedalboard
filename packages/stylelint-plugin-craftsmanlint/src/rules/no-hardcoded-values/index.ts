@@ -34,7 +34,10 @@ const meta = {
  * - Removing quotes if present
  */
 function normalizeValue(value: string): string {
-    return value.trim().toLowerCase().replace(/^['"]|['"]$/g, '');
+    return value
+        .trim()
+        .toLowerCase()
+        .replace(/^['"]|['"]$/g, '');
 }
 
 const ruleFunction = (primaryOption: PrimaryOption) => {
@@ -77,4 +80,3 @@ ruleFunction.messages = messages;
 ruleFunction.meta = meta;
 
 export default ruleFunction;
-
