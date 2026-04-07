@@ -3,7 +3,8 @@
     "compilerOptions": {
         "module": "ES2020",
         "outDir": "dist/esm",
-        "declarationDir": "dist/types"
+        "declarationDir": "dist/types",
+        "types": ["node"]
     },
     "files": ["index.ts"],
     "include": ["src/**/*"]

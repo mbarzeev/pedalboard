@@ -5,6 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import GitHook from './src/GitHook';
 
 export {default as conventionalCommitsValidationHook} from './src/conventional-commits-validation-hook';

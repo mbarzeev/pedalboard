@@ -23,9 +23,10 @@
         "default": "./dist/esm/index.js"
     },
     "scripts": {
-        "test": "jest",
-        "lint": "eslint ./src",
-        "build": "tsc --project tsconfig.esm.json & tsc --project tsconfig.cjs.json"
+        "test": "bazel run //packages/git-hooks:jest -- --coverageDirectory=$(pwd)/coverage",
+        "lint": "bazel run //packages/git-hooks:lint",
+        "build": "bazel run //packages/git-hooks:build_and_copy",
+        "test:watch": "jest --watch"
     },
     "devDependencies": {
         "@babel/core": "^7.16.5",
@@ -33,6 +34,7 @@
         "babel-jest": "^27.4.5",
         "eslint": "10.1.0",
         "jest": "^27.4.3",
+        "jest-cli": "27.4.3",
         "typescript": "^4.6.4"
     },
     "dependencies": {

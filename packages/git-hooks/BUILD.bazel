@@ -13,6 +13,7 @@ npm_link_all_packages(name = "node_modules")
 filegroup(
     name = "build",
     srcs = [
+        ":compile_esm",
         ":compile_cjs",
         ":compile_types",
     ],
@@ -38,11 +39,22 @@ ts_project(
     name = "compile_types",
     srcs = [":sources"],
     tsconfig = ":tsconfig",
-    deps = [":node_modules/eslint"],
+    deps = [
+        ":node_modules/eslint",
+        ":node_modules/@types/node",
+    ],
     declaration = True,
     declaration_dir = "dist/types",
     emit_declaration_only = True,
     validate = False,
+)
+
+swc(
+    name = "compile_esm",
+    srcs = [":sources"],
+    swcrc = "//:swcrc_base_esm",
+    source_maps = "true",
+    out_dir = "dist/esm",
 )
 
 swc(
@@ -56,6 +68,7 @@ swc(
 copy_to_directory(
     name = "dist_dir",
     srcs = [
+        ":compile_esm",
         ":compile_cjs",
         ":compile_types",
     ],
@@ -99,6 +112,7 @@ npm_package(
     name = "pkg",
     srcs = [
         "package.json",
+        ":compile_esm",
         ":compile_cjs",
         ":compile_types"
     ],

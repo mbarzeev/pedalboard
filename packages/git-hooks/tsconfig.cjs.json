@@ -3,7 +3,8 @@
     "compilerOptions": {
         "module": "CommonJS",
         "outDir": "dist/cjs",
-        "declarationDir": "dist/types"
+        "declarationDir": "dist/types",
+        "types": ["node"]
     },
     "files": ["index.ts"],
     "include": ["src/**/*"]
