@@ -27,7 +27,7 @@ interface MediaLoaderProps {
     children: ReactNode;
     loadingStrategy: (
         mediaHTMLElements: RefObject<MediaHTMLElement>[],
-        loadMedia: (mediaHTMLElement: MediaHTMLElement) => void
+        loadMedia: (mediaHTMLElement: MediaHTMLElement) => void,
     ) => void;
 }
 

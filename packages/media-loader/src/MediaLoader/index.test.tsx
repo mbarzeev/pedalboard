@@ -26,7 +26,7 @@ describe('MediaLoader component', () => {
                         <img src="/assets/image-09.jpg" alt="image-09"></img>
                     </div>
                 </MediaLoader>
-            </div>
+            </div>,
         );
 
         const images = queryAllByRole('img', {hidden: true});
@@ -47,7 +47,7 @@ describe('MediaLoader component', () => {
                     </div>
                     <video role="video" controls height="100" autoPlay src="/assets/video-01.mp4"></video>
                 </MediaLoader>
-            </div>
+            </div>,
         );
 
         const videos = getAllByRole('video', {hidden: true});
@@ -68,7 +68,7 @@ describe('MediaLoader component', () => {
                     </div>
                     <audio role="audio" controls autoPlay src="/assets/audio-02.mp3"></audio>
                 </MediaLoader>
-            </div>
+            </div>,
         );
 
         const audios = getAllByRole('audio', {hidden: true});
@@ -99,7 +99,7 @@ describe('MediaLoader component', () => {
                     <video role="video" controls height="100" autoPlay src="/assets/video-01.mp4"></video>
                     <audio role="audio" controls autoPlay src="/assets/audio-02.mp3"></audio>
                 </MediaLoader>
-            </div>
+            </div>,
         );
 
         setTimeout(() => {
@@ -140,7 +140,7 @@ describe('MediaLoader component', () => {
                         <source role="source" src="/assets/audio-01.mp3" type="audio/mp3" />
                     </audio>
                 </MediaLoader>
-            </div>
+            </div>,
         );
 
         setTimeout(() => {

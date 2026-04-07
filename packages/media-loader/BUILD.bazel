@@ -1,0 +1,124 @@
+load("@npm//:defs.bzl", "npm_link_all_packages")
+load("@aspect_rules_swc//swc:defs.bzl", "swc")
+load("@aspect_rules_ts//ts:defs.bzl", "ts_config", "ts_project")
+load("@aspect_rules_jest//jest:defs.bzl", "jest_test")
+load("@aspect_rules_js//js:defs.bzl", "js_library")
+load("@aspect_rules_js//npm:defs.bzl", "npm_package")
+load("@aspect_bazel_lib//lib:copy_to_directory.bzl", "copy_to_directory")
+load("@aspect_bazel_lib//lib:write_source_files.bzl", "write_source_files")
+load("//tools/lint:linters.bzl", "eslint_test")
+
+npm_link_all_packages(name = "node_modules")
+
+filegroup(
+    name = "build",
+    srcs = [
+        ":compile_esm",
+        ":compile_cjs",
+        ":compile_types",
+    ],
+)
+
+ts_config(
+    name = "tsconfig",
+    src = "tsconfig.cjs.json",
+    deps = ["//:tsconfig_base"],
+)
+
+js_library(
+    name = "sources",
+    srcs = ["index.ts"] + glob(["src/**/*.ts*"], exclude = ["**/*.test.ts*", "**/*.stories.tsx"]),
+)
+
+js_library(
+    name = "test_sources",
+    srcs = glob(["src/**/*.test.tsx"]) + ["jest-setup.js"],
+)
+
+ts_project(
+    name = "compile_types",
+    srcs = [":sources"],
+    tsconfig = ":tsconfig",
+    deps = [
+        ":node_modules/react",
+        ":node_modules/react-dom",
+        ":node_modules/@types/react",
+    ],
+    declaration = True,
+    declaration_dir = "dist/types",
+    emit_declaration_only = True,
+    validate = False,
+)
+
+swc(
+    name = "compile_esm",
+    srcs = [":sources"],
+    swcrc = "//:swcrc_base_esm",
+    source_maps = "true",
+    out_dir = "dist/esm",
+)
+
+swc(
+    name = "compile_cjs",
+    srcs = [":sources"],
+    swcrc = "//:swcrc_base_cjs",
+    source_maps = "true",
+    out_dir = "dist/cjs",
+)
+
+copy_to_directory(
+    name = "dist_dir",
+    srcs = [
+        ":compile_esm",
+        ":compile_cjs",
+        ":compile_types",
+    ],
+    replace_prefixes = {"dist/": ""},
+)
+
+write_source_files(
+    name = "build_and_copy",
+    files = {
+        "dist": ":dist_dir",
+    },
+)
+
+jest_test(
+    name = "jest",
+    config = "jest.config.js",
+    auto_configure_reporters = False,
+    args = ["--reporters=default"],
+    data = [
+        ":sources",
+        ":test_sources",
+        "jest.config.js",
+        "//:jest_config_base",
+        "//:node_modules/@swc/core",
+        "//:node_modules/@swc/jest",
+        "//:node_modules/eslint",
+        ":node_modules/react",
+        ":node_modules/react-dom",
+        ":node_modules/@testing-library/react",
+    ],
+    node_modules = ":node_modules",
+)
+
+eslint_test(
+    name = "lint",
+    timeout = "short",
+    srcs = [
+        ":sources",  # ts_project — all non-test TS sources
+        ":test_sources",   # js_library — test files
+    ],
+)
+
+npm_package(
+    name = "pkg",
+    srcs = [
+        "package.json",
+        ":compile_esm",
+        ":compile_cjs",
+        ":compile_types"
+    ],
+    visibility = ["//visibility:public"],
+)
