@@ -26,6 +26,7 @@ export default defineConfig([
                 beforeAll: true,
                 beforeEach: true,
                 process: true,
+                __dirname: true,
             },
 
             parser: tsParser,
