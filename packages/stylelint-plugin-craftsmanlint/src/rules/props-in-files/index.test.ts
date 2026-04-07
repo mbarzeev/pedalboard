@@ -1,8 +1,11 @@
+import path from 'path';
 import {ConfigRules, lint} from 'stylelint';
+
+const packageRoot = path.resolve(__dirname, '../../..');
 
 it('should error on files that contain a prop they should not', async () => {
     const config = {
-        plugins: ['./index.ts'],
+        plugins: [path.resolve(packageRoot, 'index.ts')],
         rules: {
             'stylelint-plugin-craftsmanlint/props-in-files': [
                 {
@@ -20,7 +23,7 @@ it('should error on files that contain a prop they should not', async () => {
     const {
         results: [{warnings, errored}],
     } = await lint({
-        files: 'src/rules/props-in-files/fixtures/a.css',
+        files: path.resolve(packageRoot, 'src/rules/props-in-files/fixtures/a.css'),
         config,
     });
 
@@ -38,7 +41,7 @@ it('should error on files that contain a prop they should not', async () => {
 
 it('should be valid on files that contain a prop they are allowed to', async () => {
     const config = {
-        plugins: ['./index.ts'],
+        plugins: [path.resolve(packageRoot, 'index.ts')],
         rules: {
             'stylelint-plugin-craftsmanlint/props-in-files': [
                 {
@@ -56,7 +59,7 @@ it('should be valid on files that contain a prop they are allowed to', async () 
     const {
         results: [{warnings: warningsA, errored: erroredA}],
     } = await lint({
-        files: 'src/rules/props-in-files/fixtures/a.css',
+        files: path.resolve(packageRoot, 'src/rules/props-in-files/fixtures/a.css'),
         config,
     });
 
@@ -66,7 +69,7 @@ it('should be valid on files that contain a prop they are allowed to', async () 
     const {
         results: [{warnings: warningsB, errored: erroredB}],
     } = await lint({
-        files: 'src/rules/props-in-files/fixtures/b.css',
+        files: path.resolve(packageRoot, 'src/rules/props-in-files/fixtures/b.css'),
         config,
     });
 
@@ -76,7 +79,7 @@ it('should be valid on files that contain a prop they are allowed to', async () 
 
 it('should forbid a certain CSS property from all inspected files', async () => {
     const config = {
-        plugins: ['./index.ts'],
+        plugins: [path.resolve(packageRoot, 'index.ts')],
         rules: {
             'stylelint-plugin-craftsmanlint/props-in-files': [
                 {
@@ -92,7 +95,7 @@ it('should forbid a certain CSS property from all inspected files', async () => 
     };
 
     const {results} = await lint({
-        files: ['src/rules/props-in-files/fixtures/a.css', 'src/rules/props-in-files/fixtures/b.css'],
+        files: [path.resolve(packageRoot, 'src/rules/props-in-files/fixtures/a.css'), path.resolve(packageRoot, 'src/rules/props-in-files/fixtures/b.css')],
         config,
     });
 
@@ -104,7 +107,7 @@ it('should forbid a certain CSS property from all inspected files', async () => 
 
 it('should allow a certain CSS property in all inspected files', async () => {
     const config = {
-        plugins: ['./index.ts'],
+        plugins: [path.resolve(packageRoot, 'index.ts')],
         rules: {
             'stylelint-plugin-craftsmanlint/props-in-files': [
                 {
@@ -120,7 +123,7 @@ it('should allow a certain CSS property in all inspected files', async () => {
     };
 
     const {results} = await lint({
-        files: ['src/rules/props-in-files/fixtures/a.css', 'src/rules/props-in-files/fixtures/b.css'],
+        files: [path.resolve(packageRoot, 'src/rules/props-in-files/fixtures/a.css'), path.resolve(packageRoot, 'src/rules/props-in-files/fixtures/b.css')],
         config,
     });
 
@@ -132,7 +135,7 @@ it('should allow a certain CSS property in all inspected files', async () => {
 
 it('should forbid a certain CSS property with a specific value from all inspected files', async () => {
     const config = {
-        plugins: ['./index.ts'],
+        plugins: [path.resolve(packageRoot, 'index.ts')],
         rules: {
             'stylelint-plugin-craftsmanlint/props-in-files': [
                 {
@@ -149,7 +152,7 @@ it('should forbid a certain CSS property with a specific value from all inspecte
     };
 
     const {results} = await lint({
-        files: ['src/rules/props-in-files/fixtures/a.css', 'src/rules/props-in-files/fixtures/b.css'],
+        files: [path.resolve(packageRoot, 'src/rules/props-in-files/fixtures/a.css'), path.resolve(packageRoot, 'src/rules/props-in-files/fixtures/b.css')],
         config,
     });
 
@@ -163,7 +166,7 @@ it('should forbid a certain CSS property with a specific value from all inspecte
 
 it('should allow a certain CSS property with a specific value in all inspected files', async () => {
     const config = {
-        plugins: ['./index.ts'],
+        plugins: [path.resolve(packageRoot, 'index.ts')],
         rules: {
             'stylelint-plugin-craftsmanlint/props-in-files': [
                 {
@@ -180,7 +183,7 @@ it('should allow a certain CSS property with a specific value in all inspected f
     };
 
     const {results} = await lint({
-        files: ['src/rules/props-in-files/fixtures/a.css', 'src/rules/props-in-files/fixtures/b.css'],
+        files: [path.resolve(packageRoot, 'src/rules/props-in-files/fixtures/a.css'), path.resolve(packageRoot, 'src/rules/props-in-files/fixtures/b.css')],
         config,
     });
 
@@ -194,7 +197,7 @@ it('should allow a certain CSS property with a specific value in all inspected f
 
 it('should forbid a certain CSS property with a specific value from a specific file', async () => {
     const config = {
-        plugins: ['./index.ts'],
+        plugins: [path.resolve(packageRoot, 'index.ts')],
         rules: {
             'stylelint-plugin-craftsmanlint/props-in-files': [
                 {
@@ -211,7 +214,7 @@ it('should forbid a certain CSS property with a specific value from a specific f
     };
 
     const {results} = await lint({
-        files: ['src/rules/props-in-files/fixtures/a.css', 'src/rules/props-in-files/fixtures/b.css'],
+        files: [path.resolve(packageRoot, 'src/rules/props-in-files/fixtures/a.css'), path.resolve(packageRoot, 'src/rules/props-in-files/fixtures/b.css')],
         config,
     });
 
@@ -225,7 +228,7 @@ it('should forbid a certain CSS property with a specific value from a specific f
 
 it('should allow a certain CSS property with a specific value in a specific file', async () => {
     const config = {
-        plugins: ['./index.ts'],
+        plugins: [path.resolve(packageRoot, 'index.ts')],
         rules: {
             'stylelint-plugin-craftsmanlint/props-in-files': [
                 {
@@ -242,7 +245,7 @@ it('should allow a certain CSS property with a specific value in a specific file
     };
 
     const {results} = await lint({
-        files: ['src/rules/props-in-files/fixtures/a.css', 'src/rules/props-in-files/fixtures/b.css'],
+        files: [path.resolve(packageRoot, 'src/rules/props-in-files/fixtures/a.css'), path.resolve(packageRoot, 'src/rules/props-in-files/fixtures/b.css')],
         config,
     });
 
@@ -272,12 +275,12 @@ it('should support JSON configuration with valueRegex', async () => {
     }`);
 
     const config = {
-        plugins: ['./index.ts'],
+        plugins: [path.resolve(packageRoot, 'index.ts')],
         rules: jsonRule,
     };
 
     const {results} = await lint({
-        files: ['src/rules/props-in-files/fixtures/a.css', 'src/rules/props-in-files/fixtures/b.css'],
+        files: [path.resolve(packageRoot, 'src/rules/props-in-files/fixtures/a.css'), path.resolve(packageRoot, 'src/rules/props-in-files/fixtures/b.css')],
         config,
     });
 

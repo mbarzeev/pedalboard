@@ -1,9 +1,12 @@
+import path from 'path';
 import {lint} from 'stylelint';
+
+const packageRoot = path.resolve(__dirname, '../../..');
 
 describe('no-hardcoded-values rule', () => {
     it('should error on hardcoded spacing values', async () => {
         const config = {
-            plugins: ['./index.ts'],
+            plugins: [path.resolve(packageRoot, 'index.ts')],
             rules: {
                 'stylelint-plugin-craftsmanlint/no-hardcoded-values': [
                     {
@@ -22,7 +25,7 @@ describe('no-hardcoded-values rule', () => {
         const {
             results: [{warnings, errored}],
         } = await lint({
-            files: 'src/rules/no-hardcoded-values/fixtures/invalid.scss',
+            files: path.resolve(packageRoot, 'src/rules/no-hardcoded-values/fixtures/invalid.css'),
             config,
         });
 
@@ -36,7 +39,7 @@ describe('no-hardcoded-values rule', () => {
 
     it('should error on hardcoded color values', async () => {
         const config = {
-            plugins: ['./index.ts'],
+            plugins: [path.resolve(packageRoot, 'index.ts')],
             rules: {
                 'stylelint-plugin-craftsmanlint/no-hardcoded-values': [
                     {
@@ -55,7 +58,7 @@ describe('no-hardcoded-values rule', () => {
         const {
             results: [{warnings, errored}],
         } = await lint({
-            files: 'src/rules/no-hardcoded-values/fixtures/invalid.scss',
+            files: path.resolve(packageRoot, 'src/rules/no-hardcoded-values/fixtures/invalid.css'),
             config,
         });
 
@@ -69,7 +72,7 @@ describe('no-hardcoded-values rule', () => {
 
     it('should not error on values already using tokens', async () => {
         const config = {
-            plugins: ['./index.ts'],
+            plugins: [path.resolve(packageRoot, 'index.ts')],
             rules: {
                 'stylelint-plugin-craftsmanlint/no-hardcoded-values': [
                     {
@@ -87,7 +90,7 @@ describe('no-hardcoded-values rule', () => {
         const {
             results: [{warnings, errored}],
         } = await lint({
-            files: 'src/rules/no-hardcoded-values/fixtures/valid.scss',
+            files: path.resolve(packageRoot, 'src/rules/no-hardcoded-values/fixtures/valid.css'),
             config,
         });
 
@@ -97,7 +100,7 @@ describe('no-hardcoded-values rule', () => {
 
     it('should support multiple token options for same value', async () => {
         const config = {
-            plugins: ['./index.ts'],
+            plugins: [path.resolve(packageRoot, 'index.ts')],
             rules: {
                 'stylelint-plugin-craftsmanlint/no-hardcoded-values': [
                     {
@@ -125,7 +128,7 @@ describe('no-hardcoded-values rule', () => {
 
     it('should be case insensitive for color values', async () => {
         const config = {
-            plugins: ['./index.ts'],
+            plugins: [path.resolve(packageRoot, 'index.ts')],
             rules: {
                 'stylelint-plugin-craftsmanlint/no-hardcoded-values': [
                     {
@@ -143,7 +146,7 @@ describe('no-hardcoded-values rule', () => {
         const {
             results: [{warnings, errored}],
         } = await lint({
-            files: 'src/rules/no-hardcoded-values/fixtures/invalid.scss',
+            files: path.resolve(packageRoot, 'src/rules/no-hardcoded-values/fixtures/invalid.css'),
             config,
         });
 
@@ -154,7 +157,7 @@ describe('no-hardcoded-values rule', () => {
 
     it('should not error on values that are not in the valueToToken map', async () => {
         const config = {
-            plugins: ['./index.ts'],
+            plugins: [path.resolve(packageRoot, 'index.ts')],
             rules: {
                 'stylelint-plugin-craftsmanlint/no-hardcoded-values': [
                     {
@@ -172,7 +175,7 @@ describe('no-hardcoded-values rule', () => {
         const {
             results: [{warnings}],
         } = await lint({
-            files: 'src/rules/no-hardcoded-values/fixtures/invalid.scss',
+            files: path.resolve(packageRoot, 'src/rules/no-hardcoded-values/fixtures/invalid.css'),
             config,
         });
 
@@ -184,4 +187,3 @@ describe('no-hardcoded-values rule', () => {
         expect(otherWarnings).toHaveLength(0);
     });
 });
-
