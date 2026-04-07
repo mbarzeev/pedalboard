@@ -5,8 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-export default {
-    name: 'no-namespace-imports',
+import {Rule} from 'eslint';
+
+const rule: Rule.RuleModule = {
     meta: {
         type: 'problem',
 
@@ -38,7 +39,7 @@ export default {
                     // If there are forbidden modules configuration, check if the
                     // source module is among them, and only if it is - report
                     let shouldReport = true;
-                    const sourceModule = node.source.value;
+                    const sourceModule = node.source.value as string;
                     const forbiddenModules = context?.options[0]?.forbiddenModules;
 
                     if (forbiddenModules) {
@@ -60,3 +61,5 @@ export default {
         };
     },
 };
+
+export default rule;
