@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.2.19
+
+### Patch Changes
+
+- 631e7c3: Converting to TS and Bazelifying
+
 ## 1.2.18
 
 ### Patch Changes
