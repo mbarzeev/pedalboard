@@ -1,3 +1,4 @@
 {
-    "eslint.useFlatConfig": true
+    "eslint.useFlatConfig": true,
+    "bazel.executable": "${workspaceFolder}/node_modules/.bin/bazelisk"
 }

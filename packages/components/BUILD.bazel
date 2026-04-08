@@ -6,7 +6,7 @@ load("@aspect_rules_js//js:defs.bzl", "js_library")
 load("@aspect_rules_js//npm:defs.bzl", "npm_package")
 load("@aspect_bazel_lib//lib:copy_to_directory.bzl", "copy_to_directory")
 load("@aspect_bazel_lib//lib:write_source_files.bzl", "write_source_files")
-load("//tools/lint:linters.bzl", "eslint_test")
+load("//tools/lint:linters.bzl", "eslint_test", "stylelint_test")
 
 npm_link_all_packages(name = "node_modules")
 
@@ -19,27 +19,45 @@ filegroup(
     ],
 )
 
+filegroup(
+    name = "scss_sources",
+    srcs = glob(["src/**/*.scss"]),
+)
+
 ts_config(
     name = "tsconfig",
-    src = "tsconfig.esm.json",
+    src = "tsconfig.cjs.json",
     deps = ["//:tsconfig_base"],
 )
 
 js_library(
     name = "sources",
-    srcs = ["index.ts"] + glob(["src/**/*.ts"], exclude = ["**/*.test.ts"]),
+    srcs = ["index.ts"] + glob(["src/**/*.ts*"], exclude = ["**/*.test.ts*", "**/*.stories.tsx"]),
 )
 
 js_library(
     name = "test_sources",
-    srcs = glob(["src/**/*.test.ts"]),
+    srcs = glob(["src/**/*.test.tsx"]) + ["jest-setup.js"],
+)
+
+js_library(
+    name = "stories_sources",
+    srcs = glob(["src/**/*.stories.tsx"]),
 )
 
 ts_project(
     name = "compile_types",
     srcs = [":sources"],
     tsconfig = ":tsconfig",
-    deps = [":node_modules/@types/react"],
+    deps = [
+        ":node_modules/react",
+        ":node_modules/react-dom",
+        ":node_modules/@types/react",
+        ":node_modules/prop-types",
+        ":node_modules/@types/prop-types",
+        ":node_modules/@pedalboard/hooks",
+
+    ],
     declaration = True,
     declaration_dir = "dist/types",
     emit_declaration_only = True,
@@ -91,8 +109,11 @@ jest_test(
         "//:jest_config_base",
         "//:node_modules/@swc/core",
         "//:node_modules/@swc/jest",
-        ":node_modules/@testing-library/react-hooks",
+        "//:node_modules/eslint",
         ":node_modules/react",
+        ":node_modules/react-dom",
+        ":node_modules/@testing-library/react",
+        ":node_modules/@pedalboard/hooks",
     ],
     node_modules = ":node_modules",
 )
@@ -101,9 +122,25 @@ eslint_test(
     name = "lint",
     timeout = "short",
     srcs = [
-        ":sources",  # ts_project — all non-test TS sources
-        ":test_sources",   # js_library — test files
+        ":sources",         # ts_project — all non-test TS sources
+        ":test_sources",    # js_library — test files
+        ":stories_sources"  #js_library — stories files 
     ],
+)
+
+js_library(
+    name = "stylelintrc",
+    srcs = [".stylelintrc.json"],
+    deps = [
+        ":node_modules/@pedalboard/stylelint-plugin-craftsmanlint",
+        ":node_modules/postcss-scss",
+    ],
+)
+
+stylelint_test(
+    name = "stylelint",
+    srcs = [":scss_sources"],
+    config = ":stylelintrc",
 )
 
 npm_package(
@@ -112,7 +149,7 @@ npm_package(
         "package.json",
         ":compile_esm",
         ":compile_cjs",
-        ":compile_types",
+        ":compile_types"
     ],
     visibility = ["//visibility:public"],
 )

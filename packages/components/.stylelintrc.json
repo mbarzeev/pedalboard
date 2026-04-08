@@ -1,4 +1,5 @@
 {
+    "customSyntax": "postcss-scss",
     "plugins": ["@pedalboard/stylelint-plugin-craftsmanlint"],
     "rules": {
         "stylelint-plugin-craftsmanlint/props-in-files": [
