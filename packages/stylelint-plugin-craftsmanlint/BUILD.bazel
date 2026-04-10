@@ -86,6 +86,8 @@ jest_test(
         "//:node_modules/@swc/core",
         "//:node_modules/@swc/jest",
         "//:node_modules/eslint",
+        ":node_modules/jest-preset-stylelint",
+        ":node_modules/stylelint",
     ],
     node_modules = ":node_modules",
 )

@@ -22,7 +22,8 @@
         "default": "./dist/cjs/index.js"
     },
     "scripts": {
-        "test": "bazel run //packages/stylelint-plugin-craftsmanlint:jest -- --coverageDirectory=$(pwd)/coverage",
+        "test": "bazel test :jest",
+        "test:coverage": "bazel coverage :jest --config=html_coverage --cache_test_results=no --test_arg=--coverageDirectory=$(pwd)/coverage",
         "lint": "bazel run //packages/stylelint-plugin-craftsmanlint:lint",
         "build": "bazel run //packages/stylelint-plugin-craftsmanlint:build_and_copy",
         "test:watch": "jest --watch",

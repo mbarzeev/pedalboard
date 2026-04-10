@@ -23,7 +23,8 @@
     },
     "types": "./dist/types/index.d.ts",
     "scripts": {
-        "test": "bazel run //packages/media-loader:jest -- --coverageDirectory=$(pwd)/coverage",
+        "test": "bazel test :jest",
+        "test:coverage": "bazel coverage :jest --config=html_coverage --cache_test_results=no --test_arg=--coverageDirectory=$(pwd)/coverage",
         "lint": "bazel run //packages/media-loader:lint",
         "build": "bazel run //packages/media-loader:build_and_copy",
         "storybook": "storybook dev -p 6006",

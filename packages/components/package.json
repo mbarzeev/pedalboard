@@ -22,7 +22,8 @@
         "default": "./dist/esm/index.js"
     },
     "scripts": {
-        "test": "bazel run //packages/components:jest -- --coverageDirectory=$(pwd)/coverage",
+        "test": "bazel test :jest",
+        "test:coverage": "bazel coverage :jest --config=html_coverage --test_arg=--coverageDirectory=$(pwd)/coverage",
         "lint": "bazel run //packages/components:lint",
         "lint:style": "bazel run //packages/components:stylelint",
         "build": "bazel run //packages/components:build_and_copy",
