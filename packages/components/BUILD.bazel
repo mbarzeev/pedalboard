@@ -99,6 +99,7 @@ write_source_files(
 
 jest_test(
     name = "jest",
+    tags = ["jest"],
     config = "jest.config.js",
     auto_configure_reporters = False,
     args = ["--reporters=default"],
