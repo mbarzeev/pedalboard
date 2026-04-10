@@ -95,6 +95,7 @@ write_source_files(
     files = {
         "dist": ":dist_dir",
     },
+    diff_test = False,
 )
 
 jest_test(
