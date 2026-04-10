@@ -9,13 +9,15 @@ pnpm add @pedalboard/scripts -D
 
 *** 
 ### **collectFiles**
-This script allows you to collect files which match a given pattern into a target directory
+This script allows you to collect files which match a given pattern into a target directory.
 
 ### Usage
-In the following example you collect all the coverage-finals.json files  under the packages directory and place them in `.nyc_output`.
+In the following example you collect all the `coverage-final.json` files under the packages directory and place them in `.nyc_output`. Each package's coverage script writes its own `coverage-final.json` to `packages/<pkg>/coverage/`, and this step gathers them all into one place for aggregation.
 ```json
 "scripts": {
-    "collect": "pedalboard-scripts collectFiles --pattern='packages/**/coverage-final.json' --target='.nyc_output'"
+    "coverage:collect": "mkdir -p .nyc_output && pedalboard-scripts collectFiles --pattern='packages/**/coverage-final.json' --target='.nyc_output'",
+    "coverage:all": "pnpm -r --workspace-concurrency=1 run test:coverage",
+    "coverage:combined": "pnpm run coverage:all && pnpm run coverage:collect && nyc report --reporter lcov"
 }
 ```
 

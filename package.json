@@ -18,8 +18,7 @@
         "build": "pnpm -r run build",
         "version:changeset": "changeset version",
         "publish:changeset": "changeset publish",
-        "coverage": "pnpm run test --coverage",
-        "coverage:all": "pnpm -r run test --coverage --silent",
+        "coverage:all": "pnpm -r --workspace-concurrency=1 run test:coverage",
         "coverage:collect": "mkdir -p .nyc_output && pedalboard-scripts collectFiles --pattern='packages/**/coverage-final.json' --target='.nyc_output'",
         "coverage:combined": "pnpm run coverage:all && pnpm run coverage:collect && nyc report --reporter lcov",
         "bazel": "bazel"
