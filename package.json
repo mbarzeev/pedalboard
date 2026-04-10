@@ -18,9 +18,9 @@
         "build": "pnpm -r run build",
         "version:changeset": "changeset version",
         "publish:changeset": "changeset publish",
-        "coverage:all": "pnpm -r --workspace-concurrency=1 run test:coverage",
-        "coverage:collect": "mkdir -p .nyc_output && pedalboard-scripts collectFiles --pattern='packages/**/coverage-final.json' --target='.nyc_output'",
-        "coverage:combined": "pnpm run coverage:all && pnpm run coverage:collect && nyc report --reporter lcov",
+        "coverage:all": "pnpm bazel coverage //packages/... --test_tag_filters=jest",
+        "coverage:report": "lcov-viewer lcov bazel-out/_coverage/_coverage_report.dat -o coverage",
+        "coverage:combined": "pnpm coverage:all && pnpm coverage:report",
         "bazel": "bazel"
     },
     "devDependencies": {
@@ -31,9 +31,9 @@
         "@changesets/cli": "^2.30.0",
         "@eslint/eslintrc": "^3.3.5",
         "@eslint/js": "^10.0.1",
+        "@lcov-viewer/cli": "^1.3.0",
         "@pedalboard/eslint-plugin-craftsmanlint": "workspace:^",
         "@pedalboard/git-hooks": "workspace:^",
-        "@pedalboard/scripts": "workspace:^",
         "@swc/core": "^1.3.24",
         "@swc/jest": "^0.2.24",
         "@typescript-eslint/eslint-plugin": "^8.0.0",
@@ -42,7 +42,6 @@
         "esbuild": "^0.15.7",
         "esbuild-sass-plugin": "^2.4.5",
         "globals": "^17.4.0",
-        "nyc": "^15.1.0",
         "ts-node": "^10.9.2"
     },
     "dependencies": {
