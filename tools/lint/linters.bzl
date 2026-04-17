@@ -18,12 +18,16 @@ eslint = lint_eslint_aspect(
     ],
 )
 
-eslint_test = lint_test(aspect = eslint)
+_eslint_test = lint_test(aspect = eslint)
 
-def stylelint_test(name, srcs, config):
+def eslint_test(name, srcs, **kwargs):
+    _eslint_test(name = name, srcs = srcs, tags = ["lint"], **kwargs)
+
+def stylelint_test(name, srcs, config, data = []):
     _stylelint_bin.stylelint_test(
         name = name,
+        tags = ["lint"],
         args = ["--config", "$(location {})".format(config)] +
                ["$(locations {})".format(s) for s in srcs],
-        data = srcs + [config],
+        data = srcs + [config] + data,
     )

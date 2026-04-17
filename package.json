@@ -13,7 +13,7 @@
         "setup:git-hooks": "git config core.hooksPath .git-hooks",
         "postinstall": "pnpm run setup:git-hooks",
         "test": "bazel test //packages/... --test_tag_filters=jest",
-        "lint": "pnpm -r run lint",
+        "lint": "bazel test //packages/... --test_tag_filters=lint",
         "lint:since": "pnpm --filter '...[origin/master]' run lint",
         "build": "pnpm -r run build",
         "version:changeset": "changeset version",

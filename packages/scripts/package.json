@@ -18,7 +18,7 @@
     "scripts": {
         "test": "bazel test :jest",
         "test:coverage": "bazel coverage :jest --config=html_coverage --test_arg=--coverageDirectory=$(pwd)/coverage",
-        "lint": "bazel run //packages/scripts:lint",
+        "lint": "bazel test ... --test_tag_filters=lint",
         "build": "bazel run //packages/scripts:build_and_copy",
         "test:watch": "jest --watch"
     },

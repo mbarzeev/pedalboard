@@ -24,8 +24,7 @@
     "scripts": {
         "test": "bazel test :jest",
         "test:coverage": "bazel coverage :jest --config=html_coverage --test_arg=--coverageDirectory=$(pwd)/coverage",
-        "lint": "bazel run //packages/components:lint",
-        "lint:style": "bazel run //packages/components:stylelint",
+        "lint": "bazel test ... --test_tag_filters=lint",
         "build": "bazel run //packages/components:build_and_copy",
         "bundle": "node ../../esbuild.config.js",
         "storybook": "storybook dev -p 6006",

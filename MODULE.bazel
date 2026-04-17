@@ -41,6 +41,7 @@ npm.npm_translate_lock(
         "typescript-eslint": [""],
         "eslint-plugin-react": [""],
         "stylelint@14.16.1": [""],
+        "postcss-scss": [""],
     },
 )
 use_repo(npm, "npm")

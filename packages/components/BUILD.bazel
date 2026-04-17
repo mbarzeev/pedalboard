@@ -146,6 +146,7 @@ stylelint_test(
     name = "stylelint",
     srcs = [":scss_sources"],
     config = ":stylelintrc",
+    data = ["//:node_modules/postcss-scss"],
 )
 
 npm_package(
