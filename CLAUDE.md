@@ -22,7 +22,6 @@ pnpm run lint           # Lint all packages
 ### Since-changed variants (only packages with changes)
 ```bash
 pnpm run test:since     # Test only changed packages
-pnpm run lint:since     # Lint only changed packages
 ```
 
 ### Per-package commands (run from package directory)

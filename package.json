@@ -14,7 +14,6 @@
         "postinstall": "pnpm run setup:git-hooks",
         "test": "bazel test //packages/... --test_tag_filters=jest",
         "lint": "bazel test //packages/... --test_tag_filters=lint",
-        "lint:since": "pnpm --filter '...[origin/master]' run lint",
         "build": "pnpm -r run build",
         "version:changeset": "changeset version",
         "publish:changeset": "changeset publish",
