@@ -1,7 +1,7 @@
 load("@npm//:defs.bzl", "npm_link_all_packages")
 load("@aspect_rules_swc//swc:defs.bzl", "swc")
 load("@aspect_rules_ts//ts:defs.bzl", "ts_config", "ts_project")
-load("@aspect_rules_jest//jest:defs.bzl", "jest_test")
+load("//tools/test:testers.bzl", "jest_unit_test")
 load("@aspect_rules_js//js:defs.bzl", "js_library")
 load("@aspect_rules_js//npm:defs.bzl", "npm_package")
 load("@aspect_bazel_lib//lib:copy_to_directory.bzl", "copy_to_directory")
@@ -75,22 +75,11 @@ write_source_files(
     diff_test = False,
 )
 
-jest_test(
+jest_unit_test(
     name = "jest",
-    tags = ["jest"],
-    config = "jest.config.js",
-    auto_configure_reporters = False,
-    args = ["--reporters=default"],
     data = [
-        ":sources",
-        ":test_sources",
-        "jest.config.js",
-        "//:jest_config_base",
-        "//:node_modules/@swc/core",
-        "//:node_modules/@swc/jest",
         "//:node_modules/eslint",
     ],
-    node_modules = ":node_modules",
 )
 
 eslint_test(
