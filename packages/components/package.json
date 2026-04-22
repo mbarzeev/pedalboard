@@ -24,7 +24,7 @@
     "scripts": {
         "test": "bazel test :jest",
         "test:coverage": "bazel coverage :jest --config=html_coverage --test_arg=--coverageDirectory=$(pwd)/coverage",
-        "lint": "bazel test ... --test_tag_filters=lint",
+        "lint": "bazel test :lint :stylelint",
         "build": "bazel run //packages/components:build_and_copy",
         "storybook": "storybook dev -p 6006",
         "cy:open": "cypress open-ct",

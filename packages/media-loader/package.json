@@ -25,7 +25,7 @@
     "scripts": {
         "test": "bazel test :jest",
         "test:coverage": "bazel coverage :jest --config=html_coverage --test_arg=--coverageDirectory=$(pwd)/coverage",
-        "lint": "bazel test ... --test_tag_filters=lint",
+        "lint": "bazel test :lint",
         "build": "bazel run //packages/media-loader:build_and_copy",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
