@@ -27,6 +27,7 @@
         "lint": "bazel test :lint :stylelint",
         "build": "bazel run //packages/components:build_and_copy",
         "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build",
         "cy:open": "cypress open-ct",
         "cy:run": "cypress run-ct",
         "plop": "plop",
