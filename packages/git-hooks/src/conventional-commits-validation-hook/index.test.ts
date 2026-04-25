@@ -5,16 +5,17 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import {vi, describe, it, expect, beforeEach} from 'vitest';
 import fs from 'fs';
 import conventionalCommitsValidationHook from './index';
 
 describe('conventional-commits-validation-hook', () => {
-    const mockConsoleLog = jest.spyOn(console, 'log').mockImplementation((msg) => msg);
-    const mockConsoleError = jest.spyOn(console, 'error').mockImplementation((msg) => msg);
-    const mockExit = jest.spyOn(process, 'exit').mockImplementation((code) => code as never);
+    const mockConsoleLog = vi.spyOn(console, 'log').mockImplementation((msg) => msg);
+    const mockConsoleError = vi.spyOn(console, 'error').mockImplementation((msg) => msg);
+    const mockExit = vi.spyOn(process, 'exit').mockImplementation((code) => code as never);
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should have an execute method', () => {
@@ -42,15 +43,15 @@ describe('conventional-commits-validation-hook', () => {
         ];
 
         messages.forEach((msg) => {
-            jest.clearAllMocks();
-            jest.spyOn(fs, 'readFileSync').mockImplementation(() => msg);
+            vi.clearAllMocks();
+            vi.spyOn(fs, 'readFileSync').mockImplementation(() => msg);
             conventionalCommitsValidationHook.execute();
             expect(mockExit).toHaveBeenCalledWith(0);
         });
     });
 
     it('should fail validation when not a conventional commit', () => {
-        jest.spyOn(fs, 'readFileSync').mockImplementation(() => 'not a conventional commit');
+        vi.spyOn(fs, 'readFileSync').mockImplementation(() => 'not a conventional commit');
         conventionalCommitsValidationHook.execute();
         expect(mockExit).toHaveBeenCalledWith(1);
         expect(mockConsoleLog).toHaveBeenCalledWith(

@@ -16,19 +16,19 @@
         "pedalboard-scripts": "./dist/src/pedalboard-scripts.js"
     },
     "scripts": {
-        "test": "bazel test :jest",
-        "test:coverage": "bazel coverage :jest --config=html_coverage --test_arg=--coverageDirectory=$(pwd)/coverage",
+        "test": "bazel test :vitest",
+        "test:coverage": "bazel coverage :vitest --config=vitest_coverage --test_arg=--coverage.reportsDirectory=$(pwd)/coverage",
         "lint": "bazel test :lint",
         "build": "bazel run //packages/scripts:build_and_copy",
-        "test:watch": "jest --watch"
+        "test:watch": "vitest"
     },
     "devDependencies": {
         "@types/glob": "^8.0.0",
         "@types/node": "^18.11.0",
         "@types/yargs": "^17.0.0",
+        "@vitest/coverage-v8": "^3.0.0",
         "eslint": "10.1.0",
-        "jest": "^27.4.3",
-        "jest-cli": "27.4.3"
+        "vitest": "^3.0.0"
     },
     "dependencies": {
         "glob": "^8.0.3",

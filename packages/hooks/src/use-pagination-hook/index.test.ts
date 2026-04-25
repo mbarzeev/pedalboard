@@ -5,7 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import {renderHook, act} from '@testing-library/react-hooks';
+import {describe, it, expect, vi} from 'vitest';
+import {renderHook, act} from '@testing-library/react';
 import usePagination, {NO_TOTAL_PAGES_ERROR} from './index';
 
 describe('UsePagination hook', () => {
@@ -121,7 +122,7 @@ describe('UsePagination hook', () => {
 
     describe('onChange callback handler', () => {
         it('should be invoked when the cursor changes by setCursor method', () => {
-            const onChangeSpy = jest.fn();
+            const onChangeSpy = vi.fn();
             const {result} = renderHook(() => usePagination({totalPages: 5, onChange: onChangeSpy}));
 
             act(() => {
@@ -132,7 +133,7 @@ describe('UsePagination hook', () => {
         });
 
         it('should not be invoked when the hook is initialized', () => {
-            const onChangeSpy = jest.fn();
+            const onChangeSpy = vi.fn();
             renderHook(() => usePagination({totalPages: 5, onChange: onChangeSpy}));
 
             expect(onChangeSpy).not.toHaveBeenCalled();

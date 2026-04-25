@@ -1,28 +1,26 @@
 """Test runner macros for use across packages.
 
 Exports:
-  jest_unit_test: a test rule that runs Jest with the project-wide SWC
-                  configuration and common base deps.
-                  Usage: jest_unit_test(name = "jest", data = [...extra deps])
+  vitest_unit_test: a test rule that runs Vitest with the project-wide base
+                    configuration and common base deps.
+                    Usage: vitest_unit_test(name = "vitest", data = [...extra deps])
 """
 
-load("@aspect_rules_jest//jest:defs.bzl", "jest_test")
+load("@npm//:vitest/package_json.bzl", _vitest_bin = "bin")
 
-def jest_unit_test(name, data = [], **kwargs):
-    jest_test(
+def vitest_unit_test(name, data = [], **kwargs):
+    _vitest_bin.vitest_test(
         name = name,
-        tags = ["jest"],
-        config = "jest.config.js",
-        auto_configure_reporters = False,
-        args = ["--reporters=default"],
+        tags = ["vitest"],
+        chdir = native.package_name(),
+        args = ["run", "--reporter=verbose"],
         data = [
             ":sources",
             ":test_sources",
-            "jest.config.js",
-            "//:jest_config_base",
-            "//:node_modules/@swc/core",
-            "//:node_modules/@swc/jest",
+            "vitest.config.mts",
+            "//:vitest_config_base",
+            ":node_modules/vitest",
+            ":node_modules/@vitest/coverage-v8",
         ] + data,
-        node_modules = ":node_modules",
         **kwargs
     )

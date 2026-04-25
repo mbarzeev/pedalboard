@@ -23,27 +23,25 @@
         "default": "./dist/esm/index.js"
     },
     "scripts": {
-        "test": "bazel test :jest",
-        "test:coverage": "bazel coverage :jest --config=html_coverage --test_arg=--coverageDirectory=$(pwd)/coverage",
+        "test": "bazel test :vitest",
+        "test:coverage": "bazel coverage :vitest --config=vitest_coverage --test_arg=--coverage.reportsDirectory=$(pwd)/coverage",
         "lint": "bazel test :lint",
         "build": "bazel run //packages/hooks:build_and_copy",
-        "test:watch": "jest --watch"
+        "test:watch": "vitest"
     },
     "peerDependencies": {
         "react": "^18.3.1",
         "react-dom": "^18.3.1"
     },
     "devDependencies": {
-        "@babel/core": "^7.16.5",
-        "@babel/preset-env": "^7.16.11",
-        "@testing-library/react-hooks": "^7.0.2",
+        "@testing-library/react": "^16.0.0",
         "@types/react": "^18.3.1",
-        "babel-jest": "^27.4.5",
+        "@vitest/coverage-v8": "^3.0.0",
         "esbuild": "^0.15.7",
         "esbuild-sass-plugin": "^2.4.5",
         "eslint": "10.1.0",
-        "jest": "^27.4.3",
-        "jest-cli": "^27.4.3",
-        "typescript": "^5.3.3"
+        "jsdom": "^25.0.0",
+        "typescript": "^5.3.3",
+        "vitest": "^3.0.0"
     }
 }

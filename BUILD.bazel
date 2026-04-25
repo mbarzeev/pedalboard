@@ -13,8 +13,8 @@ ts_config(
 )
 
 js_library(
-    name = "jest_config_base",
-    srcs = ["jest.config.base.js"],
+    name = "vitest_config_base",
+    srcs = ["vitest.config.base.mts"],
     visibility = ["//packages:__subpackages__"],
 )
 

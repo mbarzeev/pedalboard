@@ -5,8 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import {describe, it, expect, beforeAll} from 'vitest';
+import type {} from '@testing-library/jest-dom/vitest';
 import React from 'react';
-import {render} from '@testing-library/react';
+import {render, waitFor} from '@testing-library/react';
 import MediaLoader from '.';
 
 describe('MediaLoader component', () => {
@@ -78,7 +80,7 @@ describe('MediaLoader component', () => {
         expect(sources[0].dataset['src']).toBeDefined();
     });
 
-    it('should load the images, videos and audios when a triggerFunction is defined', (done) => {
+    it('should load the images, videos and audios when a triggerFunction is defined', async () => {
         const {getByRole} = render(
             <div>
                 <MediaLoader
@@ -102,7 +104,7 @@ describe('MediaLoader component', () => {
             </div>,
         );
 
-        setTimeout(() => {
+        await waitFor(() => {
             const imageElement = getByRole('img');
             expect(imageElement).toBeVisible();
             expect(imageElement.getAttribute('src')).toBeDefined();
@@ -112,11 +114,10 @@ describe('MediaLoader component', () => {
             const videoElement = getByRole('video');
             expect(videoElement).toBeVisible();
             expect(videoElement.getAttribute('src')).toBeDefined();
-            done();
         });
     });
 
-    it('should load the videos and audios with source tags when a triggerFunction is defined', (done) => {
+    it('should load the videos and audios with source tags when a triggerFunction is defined', async () => {
         const {getByRole} = render(
             <div>
                 <MediaLoader
@@ -143,14 +144,13 @@ describe('MediaLoader component', () => {
             </div>,
         );
 
-        setTimeout(() => {
+        await waitFor(() => {
             const audioElement = getByRole('audio');
             expect(audioElement).toBeVisible();
             expect(audioElement.getAttribute('src')).toBeDefined();
             const videoElement = getByRole('video');
             expect(videoElement).toBeVisible();
             expect(videoElement.getAttribute('src')).toBeDefined();
-            done();
         });
     });
 });

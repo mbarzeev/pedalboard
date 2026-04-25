@@ -3,7 +3,10 @@ common  --@aspect_rules_ts//ts:skipLibCheck=honor_tsconfig
 # Testing
 test --test_output=all
 test --test_env=FORCE_COLOR=0
-# HTML coverage report
-test:html_coverage --strategy=TestRunner=local
-test:html_coverage --test_arg=--coverageReporters=html
-test:html_coverage --test_arg=--coverageReporters=json
+# HTML coverage report (Vitest)
+test:vitest_coverage --strategy=TestRunner=local
+test:vitest_coverage --test_arg=--coverage
+test:vitest_coverage --test_arg=--coverage.reporter=html
+test:vitest_coverage --test_arg=--coverage.reporter=json
+test:vitest_coverage --test_arg=--coverage.reporter=lcov
+test:vitest_coverage --instrumentation_filter=packages/[^/]+/src/.*(?<!\.test)(?<!\.stories)\.tsx?$

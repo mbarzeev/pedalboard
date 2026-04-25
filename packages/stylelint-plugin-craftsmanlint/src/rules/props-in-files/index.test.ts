@@ -1,3 +1,4 @@
+import {it, expect} from 'vitest';
 import path from 'path';
 import {ConfigRules, lint} from 'stylelint';
 

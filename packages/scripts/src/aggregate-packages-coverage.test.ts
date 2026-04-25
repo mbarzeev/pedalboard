@@ -5,6 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import {describe, it, expect} from 'vitest';
+
 describe('aggregate-packages-coverage script', () => {
     it('should be implemented...', () => {
         // TODO: Implement...

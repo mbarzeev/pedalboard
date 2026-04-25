@@ -1,4 +1,5 @@
-jest.mock('child_process');
+import {vi, describe, it, expect} from 'vitest';
+vi.mock('child_process');
 import path from 'path';
 import {fork} from 'child_process';
 import {execute, COLLECT_FILES, AGGREGATE_PACKAGES_COVERAGE_COMMAND} from '../src/pedalboard-scripts';
