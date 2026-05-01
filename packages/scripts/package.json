@@ -23,15 +23,15 @@
         "test:watch": "vitest"
     },
     "devDependencies": {
-        "@types/glob": "^8.0.0",
-        "@types/node": "^18.11.0",
-        "@types/yargs": "^17.0.0",
-        "@vitest/coverage-v8": "^3.0.0",
-        "eslint": "10.1.0",
-        "vitest": "^3.0.0"
+        "@types/glob": "catalog:",
+        "@types/node": "catalog:",
+        "@types/yargs": "catalog:",
+        "@vitest/coverage-v8": "catalog:",
+        "eslint": "catalog:",
+        "vitest": "catalog:"
     },
     "dependencies": {
-        "glob": "^8.0.3",
-        "yargs": "^17.6.2"
+        "glob": "catalog:",
+        "yargs": "catalog:"
     }
 }

@@ -39,7 +39,7 @@ npm.npm_translate_lock(
         "eslint": [""],
         "typescript-eslint": [""],
         "eslint-plugin-react": [""],
-        "stylelint@14.16.1": [""],
+        "stylelint": [""],
         "postcss-scss": [""],
     },
 )

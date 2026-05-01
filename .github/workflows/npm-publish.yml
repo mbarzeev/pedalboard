@@ -20,6 +20,7 @@ jobs:
               with:
                   node-version: 20
             - run: pnpm install
+            - run: pnpm run deps:lint
             - run: pnpm run lint
             - run: pnpm run test
             - run: pnpm run build

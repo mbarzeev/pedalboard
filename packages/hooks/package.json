@@ -34,14 +34,14 @@
         "react-dom": "^18.3.1"
     },
     "devDependencies": {
-        "@testing-library/react": "^16.0.0",
-        "@types/react": "^18.3.1",
-        "@vitest/coverage-v8": "^3.0.0",
-        "esbuild": "^0.15.7",
-        "esbuild-sass-plugin": "^2.4.5",
-        "eslint": "10.1.0",
-        "jsdom": "^25.0.0",
-        "typescript": "^5.3.3",
-        "vitest": "^3.0.0"
+        "@testing-library/react": "catalog:",
+        "@types/react": "catalog:",
+        "@vitest/coverage-v8": "catalog:",
+        "esbuild": "catalog:",
+        "esbuild-sass-plugin": "catalog:",
+        "eslint": "catalog:",
+        "jsdom": "catalog:",
+        "typescript": "catalog:",
+        "vitest": "catalog:"
     }
 }

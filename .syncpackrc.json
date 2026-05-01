@@ -1,0 +1,27 @@
+{
+    "$schema": "./node_modules/syncpack/schema.json",
+    "versionGroups": [
+        {
+            "dependencyTypes": ["peer"],
+            "isIgnored": true
+        }
+    ],
+    "dependencyGroups": [
+        {
+            "dependencies": ["react", "react-dom"],
+            "aliasName": "react-family"
+        },
+        {
+            "dependencies": ["@storybook/**", "storybook"],
+            "aliasName": "storybook-family"
+        },
+        {
+            "dependencies": ["@typescript-eslint/**", "typescript-eslint"],
+            "aliasName": "typescript-eslint-family"
+        },
+        {
+            "dependencies": ["@vitest/**", "vitest"],
+            "aliasName": "vitest-family"
+        }
+    ]
+}
