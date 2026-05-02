@@ -52,8 +52,8 @@ catalogs:
       specifier: ^1.0.11
       version: 1.0.11
     '@storybook/addon-styling-webpack':
-      specifier: ^1.0.0
-      version: 1.0.1
+      specifier: ^0.0.6
+      version: 0.0.6
     '@storybook/addons':
       specifier: ^7.6.12
       version: 7.6.17
@@ -530,7 +530,7 @@ importers:
         version: 1.0.11(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@storybook/addon-styling-webpack':
         specifier: 'catalog:'
-        version: 1.0.1(storybook@7.6.21(encoding@0.1.13))(webpack@5.105.0(@swc/core@1.15.11)(esbuild@0.15.18))
+        version: 0.0.6(webpack@5.105.0(@swc/core@1.15.11)(esbuild@0.15.18))
       '@storybook/addons':
         specifier: 'catalog:'
         version: 7.6.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2786,8 +2786,8 @@ packages:
   '@storybook/addon-outline@7.6.21':
     resolution: {integrity: sha512-Bf/IMwl/cZIIo1v5tS0grmnPrlIeXfQdscRMtxsHj2pCZbvtJPZFuyRAVNhb9xGFPoN9zlA65ZymaajEtk4INA==}
 
-  '@storybook/addon-styling-webpack@1.0.1':
-    resolution: {integrity: sha512-5n+SXPfMTc4m7sWaJWPWjoHYWc6/B111M2Ia55toQ3GV4ON4vVlTgH9FX+EgCkDticElj99HLTMDJkHRj2yvkg==}
+  '@storybook/addon-styling-webpack@0.0.6':
+    resolution: {integrity: sha512-JjM2FXFiHpjbJsp7nRUEMhYBRpK6ukBKsbtWzCrAGOfUgoElcGwPY8KhSKSnRknIhebonGK1bxalh3u8bGZ/dw==}
     peerDependencies:
       webpack: ^5.0.0
 
@@ -2906,11 +2906,6 @@ packages:
 
   '@storybook/node-logger@7.6.21':
     resolution: {integrity: sha512-X4LwhWQ0KuLU7O2aEi7U9hhg+klnuvkXqhXIqAQCZEKogUxz7ywek+2h+7QqdgHFi6V7VYNtiMmMJKllzhg+OA==}
-
-  '@storybook/node-logger@8.6.14':
-    resolution: {integrity: sha512-/H67NMvc9hDOaNgVragsHaeXQ5JzwAQfyx1QeL4vlx2SPGoWXmxpoRXZTpOJRaNOhKlYh6sDj/3Lx2xOH5IxnQ==}
-    peerDependencies:
-      storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
 
   '@storybook/postinstall@7.6.21':
     resolution: {integrity: sha512-0NYT6tnEceRp0HE8sfR9P7o95Bz080y0s082xQ4QEHbTB8D67cJ0ML3TFxln55fOjw9/zX8FOLd/uXRHnOGQGQ==}
@@ -10443,12 +10438,10 @@ snapshots:
       '@storybook/global': 5.0.0
       ts-dedent: 2.2.0
 
-  '@storybook/addon-styling-webpack@1.0.1(storybook@7.6.21(encoding@0.1.13))(webpack@5.105.0(@swc/core@1.15.11)(esbuild@0.15.18))':
+  '@storybook/addon-styling-webpack@0.0.6(webpack@5.105.0(@swc/core@1.15.11)(esbuild@0.15.18))':
     dependencies:
-      '@storybook/node-logger': 8.6.14(storybook@7.6.21(encoding@0.1.13))
+      '@storybook/node-logger': 7.6.21
       webpack: 5.105.0(@swc/core@1.15.11)(esbuild@0.15.18)
-    transitivePeerDependencies:
-      - storybook
 
   '@storybook/addon-toolbars@7.6.21': {}
 
@@ -10957,10 +10950,6 @@ snapshots:
   '@storybook/mdx2-csf@1.1.0': {}
 
   '@storybook/node-logger@7.6.21': {}
-
-  '@storybook/node-logger@8.6.14(storybook@7.6.21(encoding@0.1.13))':
-    dependencies:
-      storybook: 7.6.21(encoding@0.1.13)
 
   '@storybook/postinstall@7.6.21': {}
 
