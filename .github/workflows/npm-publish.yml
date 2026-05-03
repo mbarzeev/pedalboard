@@ -18,7 +18,7 @@ jobs:
             - uses: pnpm/action-setup@v4
             - uses: actions/setup-node@v4
               with:
-                  node-version: 20
+                  node-version-file: '.nvmrc'
             - run: pnpm install
             - run: pnpm run deps:lint
             - run: pnpm run lint
@@ -28,7 +28,7 @@ jobs:
             # Publish to NPM
             - uses: actions/setup-node@v4
               with:
-                  node-version: 20
+                  node-version-file: '.nvmrc'
                   registry-url: https://registry.npmjs.org/
             - run: |
                   git config --local user.name 'github-actions[bot]'

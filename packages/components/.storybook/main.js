@@ -1,9 +1,8 @@
-const {join, dirname} = require('path');
+import {join, dirname} from 'path';
+import {createRequire} from 'module';
 
-/**
- * This function is used to resolve the absolute path of a package.
- * It is needed in projects that use Yarn PnP or are set up within a monorepo.
- */
+const require = createRequire(import.meta.url);
+
 function getAbsolutePath(value) {
     return dirname(require.resolve(join(value, 'package.json')));
 }
@@ -12,29 +11,18 @@ const config = {
     stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
     addons: [
         getAbsolutePath('@storybook/addon-links'),
-        getAbsolutePath('@storybook/addon-essentials'),
-        getAbsolutePath('@storybook/addon-onboarding'),
-        getAbsolutePath('@storybook/addon-interactions'),
-        getAbsolutePath('storybook-addon-sass-postcss'),
+        getAbsolutePath('@storybook/addon-webpack5-compiler-swc'),
         {
             name: '@storybook/addon-styling-webpack',
             options: {
                 rules: [
-                    // Replaces existing CSS rules with given rule
                     {
                         test: /\.css$/,
                         use: ['style-loader', 'css-loader'],
                     },
                     {
                         test: /\.s[ac]ss$/i,
-                        use: [
-                            // Creates `style` nodes from JS strings
-                            'style-loader',
-                            // Translates CSS into CommonJS
-                            'css-loader',
-                            // Compiles Sass to CSS
-                            'sass-loader',
-                        ],
+                        use: ['style-loader', 'css-loader', 'sass-loader'],
                     },
                 ],
             },
@@ -42,11 +30,6 @@ const config = {
     ],
     framework: {
         name: getAbsolutePath('@storybook/react-webpack5'),
-        options: {
-            builder: {
-                useSWC: true,
-            },
-        },
     },
     core: {
         disableTelemetry: true,

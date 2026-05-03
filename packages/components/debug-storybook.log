@@ -1,0 +1,38 @@
+[18:41:29.905] [INFO] storybook v10.3.6
+[18:41:30.114] [ERROR] [38;2;241;97;97mSB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your [33m.storybook/main.js[39m file.
+
+Original error:
+[37mError: Cannot find module '@storybook/addon-webpack5-compiler-swc/package.json'
+Require stack:
+- /.storybook/main.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at Function.resolve (node:internal/modules/helpers:193:19)
+    at getAbsolutePath (file:///.storybook/main.js:7:28)
+    at file:///.storybook/main.js:14:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:325:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:606:24)
+    at async importModule (file:///home/matti/my/projects/pedalboard/node_modules/.pnpm/storybook@10.3.6_@testing-library+dom@9.3.4_prettier@2.8.8_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/_node-chunks/chunk-OWMIR4VJ.js:737:11)
+    at async loadMainConfig (file:///home/matti/my/projects/pedalboard/node_modules/.pnpm/storybook@10.3.6_@testing-library+dom@9.3.4_prettier@2.8.8_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/_node-chunks/chunk-H4PWFMMO.js:11703:12)
+    at async buildDevStandalone (file:///home/matti/my/projects/pedalboard/node_modules/.pnpm/storybook@10.3.6_@testing-library+dom@9.3.4_prettier@2.8.8_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/core-server/index.js:7953:16)
+    at async withTelemetry (file:///home/matti/my/projects/pedalboard/node_modules/.pnpm/storybook@10.3.6_@testing-library+dom@9.3.4_prettier@2.8.8_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/_node-chunks/chunk-UYONHJJP.js:225:12)[39m[39m
+    at loadMainConfig (file:///home/matti/my/projects/pedalboard/node_modules/.pnpm/storybook@10.3.6_@testing-library+dom@9.3.4_prettier@2.8.8_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/_node-chunks/chunk-H4PWFMMO.js:11734:11)
+    at async buildDevStandalone (file:///home/matti/my/projects/pedalboard/node_modules/.pnpm/storybook@10.3.6_@testing-library+dom@9.3.4_prettier@2.8.8_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/core-server/index.js:7953:16)
+    at async withTelemetry (file:///home/matti/my/projects/pedalboard/node_modules/.pnpm/storybook@10.3.6_@testing-library+dom@9.3.4_prettier@2.8.8_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/_node-chunks/chunk-UYONHJJP.js:225:12)
+    at async dev (file:///home/matti/my/projects/pedalboard/node_modules/.pnpm/storybook@10.3.6_@testing-library+dom@9.3.4_prettier@2.8.8_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/bin/core.js:2736:3)
+    at async _Command.<anonymous> (file:///home/matti/my/projects/pedalboard/node_modules/.pnpm/storybook@10.3.6_@testing-library+dom@9.3.4_prettier@2.8.8_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/bin/core.js:2806:92)
+[18:41:30.129] [WARN] Broken build, fix the error above.
+You may need to refresh the browser.
+[18:41:30.133] [WARN]   Failed to load preset: "/home/matti/my/projects/pedalboard/packages/components/.storybook/main.js"
+[18:41:30.134] [ERROR] [38;2;241;97;97mError: Cannot find module '@storybook/addon-webpack5-compiler-swc/package.json'
+Require stack:
+- ./.storybook/main.js[39m
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at Function.resolve (node:internal/modules/helpers:193:19)
+    at getAbsolutePath (file://./.storybook/main.js:7:28)
+    at file://./.storybook/main.js:14:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:325:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:606:24)
+    at async importModule (file:///home/matti/my/projects/pedalboard/node_modules/.pnpm/storybook@10.3.6_@testing-library+dom@9.3.4_prettier@2.8.8_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/_node-chunks/chunk-OWMIR4VJ.js:737:11)
+    at async loadMainConfig (file:///home/matti/my/projects/pedalboard/node_modules/.pnpm/storybook@10.3.6_@testing-library+dom@9.3.4_prettier@2.8.8_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/_node-chunks/chunk-H4PWFMMO.js:11703:12)
+    at async buildDevStandalone (file:///home/matti/my/projects/pedalboard/node_modules/.pnpm/storybook@10.3.6_@testing-library+dom@9.3.4_prettier@2.8.8_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/core-server/index.js:7953:16)
+    at async withTelemetry (file:///home/matti/my/projects/pedalboard/node_modules/.pnpm/storybook@10.3.6_@testing-library+dom@9.3.4_prettier@2.8.8_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/storybook/dist/_node-chunks/chunk-UYONHJJP.js:225:12)

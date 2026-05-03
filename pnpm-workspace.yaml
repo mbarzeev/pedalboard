@@ -13,17 +13,11 @@ catalog:
     '@eslint/eslintrc': ^3.3.5
     '@eslint/js': ^10.0.1
     '@lcov-viewer/cli': ^1.3.0
-    '@storybook/addon-essentials': ^7.6.12
-    '@storybook/addon-interactions': ^7.6.12
-    '@storybook/addon-links': ^7.6.12
-    '@storybook/addon-onboarding': ^1.0.11
-    '@storybook/addon-styling-webpack': ^0.0.6
-    '@storybook/addons': ^7.6.12
-    '@storybook/blocks': ^7.6.12
-    '@storybook/client-api': ^7.6.12
-    '@storybook/react': ^7.6.12
-    '@storybook/react-webpack5': ^7.6.12
-    '@storybook/test': ^7.6.12
+    '@storybook/addon-links': ^10.3.6
+    '@storybook/addon-styling-webpack': ^3.0.2
+    '@storybook/addon-webpack5-compiler-swc': ^4.0.3
+    '@storybook/react': ^10.3.6
+    '@storybook/react-webpack5': ^10.3.6
     '@swc/core': ^1.3.24
     '@testing-library/jest-dom': ^6.0.0
     '@testing-library/react': ^16.0.0
@@ -46,7 +40,7 @@ catalog:
     'esbuild-sass-plugin': ^2.4.5
     'eslint': 10.3.0
     'eslint-plugin-react': ^7.37.5
-    'eslint-plugin-storybook': ^9.0.7
+    'eslint-plugin-storybook': ^10.3.6
     'glob': ^8.0.3
     'globals': ^17.4.0
     'jsdom': ^25.0.0
@@ -58,8 +52,7 @@ catalog:
     'react-responsive-carousel': ^3.2.23
     'sass': ^1.70.0
     'sass-loader': ^14.1.0
-    'storybook': ^7.6.12
-    'storybook-addon-sass-postcss': ^0.3.2
+    'storybook': ^10.3.6
     'style-loader': ^3.0.0
     'stylelint': 15.11.0
     'syncpack': ^14.3.1
