@@ -44,7 +44,6 @@ catalog:
     'glob': ^8.0.3
     'globals': ^17.4.0
     'jsdom': ^25.0.0
-    'plop': ^4.0.5
     'postcss': ^8.4.0
     'postcss-scss': ^4.0.9
     'react': ^18.3.1

@@ -66,9 +66,9 @@ cd packages/components
 pnpm run storybook
 ```
 
-## Resources
+## Creating a New Component
 
-- [Creating a React Component Generator](https://dev.to/mbarzeev/creating-a-react-component-generator-3g6)
+New components are scaffolded using the `create-react-component` Claude Code skill. Run `/create-react-component` in Claude Code to generate a new component with consistent structure including tests, stories, and styles.
 
 ## License
 

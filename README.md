@@ -12,7 +12,7 @@ Many of the development done on this project was blogged about on [dev.to/mbarze
 
 | Package | Description | Blog Post |
 |---------|-------------|-----------|
-| [@pedalboard/components](packages/components) | A set of well-crafted React components | [Creating a React Component Generator](https://dev.to/mbarzeev/creating-a-react-component-generator-3g6) |
+| [@pedalboard/components](packages/components) | A set of well-crafted React components | |
 | [@pedalboard/hooks](packages/hooks) | A set of well-crafted React hooks | [Converting Your React Hook To TypeScript](https://dev.to/mbarzeev/converting-your-react-hook-to-typescript-2439) |
 | [@pedalboard/media-loader](packages/media-loader) | A component that lets you take control over your media loading | [Take control over your media loading](https://dev.to/mbarzeev/take-control-over-your-media-loading-bpi) |
 | [@pedalboard/eslint-plugin-craftsmanlint](packages/eslint-plugin-craftsmanlint) | A set of ESLint rules for your code craftsmanship | |

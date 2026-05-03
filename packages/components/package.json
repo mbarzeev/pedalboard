@@ -30,8 +30,7 @@
         "build-storybook": "storybook build",
         "cy:open": "cypress open-ct",
         "cy:run": "cypress run-ct",
-        "plop": "plop",
-        "chromatic": "chromatic --only-changed --untraced package.json --untraced pnpm-lock.yaml --exit-zero-on-changes"
+"chromatic": "chromatic --only-changed --untraced package.json --untraced pnpm-lock.yaml --exit-zero-on-changes"
     },
     "devDependencies": {
         "@babel/core": "catalog:",
@@ -57,8 +56,7 @@
         "eslint-plugin-react": "catalog:",
         "eslint-plugin-storybook": "catalog:",
         "jsdom": "catalog:",
-        "plop": "catalog:",
-        "postcss-scss": "catalog:",
+"postcss-scss": "catalog:",
         "sass": "catalog:",
         "sass-loader": "catalog:",
         "storybook": "catalog:",
